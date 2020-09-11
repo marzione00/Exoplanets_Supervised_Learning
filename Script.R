@@ -14,27 +14,98 @@ library(rpart.plot)
 library(caret)
 library(tree)
 library(randomForest)
+library(randomForestExplainer)
+library(rpart.plot)
+library(visreg)
+library(rfPermute)
+library(rattle)
 
 Planets_dataset <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_exoplanet_catalogR.xlsx"))
 
-set.seed(1)
+set.seed(2)
 
-Planets_dataset_train<- sample(3712,2500)
+Planets_dataset_train<- sample(499,400)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
-tree.planet = rpart(P_HABITABLE~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY,data=Planets_dataset,method="class", subset=Planets_dataset_train)
-rfor<-randomForest(P_HABITABLE~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY,data=Planets_dataset,method="class", subset=Planets_dataset_train)
+tree.planet <- rpart(P_HABITABLE~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 5)
+rfor.planet <-randomForest(as.factor(P_HABITABLE)~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE)
 
-print(rfor)
-print(importance(rfor,type=2))
 
-printcp(tree.planet)
+fancyRpartPlot(tree.planet,sub = "Planets Habitability", palettes = "OrRd")
 
-rpart.plot(tree.planet,box.palette=c("red", "green"),digits=4)
+#explain_forest(rfor.planet)
+plot(rfor.planet)
+legend("top", colnames(rfor.planet$err.rate), fill=1:ncol(rfor.planet$err.rate))
+varImpPlot(rfor.planet)
+proximityPlot(rfor.planet)
+
+
+
+print(rfor.planet)
+print(importance(rfor.planet,type=2))
+
+#printcp(tree.planet)
+
+rpart.plot(tree.planet,box.palette=c("red", "green"),digits=4,extra=106)
 
 
 tree.predict<-predict(tree.planet, Planets_dataset_test, type = "class")
-confusionMatrix(table(tree.predict,Planets_dataset_test[,14]))
+rfor.predict<-predict(rfor.planet, Planets_dataset_test, type = "class")
+caret::confusionMatrix(table(tree.predict,Planets_dataset_test[,12]))
+caret::confusionMatrix(table(rfor.predict,Planets_dataset_test[,12]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Planets_dataset <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_exoplanet_catalogR.xlsx"))
+Planets_dataset_test_SET <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_exoplanet_catalog_test.xlsx"))
+
+set.seed(1)
+
+
+#caret.control <- trainControl(method = "cv",number=4)
+
+#rpart.cv <- train(as.factor(P_HABITABLE)~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY, data = Planets_dataset,method = "rpart",trControl = caret.control)
+rpart.cv <- train(as.factor(P_HABITABLE)~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY, data = Planets_dataset,method = "rpart")
+
+
+#rpart.best <- rpart.cv$finalModel
+
+prp(rpart.best, type = 5, extra = 1, under = TRUE)
+
+
+tree.predict<-predict(rpart.cv,Planets_dataset_test_SET)
+peppo<-data.frame(tree.predict)
+confusionMatrix(table(tree.predict,Planets_dataset_test_SET[,12]))
+
+
+
+
+
+
+
+
+
+
+
 
 palette = colorRampPalette(c("green", "blue", "red")) (20)
 heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c(10, 10), main = 'Planets',dist(Planets_dataset[,3:15],method = 'euclidean'))
