@@ -19,6 +19,8 @@ library(rpart.plot)
 library(visreg)
 library(rfPermute)
 library(rattle)
+library(PerformanceAnalytics)
+library(e1071)
 
 Planets_dataset <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_exoplanet_catalogR.xlsx"))
 
@@ -27,9 +29,19 @@ set.seed(2)
 Planets_dataset_train<- sample(499,400)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
-tree.planet <- rpart(P_HABITABLE~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 5)
-rfor.planet <-randomForest(as.factor(P_HABITABLE)~P_DISTANCE+P_PERIASTRON+P_APASTRON+P_DISTANCE_EFF+P_FLUX+P_TEMP_EQUIL+S_RADIUS_EST+S_LUMINOSITY,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE)
+chart.Correlation(Planets_dataset[,2:14], histogram=FALSE)
 
+
+tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 5)
+
+rfor.planet <-randomForest(as.factor(P_H)~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE)
+
+
+pca.planet <- prcomp(Planets_dataset[,2:14], center = TRUE,scale. = TRUE)
+
+#svm.planet <- svm( data=Planets_dataset, subset=Planets_dataset_train, kernel="radial")
+#summary(svm.planet)
+#plot(svm.planet,mode="pca")
 
 fancyRpartPlot(tree.planet,sub = "Planets Habitability", palettes = "OrRd")
 
