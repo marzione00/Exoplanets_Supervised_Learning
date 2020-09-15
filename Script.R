@@ -26,7 +26,7 @@ Planets_dataset <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_ex
 
 set.seed(2)
 
-Planets_dataset_train<- sample(499,400)
+Planets_dataset_train<- sample(499,300)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 chart.Correlation(Planets_dataset[,2:14], histogram=FALSE)
@@ -97,16 +97,33 @@ svm.predict["T"]<-as.factor(pca.test[,12])
 
 pippo<-table()
 
+svm_fin<-data.frame(svm.predict,stringsAsFactors = TRUE)
+
 tree.predict<-predict(tree.planet, Planets_dataset_test, type = "class")
 rfor.predict<-predict(rfor.planet, Planets_dataset_test, type = "class")
+
+
+
+
 caret::confusionMatrix(table(tree.predict,Planets_dataset_test[,12]))
+
+fourfoldplot(table(tree.predict,Planets_dataset_test[,12]), color = c("blue", "red"),conf.level = 0, margin = 1, main = "Decision Tree")
+
+
+
+
+
 caret::confusionMatrix(table(rfor.predict,Planets_dataset_test[,12]))
 
-tab <- rbind(table(svm.predict["H"]), table(svm.predict["T"]))
+fourfoldplot(table(rfor.predict,Planets_dataset_test[,12]), color = c("blue", "red"),conf.level = 0, margin = 1, main = "Random Forest")
 
 
-caret::confusionMatrix(svm.predict["H"],svm.predict["H"])
 
+
+caret::confusionMatrix(table(svm_fin))
+
+
+fourfoldplot(table(svm_fin), color = c("blue", "red"),conf.level = 0, margin = 1, main = "SVM")
 
 
 
