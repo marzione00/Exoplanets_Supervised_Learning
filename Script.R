@@ -34,7 +34,7 @@ set.seed(2)
 
 #########Splitting training vs test set
 
-Planets_dataset_train<- sample(499,100)
+Planets_dataset_train<- sample(499,300)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 
@@ -65,7 +65,11 @@ caret::confusionMatrix(table(tree.predict))
 
 fourfoldplot(table(tree.predict), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Decision Tree")
 
+pred_dec<-prediction(as.numeric(tree.predict$Predict),as.numeric(tree.predict$Test))
 
+roc_dec.perf <- performance(pred_dec, measure = "tpr", x.measure = "fpr")
+
+autoplot(roc_dec.perf)+theme_bw()
 
 #########Random Forest
 
@@ -88,6 +92,12 @@ colnames(rfor.predict)<-c("Predict","Test")
 caret::confusionMatrix(table(rfor.predict))
 
 fourfoldplot(table(rfor.predict), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Random Forest")
+
+pred_for<-prediction(as.numeric(rfor.predict$Predict),as.numeric(rfor.predict$Test))
+
+roc_for.perf <- performance(pred_for, measure = "tpr", x.measure = "fpr")
+
+autoplot(roc_for.perf)+theme_bw()
 
 
 #########PCA+SVM 
