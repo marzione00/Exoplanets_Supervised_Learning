@@ -22,29 +22,30 @@ library(rattle)
 library(PerformanceAnalytics)
 library(e1071)
 library(InformationValue)
+library(ROCR)
 
 
-#Loading data
+#########Loading data
 
 
 Planets_dataset <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_exoplanet_catalogR.xlsx"))
 
 set.seed(2)
 
-#Splitting training vs test set
+#########Splitting training vs test set
 
-Planets_dataset_train<- sample(499,300)
+Planets_dataset_train<- sample(499,100)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 
-#Plottinng the correlation chart
+#########Plotting the correlation chart
 
 
 chart.Correlation(Planets_dataset[,2:14], histogram=FALSE)
 
 
 
-#Decision Tree 
+#########Decision Tree 
 
 
 tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 5)
@@ -66,7 +67,7 @@ fourfoldplot(table(tree.predict), color = c("red","darkgreen"),conf.level = 0, m
 
 
 
-#Random Forest
+#########Random Forest
 
 
 rfor.planet <-randomForest(as.factor(P_H)~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE)
@@ -89,7 +90,7 @@ caret::confusionMatrix(table(rfor.predict))
 fourfoldplot(table(rfor.predict), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Random Forest")
 
 
-#PCA+SVM 
+#########PCA+SVM 
 
 pca.train<-Planets_dataset[Planets_dataset_train,]
 pca.test<-Planets_dataset[-Planets_dataset_train,]
@@ -128,17 +129,24 @@ caret::confusionMatrix(table(svm_fin))
 
 fourfoldplot(table(svm_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM")
 
+pred_svm<-prediction(as.numeric(svm_fin$Predict),as.numeric(svm_fin$Test))
 
-#Logistic Regression 
+roc_svm.perf <- performance(pred_svm, measure = "tpr", x.measure = "fpr")
+
+autoplot(roc_svm.perf)+theme_bw()
+
+
+#########Logistic Regression 
 
 glm.planet<- glm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=pca.train[,2:14],family=binomial)
 summary(glm.planet)
 
-glm_fin<-data.frame(glm.prob,stringsAsFactors = TRUE)
-glm_fin["Test"]<-as.factor(pca.test[,12])
 
 glm.prob<-data.frame(predict(glm.planet,pca.test,type = "response"))
 glm.prob<-ifelse(glm.prob > 0.5, "1", "0")
+
+glm_fin<-data.frame(glm.prob,stringsAsFactors = TRUE)
+glm_fin["Test"]<-as.factor(pca.test[,12])
 
 colnames(glm_fin)<-c("Predict","Test")
 
@@ -146,5 +154,9 @@ caret::confusionMatrix(table(glm_fin))
 
 fourfoldplot(table(glm_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Logistic")
 
+pred_log<-prediction(as.numeric(glm_fin$Predict),as.numeric(glm_fin$Test))
 
+roc_log.perf <- performance(pred_log, measure = "tpr", x.measure = "fpr")
+
+autoplot(roc_log.perf)+theme_bw()
 
