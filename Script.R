@@ -23,18 +23,21 @@ library(PerformanceAnalytics)
 library(e1071)
 library(InformationValue)
 library(ROCR)
+library(logistf)
+library(MASS)
+library(pca3d)
 
 
 #########Loading data
 
 
-Planets_dataset <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_exoplanet_catalogR.xlsx"))
+Planets_dataset <- data.frame(read_excel("C:/Users/Marzio/Desktop/Planets/phl_exoplanet_catalog_FINAL.xlsx"))
 
 set.seed(2)
 
 #########Splitting training vs test set
 
-Planets_dataset_train<- sample(499,300)
+Planets_dataset_train<- sample(500,300)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 
@@ -143,30 +146,81 @@ pred_svm<-prediction(as.numeric(svm_fin$Predict),as.numeric(svm_fin$Test))
 
 roc_svm.perf <- performance(pred_svm, measure = "tpr", x.measure = "fpr")
 
+phi_svm<-performance(pred_svm, "mi")
+
+phi_svm@y.values
+
 autoplot(roc_svm.perf)+theme_bw()
 
 
-#########Logistic Regression 
+#########QDA
 
-glm.planet<- glm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=pca.train[,2:14],family=binomial)
-summary(glm.planet)
+qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
+
+plot(qda.planet)
+
+#glm.planet
+
+#summary(glm.planet)
 
 
-glm.prob<-data.frame(predict(glm.planet,pca.test,type = "response"))
-glm.prob<-ifelse(glm.prob > 0.5, "1", "0")
+qda.prob<-data.frame(predict(qda.planet,pca.test,type = "response"))
+qda.prob<-qda.prob["class"]
 
-glm_fin<-data.frame(glm.prob,stringsAsFactors = TRUE)
-glm_fin["Test"]<-as.factor(pca.test[,12])
+qda_fin<-data.frame(qda.prob,stringsAsFactors = TRUE)
+qda_fin["Test"]<-as.factor(pca.test[,12])
 
-colnames(glm_fin)<-c("Predict","Test")
+colnames(qda_fin)<-c("Predict","Test")
 
-caret::confusionMatrix(table(glm_fin))
+caret::confusionMatrix(table(qda_fin))
 
-fourfoldplot(table(glm_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Logistic")
+fourfoldplot(table(qda_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "QDA")
 
-pred_log<-prediction(as.numeric(glm_fin$Predict),as.numeric(glm_fin$Test))
+pred_qda<-prediction(as.numeric(qda_fin$Predict),as.numeric(qda_fin$Test))
 
-roc_log.perf <- performance(pred_log, measure = "tpr", x.measure = "fpr")
+roc_qda.perf <- performance(pred_qda, measure = "tpr", x.measure = "fpr")
 
-autoplot(roc_log.perf)+theme_bw()
+phi_qda<-performance(pred_qda, "phi")
 
+plot(phi_qda)
+
+autoplot(roc_qda.perf)+theme_bw()
+
+
+#########LDA
+
+lda.planet<- lda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
+
+plot(lda.planet)
+
+#glm.planet
+
+#summary(glm.planet)
+
+
+lda.prob<-data.frame(predict(lda.planet,pca.test,type = "response"))
+lda.prob<-lda.prob["class"]
+
+lda_fin<-data.frame(lda.prob,stringsAsFactors = TRUE)
+lda_fin["Test"]<-as.factor(pca.test[,12])
+
+colnames(lda_fin)<-c("Predict","Test")
+
+caret::confusionMatrix(table(lda_fin))
+
+fourfoldplot(table(lda_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "QDA")
+
+pred_lda<-prediction(as.numeric(lda_fin$Predict),as.numeric(lda_fin$Test))
+
+roc_lda.perf <- performance(pred_lda, measure = "tpr", x.measure = "fpr")
+
+phi_lda<-performance(pred_lda, "phi")
+
+plot(phi_lda)
+
+autoplot(roc_lda.perf)+theme_bw()
+
+
+
+pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
+pca3d(pca.planet,group= pca.train[,12]) 
