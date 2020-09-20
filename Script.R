@@ -28,6 +28,7 @@ library(MASS)
 library(pca3d)
 
 
+
 #########Loading data
 
 
@@ -37,21 +38,24 @@ set.seed(2)
 
 #########Splitting training vs test set
 
-Planets_dataset_train<- sample(500,300)
+Planets_dataset_train<- sample(500,400)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 
 #########Plotting the correlation chart
 
 
-chart.Correlation(Planets_dataset[,2:14], histogram=FALSE)
+chart.Correlation(Planets_dataset[,2:15], histogram=FALSE)
+palette = colorRampPalette(c("green", "blue", "red")) (20)
+heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c(10, 10),main = 'Planet Features',dist(Planets_dataset[,2:15],method = 'euclidean'))
+
 
 
 
 #########Decision Tree 
 
 
-tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 5)
+tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 1)
 
 fancyRpartPlot(tree.planet,sub = "Planets Habitability", palettes = "OrRd")
 
@@ -77,7 +81,7 @@ autoplot(roc_dec.perf)+theme_bw()
 #########Random Forest
 
 
-rfor.planet <-randomForest(as.factor(P_H)~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE)
+rfor.planet <-randomForest(as.factor(P_H)~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
 #explain_forest(rfor.planet)
 plot(rfor.planet)
@@ -105,13 +109,16 @@ autoplot(roc_for.perf)+theme_bw()
 
 #########PCA+SVM 
 
+
 pca.train<-Planets_dataset[Planets_dataset_train,]
 pca.test<-Planets_dataset[-Planets_dataset_train,]
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca.planet.test  <-  predict(pca.planet, pca.test[,2:14])
 
-autoplot(pca.planet,data=pca.train[,2:14],col="P_H")
+autoplot(pca.planet,data=pca.train[,2:15],col="P_H")
 autoplot(pca.planet.test)
+
+fviz_pca_var(pca.planet,col.var = "contrib",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black",arrowsize = 1,labelsize = 0.5,jitter = list(what = "both", width = 1, height = 1) ) +theme_bw()+theme(plot.title = element_text(hjust = 0.5))
 
 pca_out<-data.frame(pca.planet[["x"]])
 pca_out_test<-data.frame(pca.planet.test[["x"]])
@@ -155,7 +162,7 @@ autoplot(roc_svm.perf)+theme_bw()
 
 #########QDA
 
-qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
+qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset, subset=Planets_dataset_train)
 
 plot(qda.planet)
 
@@ -189,7 +196,7 @@ autoplot(roc_qda.perf)+theme_bw()
 
 #########LDA
 
-lda.planet<- lda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
+lda.planet<- lda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset, subset=Planets_dataset_train)
 
 plot(lda.planet)
 
