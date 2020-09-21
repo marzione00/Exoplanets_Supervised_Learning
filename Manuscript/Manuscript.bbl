@@ -1,0 +1,52 @@
+\begin{thebibliography}{1}
+
+\bibitem{carleo2019machine}
+Giuseppe Carleo, Ignacio Cirac, Kyle Cranmer, Laurent Daudet, Maria Schuld,
+  Naftali Tishby, Leslie Vogt-Maranto, and Lenka Zdeborov{\'a}.
+\newblock Machine learning and the physical sciences.
+\newblock {\em Reviews of Modern Physics}, 91(4):045002, 2019.
+
+\bibitem{seager2013exoplanet}
+Sara Seager.
+\newblock Exoplanet habitability.
+\newblock {\em Science}, 340(6132):577--581, 2013.
+
+\bibitem{armstrong2020exoplanet}
+David~J Armstrong, Jevgenij Gamper, and Theodoros Damoulas.
+\newblock Exoplanet validation with machine learning: 50 new validated kepler
+  planets.
+\newblock {\em Monthly Notices of the Royal Astronomical Society}, 2020.
+
+\bibitem{mackay2003information}
+David JC~Mac Kay.
+\newblock {\em Information theory, inference and learning algorithms}.
+\newblock Cambridge university press, 2003.
+
+\bibitem{james2013introduction}
+Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani.
+\newblock {\em An introduction to statistical learning}, volume 112.
+\newblock Springer, 2013.
+
+\bibitem{papagiannis1985historical}
+Michael~D Papagiannis.
+\newblock A historical introduction to the search for extraterrestrial life.
+\newblock In {\em The Search for Extraterrestrial Life: Recent Developments},
+  pages 5--11. Springer, 1985.
+
+\bibitem{fleming2001barrow}
+Fergus Fleming.
+\newblock {\em Barrow's boys}.
+\newblock Grove Press, 2001.
+
+\bibitem{mckay2014requirements}
+Christopher~P McKay.
+\newblock Requirements and limits for life in the context of exoplanets.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  111(35):12628--12633, 2014.
+
+\bibitem{rothschild2001life}
+Lynn~J Rothschild and Rocco~L Mancinelli.
+\newblock Life in extreme environments.
+\newblock {\em Nature}, 409(6823):1092--1101, 2001.
+
+\end{thebibliography}
