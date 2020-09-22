@@ -70,6 +70,9 @@ Martin Rahm, Jonathan~I Lunine, David~A Usher, and David Shalloway.
 \bibitem{habitable_zone_radius}
 \url{https://upload.wikimedia.org/wikipedia/commons/6/61/Habitable_zone_-_HZ.png}.
 
+\bibitem{Greenhouse-effect-t2}
+\url{https://upload.wikimedia.org/wikipedia/commons/0/04/Greenhouse-effect-t2.svg}.
+
 \bibitem{forget2014possible}
 Fran{\c{c}}ois Forget and Jeremy Leconte.
 \newblock Possible climates on terrestrial exoplanets.
@@ -112,5 +115,11 @@ Jun Korenaga.
 \newblock On the likelihood of plate tectonics on super-earths: does size
   matter?
 \newblock {\em The Astrophysical Journal Letters}, 725(1):L43, 2010.
+
+\bibitem{exoplanet_populations}
+\url{https://www.nasa.gov/sites/default/files/thumbnails/image/press-web25_exoplanet_populations.jpg}.
+
+\bibitem{exoplanets-catalog}
+\url{http://phl.upr.edu/projects/habitable-exoplanets-catalog/media/pte}.
 
 \end{thebibliography}
