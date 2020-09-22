@@ -40,6 +40,7 @@ BCOR5mm, % Binding correction
 \usepackage{sectsty}
 \usepackage[dvipsnames,table,xcdraw,svgnames]{xcolor}
 \usepackage{listings}
+\usepackage{url}
 \lstset{language=R,
     basicstyle=\small\ttfamily,
     stringstyle=\color{DarkGreen},
@@ -124,7 +125,27 @@ Among the different tools that are considered by scholars to challenge the physi
 
 \section{Introduction}
 The possibility of other form of life on other planets represent an issue that involved scientists as well as philosophers from different millennia of documented human history \cite{papagiannis1985historical}. During the XX century, due to the technological progress, such question moved from a pure speculative approach, as it was previously for Lucretius, Muhammad al-Baqir or Iordanus Brunus, to a more quantitative and scientific method.Furthermore it is interesting to point out that this research was undertaken when the exploration of the Earth was almost completed \cite{fleming2001barrow}. The exploration of space, and the investigation of other planets was largely boosted with the use of telescopes that measure the radiation also outside the visible spectrum and later with the space telescopes such as the NASA's Kepler.
-As requested by all form of life in the Earth an habitable planet needs that liquid water can be present \cite{seager2013exoplanet,mckay2014requirements,rothschild2001life}
+As requested by all form of life in the Earth an habitable planet needs that liquid water can be present \cite{seager2013exoplanet,mckay2014requirements,rothschild2001life}: this feature that strictly depends by the radiation intensity $I$ is bounded to the power radiation ($P$) produced by the star that host the planet and the respective distance $r$. Indeed by approximating  a star as a point or a perfect sphere, a radiation with a spherical symmetry is produced; thus the integral that gives the power produced $P$: 
+
+\begin{equation}
+P=\int \textbf{I}\cdot \textit{d\textbf{A}}
+\end{equation}
+
+can be simplified as 
+
+\begin{equation}
+P=\lvert I \rvert \cdot A_{surf}=4\pi r^{2}
+\end{equation}
+
+and so 
+
+\begin{equation}
+\lvert I \rvert=\dfrac{P}{4\pi r^{2}}
+\end{equation}
+
+Further details about this solution and the formalism by which it is obtained from the Maxwell equations can be found in Ref. \cite{feynman}
+
+
 
 \section{R code}
 \begin{lstlisting}

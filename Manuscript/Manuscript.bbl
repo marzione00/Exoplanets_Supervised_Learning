@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{carleo2019machine}
 Giuseppe Carleo, Ignacio Cirac, Kyle Cranmer, Laurent Daudet, Maria Schuld,
@@ -48,5 +48,11 @@ Christopher~P McKay.
 Lynn~J Rothschild and Rocco~L Mancinelli.
 \newblock Life in extreme environments.
 \newblock {\em Nature}, 409(6823):1092--1101, 2001.
+
+\bibitem{feynman}
+Richard~P. Feynman.
+\newblock The feynman lectures on physics.
+\newblock
+  \url{https://www.feynmanlectures.caltech.edu/II_21.html#mjx-eqn-EqII217}.
 
 \end{thebibliography}
