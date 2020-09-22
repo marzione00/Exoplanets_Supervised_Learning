@@ -55,4 +55,16 @@ Richard~P. Feynman.
 \newblock
   \url{https://www.feynmanlectures.caltech.edu/II_21.html#mjx-eqn-EqII217}.
 
+\bibitem{kasting1993habitable}
+James~F Kasting, Daniel~P Whitmire, and Ray~T Reynolds.
+\newblock Habitable zones around main sequence stars.
+\newblock {\em Icarus}, 101(1):108--128, 1993.
+
+\bibitem{rahm2016polymorphism}
+Martin Rahm, Jonathan~I Lunine, David~A Usher, and David Shalloway.
+\newblock Polymorphism and electronic structure of polyimine and its potential
+  significance for prebiotic chemistry on titan.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  113(29):8121--8126, 2016.
+
 \end{thebibliography}
