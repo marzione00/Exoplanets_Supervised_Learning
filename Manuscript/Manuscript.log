@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  23 SEP 2020 10:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  23 SEP 2020 11:34
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -411,6 +411,26 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
+("C:\Program Files\MiKTeX 2.9\tex/latex/booktabs\booktabs.sty"
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen160
+\lightrulewidth=\dimen161
+\cmidrulewidth=\dimen162
+\belowrulesep=\dimen163
+\belowbottomsep=\dimen164
+\aboverulesep=\dimen165
+\abovetopsep=\dimen166
+\cmidrulesep=\dimen167
+\cmidrulekern=\dimen168
+\defaultaddspace=\dimen169
+\@cmidla=\count271
+\@cmidlb=\count272
+\@aboverulesep=\dimen170
+\@belowrulesep=\dimen171
+\@thisruleclass=\count273
+\@lastruleclass=\count274
+\@thisrulewidth=\dimen172
+)
 ("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -472,11 +492,11 @@ File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\microtype.sty"
 Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
 \MT@toks=\toks26
-\MT@count=\count271
+\MT@count=\count275
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen160
+\MT@outer@kern=\dimen173
 LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
-\MT@listname@count=\count272
+\MT@listname@count=\count276
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\microtype-pdftex.def"
 File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
@@ -510,26 +530,6 @@ Package typearea Info: These are the values describing the layout:
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/mparhack\mparhack.sty"
 Package: mparhack 2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/booktabs\booktabs.sty"
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen161
-\lightrulewidth=\dimen162
-\cmidrulewidth=\dimen163
-\belowrulesep=\dimen164
-\belowbottomsep=\dimen165
-\aboverulesep=\dimen166
-\abovetopsep=\dimen167
-\cmidrulesep=\dimen168
-\cmidrulekern=\dimen169
-\defaultaddspace=\dimen170
-\@cmidla=\count273
-\@cmidlb=\count274
-\@aboverulesep=\dimen171
-\@belowrulesep=\dimen172
-\@thisruleclass=\count275
-\@lastruleclass=\count276
-\@thisrulewidth=\dimen173
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/textcase\textcase.sty"
 Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
@@ -821,25 +821,25 @@ File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
 (Manuscript.aux)
 \openout1 = `Manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-Package scrbase Info: activating english \contentsname on input line 64.
-Package scrbase Info: activating english \listfigurename on input line 64.
-Package scrbase Info: activating english \listtablename on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+Package scrbase Info: activating english \contentsname on input line 65.
+Package scrbase Info: activating english \listfigurename on input line 65.
+Package scrbase Info: activating english \listtablename on input line 65.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -873,7 +873,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count297
-LaTeX Info: Redefining \microtypecontext on input line 64.
+LaTeX Info: Redefining \microtypecontext on input line 65.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -886,7 +886,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring ON on input line 64.
+Package hyperref Info: Link coloring ON on input line 65.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -899,9 +899,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 64.
-LaTeX Info: Redefining \pageref on input line 64.
-LaTeX Info: Redefining \nameref on input line 64.
+LaTeX Info: Redefining \ref on input line 65.
+LaTeX Info: Redefining \pageref on input line 65.
+LaTeX Info: Redefining \nameref on input line 65.
 
 (Manuscript.out) (Manuscript.out)
 \@outlinefile=\write3
@@ -914,7 +914,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 64.
+(scrartcl)           before \begin{document} on input line 65.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/bookmark\bookmark.sty"
 Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
@@ -927,13 +927,13 @@ e 168.
 \BKM@id=\count299
 ))
 LaTeX Font Info:    Trying to load font information for OT1+pplj on input line 
-101.
+102.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pplj.fd"
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
 LaTeX Font Info:    Trying to load font information for U+zeur on input line 10
-1.
+2.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/eulervm\uzeur.fd"
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
@@ -942,7 +942,7 @@ File: uzeur.fd 2005/01/11 v4.0 (WaS)
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+zeus on input line 10
-1.
+2.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/eulervm\uzeus.fd"
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
@@ -951,7 +951,7 @@ File: uzeus.fd 2005/01/11 v4.0 (WaS)
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+zeuex on input line 1
-01.
+02.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/eulervm\uzeuex.fd"
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
@@ -961,7 +961,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-101.
+102.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1zplm.fd"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -971,7 +971,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for T1+iwona on input line 
-102.
+103.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/iwona\t1iwona.fd"
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
@@ -985,7 +985,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 {C:/Users/Marzio/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
 Package tocbasic Info: character protrusion at toc deactivated on input line 12
-2.
+3.
  (Manuscript.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/12'.
@@ -1004,12 +1004,12 @@ Package microtype Info: Character `029' is missing
 File: Pic/press-web25_exoplanet_populations.jpg Graphic file (type jpg)
 <use Pic/press-web25_exoplanet_populations.jpg>
 Package pdftex.def Info: Pic/press-web25_exoplanet_populations.jpg  used on inp
-ut line 150.
+ut line 151.
 (pdftex.def)             Requested size: 370.0pt x 208.122pt.
 <Pic/PT_Confirmed.jpg, id=94, 1674.255pt x 1084.05pt>
 File: Pic/PT_Confirmed.jpg Graphic file (type jpg)
 <use Pic/PT_Confirmed.jpg>
-Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 158.
+Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 159.
 (pdftex.def)             Requested size: 370.0pt x 239.56691pt.
 
 
@@ -1018,7 +1018,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Pic/Greenhouse-effect-t2.png, id=97, 1927.2pt x 1168.365pt>
 File: Pic/Greenhouse-effect-t2.png Graphic file (type png)
 <use Pic/Greenhouse-effect-t2.png>
-Package pdftex.def Info: Pic/Greenhouse-effect-t2.png  used on input line 167.
+Package pdftex.def Info: Pic/Greenhouse-effect-t2.png  used on input line 168.
 (pdftex.def)             Requested size: 370.0pt x 224.30927pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1027,13 +1027,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: Pic/Planets_habitability_Seager.png Graphic file (type png)
 <use Pic/Planets_habitability_Seager.png>
 Package pdftex.def Info: Pic/Planets_habitability_Seager.png  used on input lin
-e 175.
+e 176.
 (pdftex.def)             Requested size: 370.0pt x 245.4137pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5 <./Pic/press-web25_exoplanet_populations.jpg>] [6 <./Pic/PT_Confirmed.jpg> <
 ./Pic/Greenhouse-effect-t2.png>] [7 <./Pic/Planets_habitability_Seager.png>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 190.
+
 [8
 
 ] [9
@@ -1043,13 +1047,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ] [11
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 20
-6.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 22
+9.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 206.
+(Font)              scaled to size 9.30756pt on input line 229.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1113,20 +1117,20 @@ anets-[]catalog /
  []
 
 ) [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 249.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 249.
  (Manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 249.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 249.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 249.
  ) 
 Here is how much of TeX's memory you used:
- 19080 strings out of 481212
- 343579 string characters out of 2913848
- 800428 words of memory out of 3000000
- 34167 multiletter control sequences out of 15000+200000
+ 19082 strings out of 481212
+ 343618 string characters out of 2913848
+ 800434 words of memory out of 3000000
+ 34168 multiletter control sequences out of 15000+200000
  648385 words of font info for 190 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  67i,22n,97p,10634b,1755s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1144,9 +1148,9 @@ ki/iwona/iwonar.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8
 a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Manuscript.pdf (14 pages, 4619047 bytes).
+Output written on Manuscript.pdf (14 pages, 4619398 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
  44101 words of extra memory for PDF output out of 51595 (max. 10000000)
 
