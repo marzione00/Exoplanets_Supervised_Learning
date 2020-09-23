@@ -122,4 +122,29 @@ Jun Korenaga.
 \bibitem{exoplanets-catalog}
 \url{http://phl.upr.edu/projects/habitable-exoplanets-catalog/media/pte}.
 
+\bibitem{space_probes}
+\url{https://nssdc.gsfc.nasa.gov/planetary/chronology.html}.
+
+\bibitem{pierrehumbert2011infrared}
+Raymond~T Pierrehumbert.
+\newblock Infrared radiation and planetary temperature.
+\newblock In {\em AIP Conference Proceedings}, volume 1401, pages 232--244.
+  American Institute of Physics, 2011.
+
+\bibitem{lovelock1982life}
+James~E Lovelock and Michael Whitfield.
+\newblock Life span of the biosphere.
+\newblock {\em Nature}, 296(5857):561--563, 1982.
+
+\bibitem{caldeira1992life}
+Ken Caldeira and James~F Kasting.
+\newblock The life span of the biosphere revisited.
+\newblock {\em Nature}, 360(6406):721--723, 1992.
+
+\bibitem{lovelock1974atmospheric}
+James~E Lovelock and Lynn Margulis.
+\newblock Atmospheric homeostasis by and for the biosphere: the gaia
+  hypothesis.
+\newblock {\em Tellus}, 26(1-2):2--10, 1974.
+
 \end{thebibliography}
