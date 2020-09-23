@@ -184,10 +184,10 @@ Such relation establishes an interval for the distance $r$ where the stellar rad
 
 \section{Data Description}
 
-The planet dataset was taken from the \textit{Planetary Habitability Laboratory @ UPR Arecibo} \cite{planet_dataset} website. Since the habitable planets, considering also the optimistic region, were almost 50 out of 3500, a reduction of the non-habitable planets was considered in order to make the habitable planets a significant portion of the overall set. As reported in table ***, among the different features that was provided by PHL, a restricted set was considered: such operation was performed in order to avoid features whose causal effect on the habitability (where it was present) do not require very complex models. 
+The planet dataset was taken from the \textit{Planetary Habitability Laboratory @ UPR Arecibo} \cite{planet_dataset} website. Since the habitable planets, considering also the optimistic region, were almost 50 out of 3500, a reduction of the non-habitable planets was considered in order to make the habitable planets a significant portion of the overall set. As reported in table \ref{features_table}, among the different features that was provided by PHL, a restricted set was considered \footnote{The stellar spectral type named A,F,G,K,M and T (the methane dwarfs, their surface temperature spaces between 550-1300 K) were relabelled respectively as 1,2,3,4,5 and 6}: such operation was performed in order to avoid features whose causal effect on the habitability (where it was present) do not require very complex models . 
 
 \begin{table}[]
-\caption{A selected features of the exoplanets dataset provided by PHL @ UPR Arecibo\cite{planet_dataset} accompanied by their measure unit }
+\caption{A selected features of the exoplanets dataset provided by PHL @ UPR Arecibo \cite{planet_dataset} accompanied by their measure unit }
 \begin{tabular}{@{}lll@{}}
 \toprule
 Variable name                                                                & Abbreviation & Description/Comments                                                                                      \\ \midrule
@@ -207,12 +207,13 @@ Planet Habitability                                                          & P
 \begin{tabular}[c]{@{}l@{}}Estimated planet\\ mass\end{tabular}              & P\_M         & (earth units)                                                                                             \\ \midrule
 Star Spectral Type                                                           & S\_S\_T      & \begin{tabular}[c]{@{}l@{}}The star spectral type according\\ to the diagram in Fig. \ref{H_R_diagram} \end{tabular}         \\ \bottomrule
 \end{tabular}
+\label{features_table}
 \end{table}
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=1\textwidth]{Pic/S_T_T_explanation.png}
-\caption{The Hertzsprung–Russell diagram (H-R): the phases that occurs during the lifetime of a star are placed on a plot that involves the surface temperature (and so the spectral type) vs the star luminosity.   Image taken from \cite{HR_diagram}}
+\includegraphics[width=0.9\textwidth]{Pic/S_T_T_explanation.png}
+\caption{The Hertzsprung–Russell diagram (H-R): the phases that occurs during the lifetime of a star are placed on a plot that involves the surface temperature (and so the spectral type) vs the star luminosity .   Image taken from \cite{HR_diagram}}
 \label{H_R_diagram}
 \end{center}
 \end{figure}
