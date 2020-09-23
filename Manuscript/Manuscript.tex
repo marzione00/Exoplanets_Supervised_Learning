@@ -32,6 +32,7 @@ BCOR5mm, % Binding correction
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{titlepic}
 \usepackage{epigraph}
 \usepackage{mathcomp}
 \usepackage{textcomp}
@@ -63,6 +64,7 @@ BCOR5mm, % Binding correction
 \begin{document}
 
 
+
 \title{\normalfont{A bird's-eye view on the habitability of exoplanets via statistical learning techniques}} % The article title
 
 \subtitle{Project for the exam: Machine learning, statistical learning, deep learning and artificial intelligence} % Uncomment to display a subtitle
@@ -71,6 +73,9 @@ BCOR5mm, % Binding correction
 \author{Marzio De Corato} % The article author(s) - author affiliations need to be specified in the AUTHOR AFFILIATIONS block
 
 \date{\today} % An optional date to appear under the author(s)
+
+%\titlepic{\includegraphics[width=\textwidth]{Pic/Triple-star_sunset.jpg}}
+
 
 %----------------------------------------------------------------------------------------
 
@@ -125,7 +130,7 @@ Among the different tools that are considered by scholars to challenge the physi
 
 \section{Introduction}
 The possibility of other form of life on other planets represented an issue that involved scientists as well as philosophers for different millennia of documented human history \cite{papagiannis1985historical}. During the XX century, due to the technological progress, such question moved from a pure speculative approach, as it was previously for Lucretius, Muhammad al-Baqir or Iordanus Brunus, to a more quantitative and scientific method. Furthermore it is interesting to point out that this research was undertaken when the exploration of the Earth was almost completed \cite{fleming2001barrow}. The exploration of space, and the investigation of other planets was largely boosted by the use of telescopes that measure the radiation also outside the visible spectrum and later with the space telescopes such as the NASA's Kepler. Finally the use of the space probes allowed a closer exploration of planets as wells of moons of solar system \cite{space_probes}. 
-We are interested in to rocky planets \footnote{In principle also moons have to be considered, however for sake of simplicity here we take into account only planets}, so gaseous ones such as Jupiter or Saturn have to be considered not habitable (see Fig. \ref{exoplanet_populations} and \ref{PT_Confirmed}); second, as requested by all form of life in the Earth, an habitable planet requires that liquid water can be present \cite{seager2013exoplanet,mckay2014requirements,rothschild2001life} \footnote{Astrobiologist scholars also proposed that other form of life can come up without liquid water (see for instance \cite{rahm2016polymorphism}) however, for simplicity, here only planets that allows liquid water are considered habitable}. This feature is given, at first glance, by the radiation intensity $I$ that is bounded to the power radiation ($P$) produced by the star that host the planet and the respective distance $r$. Indeed by approximating a star as a point or a perfect sphere, a radiation with a spherical symmetry is produced; thus the integral that gives the power produced $P$: 
+Only rocky planets are considered habitable \footnote{In principle also moons have to be considered, however for sake of simplicity here we take into account only planets}, so gaseous ones such as Jupiter or Saturn have to be considered not habitable (see Fig. \ref{exoplanet_populations} and \ref{PT_Confirmed}); second, as requested by all form of life in the Earth, an habitable planet requires that liquid water can be present \cite{seager2013exoplanet,mckay2014requirements,rothschild2001life} \footnote{Astrobiologist scholars also proposed that other form of life can come up without liquid water (see for instance \cite{rahm2016polymorphism}) however, for simplicity, here only planets that allows liquid water are considered habitable}. This feature is given, at first glance, by the radiation intensity $I$ that is bounded to the power radiation ($P$) produced by the star that host the planet and the respective distance $r$. Indeed by approximating a star as a point or a perfect sphere, a radiation with a spherical symmetry is produced; thus the integral that gives the power produced $P$: 
 \begin{equation}
 P=\int \textbf{I}\cdot \textit{d\textbf{A}}
 \end{equation}
@@ -176,7 +181,26 @@ Such relation establishes an interval for the distance $r$ where the stellar rad
 
 \clearpage
 
+\section{Data Description}
 
+The planet dataset was taken from the \textit{Planetary Habitability Laboratory @ UPR Arecibo} \cite{planet_dataset} website. Since the habitable planets, considering also the optimistic region, were almost 50 out of 3500, a reduction of the non-habitable planets was considered in order to make the habitable planets a significant portion of the overall set. As reported in table ***, among the different features that was provided by PHL, a restricted set was considered: such operation was performed in order to avoid features whose causal effect on the habitability (where it was present) do not require very complex models. 
+
+
+
+
+\clearpage
+
+\section{Theoretical Background}
+
+\clearpage
+
+\section{Results and discussion}
+
+\clearpage
+
+\section{Conclusions}
+
+\clearpage
 
 \section{R code}
 \begin{lstlisting}
