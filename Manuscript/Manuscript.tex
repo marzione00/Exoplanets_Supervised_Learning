@@ -186,27 +186,36 @@ Such relation establishes an interval for the distance $r$ where the stellar rad
 
 The planet dataset was taken from the \textit{Planetary Habitability Laboratory @ UPR Arecibo} \cite{planet_dataset} website. Since the habitable planets, considering also the optimistic region, were almost 50 out of 3500, a reduction of the non-habitable planets was considered in order to make the habitable planets a significant portion of the overall set. As reported in table ***, among the different features that was provided by PHL, a restricted set was considered: such operation was performed in order to avoid features whose causal effect on the habitability (where it was present) do not require very complex models. 
 
-
 \begin{table}[]
+\caption{A selected features of the exoplanets dataset provided by PHL @ UPR Arecibo\cite{planet_dataset} accompanied by their measure unit }
 \begin{tabular}{@{}lll@{}}
-\cmidrule(r){1-3}
-Variable name & Abbreviation & Description                                                                                          \\ \cmidrule(r){1-3}
-Planet name   & P\_NAME      & \begin{tabular}[c]{@{}l@{}}The planet name according to \\ the international convention\end{tabular} \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\
-              &              &                                                                                                      \\ \cmidrule(r){1-3}
+\toprule
+Variable name                                                                & Abbreviation & Description/Comments                                                                                      \\ \midrule
+Planet name                                                                  & P\_NAME      & \begin{tabular}[c]{@{}l@{}}The planet name according to \\ the international convention\end{tabular}      \\ \midrule
+Planet Period                                                                & P\_P         & The planet period (days)                                                                                  \\ \midrule
+Stellar temperature                                                          & S\_T         & \begin{tabular}[c]{@{}l@{}}The star effective temperature\\ (K)\end{tabular}                              \\ \midrule
+Planet distance                                                              & P\_D         & \begin{tabular}[c]{@{}l@{}}Mean distance between the planet \\ and the host star (AU)\end{tabular}        \\ \midrule
+Planet Periastron                                                            & P\_P         & \begin{tabular}[c]{@{}l@{}}The minimum distance between \\ the planet and the host star (AU)\end{tabular} \\ \midrule
+Planet apastron                                                              & P\_A         & \begin{tabular}[c]{@{}l@{}}The maximum distance between \\ the planet and host star (AU)\end{tabular}     \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Planet effective \\ thermal distance\end{tabular} & P\_D\_E      & (AU)                                                                                                      \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Planet mean stellar\\ flux\end{tabular}           & P\_F         & (earth units)                                                                                             \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Planet equilibrium \\ temperature\end{tabular}    & P\_T\_E      & An albedo of 0.3 is considered (K)                                                                        \\ \midrule
+Star radius estimated                                                        & S\_R\_E      & (solar units)                                                                                             \\ \midrule
+Star luminosity                                                              & S\_L         & (solar units)                                                                                             \\ \midrule
+Planet Habitability                                                          & P\_H         & 1 habitable, 0 else                                                                                       \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Estimated planet \\ radius\end{tabular}           & P\_R         & (earth units)                                                                                             \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Estimated planet\\ mass\end{tabular}              & P\_M         & (earth units)                                                                                             \\ \midrule
+Star Spectral Type                                                           & S\_S\_T      & \begin{tabular}[c]{@{}l@{}}The star spectral type according\\ to the diagram in Fig. \ref{H_R_diagram} \end{tabular}         \\ \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{Pic/S_T_T_explanation.png}
+\caption{The Hertzsprung–Russell diagram (H-R): the phases that occurs during the lifetime of a star are placed on a plot that involves the surface temperature (and so the spectral type) vs the star luminosity.   Image taken from \cite{HR_diagram}}
+\label{H_R_diagram}
+\end{center}
+\end{figure}
 
 
 
