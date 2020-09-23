@@ -2,6 +2,7 @@
 \contentsline {section}{\numberline {1}{Introduction}}{4}{section.1}%
 \contentsline {section}{\numberline {2}{Data Description}}{8}{section.2}%
 \contentsline {section}{\numberline {3}{Theoretical Background}}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}{Decision tree}}{10}{subsection.3.1}%
 \contentsline {section}{\numberline {4}{Results and discussion}}{11}{section.4}%
 \contentsline {section}{\numberline {5}{Conclusions}}{12}{section.5}%
 \contentsline {section}{\numberline {6}{R code}}{13}{section.6}%

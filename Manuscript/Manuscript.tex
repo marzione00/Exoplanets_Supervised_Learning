@@ -184,7 +184,8 @@ Such relation establishes an interval for the distance $r$ where the stellar rad
 
 \section{Data Description}
 
-The planet dataset was taken from the \textit{Planetary Habitability Laboratory @ UPR Arecibo} \cite{planet_dataset} website. Since the habitable planets, considering also the optimistic region, were almost 50 out of 3500, a reduction of the non-habitable planets was considered in order to make the habitable planets a significant portion of the overall set. As reported in table \ref{features_table}, among the different features that was provided by PHL, a restricted set was considered \footnote{The stellar spectral type named A,F,G,K,M and T (the methane dwarfs, their surface temperature spaces between 550-1300 K) were relabelled respectively as 1,2,3,4,5 and 6}: such operation was performed in order to avoid features whose causal effect on the habitability (where it was present) do not require very complex models . 
+The planet dataset was taken from the \textit{Planetary Habitability Laboratory @ UPR Arecibo} \cite{planet_dataset} website. Since the habitable planets, considering also the optimistic region, were  55 out of 3500, a reduction of the non-habitable planets to 445 was undertaken in order to make the habitable planets a significant portion of the overall set. As reported in table \ref{features_table}, among the different features that was provided by PHL, a restricted set was considered \footnote{The stellar spectral type named A,F,G,K,M and T (the methane dwarfs, their surface temperature spaces between 550-1300 K) were relabelled respectively as 1,2,3,4,5 and 6}: such operation was performed in order to avoid features whose causal effect on the habitability (where it was present) do not require very complex models/explanation. For all planets considered the features reported in the table \ref{features_table} were well-defined. 
+ 
 
 \begin{table}[]
 \caption{A selected features of the exoplanets dataset provided by PHL @ UPR Arecibo \cite{planet_dataset} accompanied by their measure unit }
@@ -219,11 +220,15 @@ Star Spectral Type                                                           & S
 \end{figure}
 
 
-
-
 \clearpage
 
 \section{Theoretical Background}
+
+In this section the theoretical background of the methods used in this work are summarized following James at al. approach \cite{james2013introduction}. In particular here we considered the following ones: the decision tree, the random forest, the support vector classifier (for which a dimensionality reduction via the principal component analysis (PCA) was performed), the linear and the quadratic discriminant analysis. 
+
+\subsection{Decision tree}
+
+
 
 \clearpage
 
