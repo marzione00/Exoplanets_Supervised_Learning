@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  23 SEP 2020 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  24 SEP 2020 10:41
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1051,24 +1051,39 @@ Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 216.
 [8
 
  <./Pic/S_T_T_explanation.png>] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 227--229
+
+ []
+
+<Pic/Noisy_channel.png, id=169, 624.83438pt x 320.69812pt>
+File: Pic/Noisy_channel.png Graphic file (type png)
+<use Pic/Noisy_channel.png>
+Package pdftex.def Info: Pic/Noisy_channel.png  used on input line 235.
+(pdftex.def)             Requested size: 332.99774pt x 170.91362pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10
+
+] [11 <./Pic/Noisy_channel.png>]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/b/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [10
+ [12
 
-] [11
+] [13
 
-] [12
+] [14
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 24
-4.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 26
+0.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 244.
+(Font)              scaled to size 9.30756pt on input line 260.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1087,7 +1102,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--57
  . html #
  []
 
-[13
+[15
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
@@ -1124,7 +1139,7 @@ Overfull \hbox (5.64812pt too wide) in paragraph at lines 123--124
 anets-[]catalog /
  []
 
-[14]
+[16]
 Overfull \hbox (5.64812pt too wide) in paragraph at lines 151--152
 [][][]$\T1/fvm/m/n/12 http : / / phl . upr . edu / projects / habitable-[]exopl
 anets-[]catalog /
@@ -1141,41 +1156,44 @@ Overfull \hbox (16.41257pt too wide) in paragraph at lines 154--155
 entation$[][]\T1/pplj/m/n/12 . 
  []
 
-) [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
+) [17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
  (Manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
  ) 
 Here is how much of TeX's memory you used:
- 19105 strings out of 481212
- 344040 string characters out of 2913848
+ 19166 strings out of 481212
+ 344898 string characters out of 2913848
  800434 words of memory out of 3000000
- 34185 multiletter control sequences out of 15000+200000
- 654156 words of font info for 192 fonts, out of 3000000 for 9000
+ 34211 multiletter control sequences out of 15000+200000
+ 662175 words of font info for 221 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  67i,22n,97p,10634b,1755s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Files/Mi
 KTeX 2.9/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/Program Files/MiKTeX 2.9/fon
 ts/enc/dvips/iwona/ec-iwona.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/euler/euex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/eul
-er/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eu
-rm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/nowacki/iwona/iwonab.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/nowac
-ki/iwona/iwonar.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8
-a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Manuscript.pdf (15 pages, 5094043 bytes).
+s/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/e
+uex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurm7.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/bera/fvmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/nowacki/iwona
+/iwonab.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/nowacki/iwona/iwonar.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
+rw/palatino/uplri8a.pfb>
+Output written on Manuscript.pdf (17 pages, 5172951 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 45138 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 46167 words of extra memory for PDF output out of 51595 (max. 10000000)
 

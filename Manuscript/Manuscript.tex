@@ -225,6 +225,22 @@ Star Spectral Type                                                           & S
 \section{Theoretical Background}
 
 In this section the theoretical background of the methods used in this work are summarized following James at al. approach \cite{james2013introduction}. In particular here we considered the following ones: the decision tree, the random forest, the support vector classifier (for which a dimensionality reduction via the principal component analysis (PCA) was performed), the linear and the quadratic discriminant analysis. 
+Before describing them, it is useful to recap the basic concepts that found the supervised learning.\newline\newline Lets consider a process, or more precisely a dynamical system,  where there is a set of variables \textbf{X} that represent the different initial conditions, called inputs, and a set of respective final condition, called outputs \textbf{Y}. Moreover lets suppose that the, during the first approach on the dynamical system the machinery of it is inaccessible (a black-box), but we are interested to predict some unknown output given some known input. Formally we are intended to approximate the dynamical system with the following relation \cite{james2013introduction}: 
+\begin{equation}
+\textbf{Y}=f(\textbf{X})+\epsilon
+\end{equation}
+where the $\epsilon$ represents the irreducible error term introduced by the approximation of the dynamical system (basically we will never know the exact laws that govern the phenomena, and also if these known we will always have an error term due to finite precision by which we approximate the initial conditions \cite{prigogine2018order,prigogine1997end,petrosky1996liouville}). Basically the aim of the statical learning theory is to estimate, with different methods, the response function $f$ \footnote{A useful approximation, especially in physics, of the response function is the linear response function $\chi(t-t')$ for an input h(t), where t represent the time, and an output x(t) is defined as $x(t)=\int_{-\infty}^{t}dt'\chi(t-t')h(t')+\epsilon$, where $\epsilon$ is due to the fact that we approximated the response function as a linear one. The linear response function is closely related to the Green function that plays a crucial role in the modern physics (for instance in the quantum field theory \cite{kubo1957statistical,zee2010quantum}) }. It worth nothing that a very interesting application of this approach was performed by Claude Shannon \cite{shannon2001mathematical,mackay2003information} when he founded the information theory: in this case, as shown in Fig \ref{Noisy_channel} we can fix the input \textbf{X} as the signal produced and the output \textbf{Y} as the signal received, since no perfect channel is available the output signal will be distorted, thus the idea is how to infer from the output signal the input one.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Pic/Noisy_channel.png}
+\caption{A sequence of binary data transmitted over a binary symmateric channel with noise equal to $f=0.1$   Image taken from \cite{mackay2003information}}
+\label{Noisy_channel}
+\end{center}
+\end{figure}
+
+
+
+\clearpage
 
 \subsection{Decision tree}
 
