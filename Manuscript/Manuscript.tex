@@ -269,7 +269,17 @@ D=-\sum_{k=1}^{K}\hat{p}_{mk}log\hat{p}_{mk}
 these indices, as evaluated here, measure the degree of purity of a node: if all the values are close to zero or one, their values will be close to 0. The decision tree approach provide therefore a results that is easily interpretable, drawable and communicable; on the other side among the statistical learning tools is not the one that provide the highest predictive accuracy and stability. 
 
 
-\subsection{Random Forest}
+\paragraph{Bagging}
+
+In order to make the decision tree result more independent from the training dataset chosen (the over-fitting problem described before) one can consider to generate further training sets, via bootstrap method, in order to reduce the variance of the model. Thus the final model will be given by \\cite{james2013introduction}: 
+\begin{equation}
+\hat{f}_{bag}\left(x\right)=\dfrac{1}{B}\sum_{b=1}^{B}\hat{f}^{*b}\left(x\right)
+\end{equation}
+Where $B$ is the overall number of training sets generated via the bootstrap and $\hat{f}^{*b}$ the statistical model obtained from the $b^{th}$ training set. If a classification problem is undertaken, the class predicted will given by the one that is most common among the B predictions (majority rule).
+
+
+\paragraph{Random forest} 
+The random forest technique represent an improvement of the decision tree that considers not only the bagging but also a random subset m of the full predictor set m is used.  
 
 \section{Results and discussion}
 
