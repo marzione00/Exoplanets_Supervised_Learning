@@ -189,4 +189,34 @@ Ryogo Kubo.
 \bibitem{dyson}
 \url{http://lilith.fisica.ufmg.br/~dsoares/fdyson.htm}.
 
+\bibitem{gini1912variabilita}
+Corrado Gini.
+\newblock Variabilit{\`a} e mutabilit{\`a} (variability and mutability).
+\newblock {\em Reprinted in Memorie di metodologica statistica (Ed. Pizetti E,
+  Salvemini, T). Rome: Libreria Eredi Virgilio Veschi (1955) ed. Bologna},
+  1912.
+
+\bibitem{wu1975boltzmann}
+Ta-You Wu.
+\newblock Boltzmann'sh theorem and the loschmidt and the zermelo paradoxes.
+\newblock {\em International Journal of Theoretical Physics}, 14(5):289--294,
+  1975.
+
+\bibitem{loschmidt1876grosse}
+Josef Loschmidt.
+\newblock Zur grosse der luftmoleciile.
+\newblock {\em Sitzungsber. Kais. Akad. Wiss. Wien, Math. Naturwiss. Classe},
+  52:395, 1876.
+
+\bibitem{wang2002experimental}
+GM~Wang, Edith~M Sevick, Emil Mittag, Debra~J Searles, and Denis~J Evans.
+\newblock Experimental demonstration of violations of the second law of
+  thermodynamics for small systems and short time scales.
+\newblock {\em Physical Review Letters}, 89(5):050601, 2002.
+
+\bibitem{evans1993probability}
+Denis~J Evans, Ezechiel Godert~David Cohen, and Gary~P Morriss.
+\newblock Probability of second law violations in shearing steady states.
+\newblock {\em Physical review letters}, 71(15):2401, 1993.
+
 \end{thebibliography}

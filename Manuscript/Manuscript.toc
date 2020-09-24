@@ -3,6 +3,7 @@
 \contentsline {section}{\numberline {2}{Data Description}}{8}{section.2}%
 \contentsline {section}{\numberline {3}{Theoretical Background}}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}{Decision tree}}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}{Random Forest}}{13}{subsection.3.2}%
 \contentsline {section}{\numberline {4}{Results and discussion}}{13}{section.4}%
 \contentsline {section}{\numberline {5}{Conclusions}}{14}{section.5}%
 \contentsline {section}{\numberline {6}{R code}}{15}{section.6}%

@@ -36,12 +36,14 @@ BCOR5mm, % Binding correction
 \usepackage{epigraph}
 \usepackage{mathcomp}
 \usepackage{textcomp}
+\usepackage[LGR,T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage{sectsty}
 \usepackage[dvipsnames,table,xcdraw,svgnames]{xcolor}
 \usepackage{listings}
 \usepackage{booktabs}
+\newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
 \usepackage{url}
 \lstset{language=R,
     basicstyle=\small\ttfamily,
@@ -256,14 +258,18 @@ where $\hat{y}_{R_{1}}$ represent the mean response for the training observation
 \begin{equation}
 \sum_{m=1}^{|T|}\sum_{x_{i}\in R_{m}}(y_{i}-\hat{y}_{R_{m}})^{2}+\alpha|T|
 \end{equation}
-where $\alpha$ represent the penalising factor when a new sub-tree is generated and |T| the number of terminal nodes of tree T. Such approach is called pruning
+where $\alpha$ represent the penalising factor when a new sub-tree is generated and |T| the number of terminal nodes of tree T. Such approach is called pruning. Finally if the output is class (as in this work: habitable or not) the RSS approach has to be replaced with the Gini index \footnote{This index was proposed by Corrado Gini to measure the inequality distribution of wealth in a country \cite{gini1912variabilita}}
+\begin{equation}
+G=\sum_{k=1}^{K}\hat{p}_{mk}(1-\hat{p}_{mk})
+\end{equation}
+or by the entropy \footnote{The entropy, introduced firstly by Rudolf Clausius and later developed by  Ludwig Boltzmann and Josiah Willard Gibbs, is concept that was initially introduced in physics: it was used to quantify the spontaneity of a transformation (\textgreek{entropía}-entropía, "a turning towards"). This because all the law of classical mechanics are symmetric with respect to the inversion of time and so the physical phenomena such as the diffusion of a gas (and not its spontaneous accumulation) cannot be explained only with them. Note that this issue, that was first formalized by \cite{loschmidt1876grosse,wu1975boltzmann}  was solved only recently with the fluctuation theorem \cite{evans1993probability,wang2002experimental}. The form used here is basically the scaled Gibbs expression (in which the Boltzmann constant $k_{b}$ was set to 1)}
+\begin{equation}
+D=-\sum_{k=1}^{K}\hat{p}_{mk}log\hat{p}_{mk}
+\end{equation}
+these indices, as evaluated here, measure the degree of purity of a node: if all the values are close to zero or one, their values will be close to 0. The decision tree approach provide therefore a results that is easily interpretable, drawable and communicable; on the other side among the statistical learning tools is not the one that provide the highest predictive accuracy and stability. 
 
 
-
-
-
-
-\clearpage
+\subsection{Random Forest}
 
 \section{Results and discussion}
 
