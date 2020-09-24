@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  24 SEP 2020 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  24 SEP 2020 20:50
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1181,7 +1181,11 @@ File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count290
 \l__pdf_internal_box=\box56
 )
-(Manuscript.aux)
+(Manuscript.aux
+
+LaTeX Warning: Label `Noisy_channel' multiply defined.
+
+)
 \openout1 = `Manuscript.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -1210,6 +1214,7 @@ LaTeX Font Info:    ... okay on input line 67.
 Package scrbase Info: activating english \contentsname on input line 67.
 Package scrbase Info: activating english \listfigurename on input line 67.
 Package scrbase Info: activating english \listtablename on input line 67.
+
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count291
@@ -1446,17 +1451,30 @@ LaTeX Font Info:    Trying to load font information for OT1+pplj on input line
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 ) [12
 
-] [13] [14
+]
+<Pic/random-forest-algorithm2.png, id=219, 602.25pt x 501.875pt>
+File: Pic/random-forest-algorithm2.png Graphic file (type png)
+<use Pic/random-forest-algorithm2.png>
+Package pdftex.def Info: Pic/random-forest-algorithm2.png  used on input line 2
+85.
+(pdftex.def)             Requested size: 332.99774pt x 277.51009pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] [14 <./Pic/random-forest-algorithm2.png>] [15
+
+] [16
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 29
-3.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 30
+1.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 293.
+(Font)              scaled to size 9.30756pt on input line 301.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1475,7 +1493,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--57
  . html #
  []
 
-[15
+[17
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
@@ -1512,7 +1530,7 @@ Overfull \hbox (5.64812pt too wide) in paragraph at lines 123--124
 anets-[]catalog /
  []
 
-[16]
+[18]
 Overfull \hbox (5.64812pt too wide) in paragraph at lines 151--152
 [][][]$\T1/fvm/m/n/12 http : / / phl . upr . edu / projects / habitable-[]exopl
 anets-[]catalog /
@@ -1529,25 +1547,39 @@ Overfull \hbox (16.41257pt too wide) in paragraph at lines 154--155
 entation$[][]\T1/pplj/m/n/12 . 
  []
 
-[17]) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
+[][][]$\T1/fvm/m/n/12 https : / / builtin . com / data-[]science /
+ []
+
+
+Overfull \hbox (70.17654pt too wide) in paragraph at lines 232--233
+[][][]$\T1/fvm/m/n/12 https : / / www . javatpoint . com / machine-[]learning-[
+]random-[]forest-[]algorithm$[][]\T1/pplj/m/n/12 . 
+ []
+
+) [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
  (Manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 313.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 313.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 321.
  ) 
 Here is how much of TeX's memory you used:
- 20283 strings out of 481212
- 363890 string characters out of 2913848
+ 20300 strings out of 481212
+ 364249 string characters out of 2913848
  807242 words of memory out of 3000000
- 35286 multiletter control sequences out of 15000+200000
+ 35296 multiletter control sequences out of 15000+200000
  676682 words of font info for 224 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  67i,22n,97p,10634b,1755s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1570,9 +1602,9 @@ C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/palatino/uplri8a.pfb>
-Output written on Manuscript.pdf (18 pages, 5209463 bytes).
+Output written on Manuscript.pdf (20 pages, 5244350 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 43607 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
+ 43612 words of extra memory for PDF output out of 51595 (max. 10000000)
 

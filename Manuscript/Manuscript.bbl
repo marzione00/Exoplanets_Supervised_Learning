@@ -219,4 +219,16 @@ Denis~J Evans, Ezechiel Godert~David Cohen, and Gary~P Morriss.
 \newblock Probability of second law violations in shearing steady states.
 \newblock {\em Physical review letters}, 71(15):2401, 1993.
 
+\bibitem{ho1995random}
+Tin~Kam Ho.
+\newblock Random decision forests.
+\newblock In {\em Proceedings of 3rd international conference on document
+  analysis and recognition}, volume~1, pages 278--282. IEEE, 1995.
+
+\bibitem{rand_for_exp}
+\url{https://builtin.com/data-science/random-forest-algorithm}.
+
+\bibitem{rand_for_fig}
+\url{https://www.javatpoint.com/machine-learning-random-forest-algorithm}.
+
 \end{thebibliography}

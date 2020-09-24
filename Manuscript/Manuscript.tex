@@ -279,8 +279,16 @@ Where $B$ is the overall number of training sets generated via the bootstrap and
 
 
 \paragraph{Random forest} 
-The random forest technique represent an improvement of the decision tree that considers not only the bagging but also a random subset m of the full predictor set m is used.  
+The random forest technique, firstly introduce in 1995 \cite{ho1995random}, represent an further improvement of the decision tree after the bagging: in this case, for each split, a random subset m of the full predictor set p is used. Such procedure is perform in order to avoid that the decision tree generated with the bootstrap are too similar due to the fact that there only few predictor that dominates the others, otherwise the reduction of variance due to the bagging is not so efficient since the bagged trees are correlated. The full random forest algorithm can be explained with the following analogy \cite{rand_for_exp}: lets consider a man, Carlo,  that would like to made a trip and, for this propose,  he asks to different people a suggestion; these asks to him a set of questions (last trip, sea or mountain, budget etc.) and give to him a final propose. Carlo at least takes a decision by using all the answers. In this example the different peoples are the bagged trees that give an answer basing of a different set of predictors. 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Pic/random-forest-algorithm2.png}
+\caption{A schematic representation of the random forest algorithm. Image taken from \cite{rand_for_fig}}
+\label{Noisy_channel}
+\end{center}
+\end{figure}
 
+\clearpage
 \section{Results and discussion}
 
 \clearpage
