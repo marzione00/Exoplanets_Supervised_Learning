@@ -233,18 +233,33 @@ where the $\epsilon$ represents the irreducible error term introduced by the app
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{Pic/Noisy_channel.png}
-\caption{A sequence of binary data transmitted over a binary symmateric channel with noise equal to $f=0.1$   Image taken from \cite{mackay2003information}}
+\caption{A sequence of binary data transmitted over a binary symmetric channel with noise equal to $f=0.1$   Image taken from \cite{mackay2003information}}
 \label{Noisy_channel}
 \end{center}
 \end{figure}
-Basically the approaches by which the problem of finding (inference) or forecasting (prediction) the behaviour of the response function is faced are two: the parametric methods and the non-parametric. The parametric methods perform firstly an approximation on the response function (e.g. it is linear), then use a part of the known input and output to estimate the parameters of the model by which the response function was approximated and finally the reaming values of input and output are used to validate the model; here the main risk is to introduce too much paramters that fits not only the response function but also the noise, thus when the input will be changed (with the test input/output) the error will abruptly increase: such behaviour is know as over-fitting. \footnote{The ovefitting can be quickly described with an Enrico Fermi answer to Freeman Dyson: "How many arbitrary parameters did you use for your calculations?" I thought for a moment about our cut-off procedures and said, "Four." He said, "I remember my friend Johnny von Neumann used to say, with four parameters I can fit an elephant, and with five I can make him wiggle his trunk." \cite{dyson}}
-
-
+Basically the approaches by which the problem of finding (inference) or forecasting (prediction) the behaviour of the response function is faced are two: the parametric methods and the non-parametric. The parametric methods perform firstly an approximation on the response function (e.g. it is linear), then use a part of the known input and output to estimate the parameters of the model by which the response function was approximated and finally the reaming values of input and output are used to validate the model; here the main risk is to introduce too much paramters that fits not only the response function but also the noise, thus when the input will be changed (with the test input/output) the error will abruptly increase: such behaviour is know as over-fitting. \footnote{The ovefitting can be quickly described with an Enrico Fermi answer to Freeman Dyson: "How many arbitrary parameters did you use for your calculations?" I thought for a moment about our cut-off procedures and said, "Four." He said, "I remember my friend Johnny von Neumann used to say, with four parameters I can fit an elephant, and with five I can make him wiggle his trunk." \cite{dyson}}. On the other side one can make no assumptions on the form of the response function (and so the model is more flexible) and try to estimate an f that is close as possible to the data point: these are the non-parametric methods; note that also in this case the over-fitting is possible. 
 
 
 \clearpage
 
 \subsection{Decision tree}
+
+The basic idea of this approach is to divide the space of the predictor \textbf{X} in a set of a different subspaces, and then imposing that predictors that are in the same subspace have the same output value. Thus the problem is shifted to the creation of subspaces and their shape. Concerning the shape the most easy approach is to consider rectangles or, for higher dimensions, boxes; on the other side the creation of them can be performed by a top down approach where each box is divided in two sub-box, via the minimization of the RSS: given a predictor $X_{j}$ the cut-points s of boxes j are chosen so that, given \cite{james2013introduction}:   
+\begin{equation}
+R_{1}(j,s)= \{X | X_{j} < s \} \quad R_{2}(j,s)= \{X | X_{j} > s \}
+\end{equation}
+they minimize the following equation \cite{james2013introduction}: 
+\begin{equation}
+\sum_{i: x_{i} \in  R_{1}(j,s)}(y_{i}-\hat{y}_{R_{1}})^{2}+\sum_{i: x_{i} \in  R_{2}(j,s)}(y_{i}-\hat{y}_{R_{2}})^{2}
+\end{equation}
+where $\hat{y}_{R_{1}}$ represent the mean response for the training observation in $R_{1}(j,s)$. This splitting is performed recursively until each box contains no more than a fixed quantity of points. Finally the answer of the points contained in the same box will be identical. In order to avoid the overfitting one can consider to limit the splitting when the pay-off between the generation of a new subtree and the over-fitting threat is not convenient;formally this can be done by using the following expression \cite{james2013introduction}: 
+\begin{equation}
+\sum_{m=1}^{|T|}\sum_{x_{i}\in R_{m}}(y_{i}-\hat{y}_{R_{m}})^{2}+\alpha|T|
+\end{equation}
+where $\alpha$ represent the penalising factor when a new sub-tree is generated and |T| the number of terminal nodes of tree T. Such approach is called pruning
+
+
+
 
 
 
