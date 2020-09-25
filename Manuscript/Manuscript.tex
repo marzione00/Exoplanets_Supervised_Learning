@@ -340,7 +340,7 @@ the linear kernel \cite{james2013introduction}
 \begin{equation}
 K(x_{i},x_{i'})=\sum^{p}_{j=1}x_{ij}x_{i'j}
 \end{equation}
-is replaced with other kernels, as reported in Fig \ref{SVM_kernels} such as the polynomial of degree d \cite{james2013introduction}
+is replaced with other kernels \footnote{Such functions are quite close to the correlation functions as defined in statistical mechanics, and then extended in quantum field theory (QFT). In statistical mechanics the correlation functions are defined as \cite{huang1963statistical} $C(r,\tau)= \left\langle s_{1}(\textbf{R},t)\cdot s_{2}(\textbf{R+r},t+\tau)\right\rangle -  \left\langle s_{1}(\textbf{R},t)\cdot s_{2}\right\rangle\left\langle( s_{1}(\textbf{R+r},t+\tau))\right\rangle $ where $s_{1}$ and $s_{2}$ are two random functions, while in QFT these are defined as \cite{zee2010quantum}  $C(x_{1},x_{2},...,x_{n})=\left\langle \phi (x_{1}),\phi(x_{2}),...,\phi(x_{n}) \right\rangle$ where $\phi(x_{n})$ are the field operators. Such analogy is due to the fact that statistical learning and statistical mechanics both face the response functions described before}, as reported in Fig \ref{SVM_kernels} such as the polynomial of degree d \cite{james2013introduction}
 \begin{equation}
 K(x_{i},x_{i'})=\left(1+\sum_{j=1}^{p}x_{ij}x_{i'j}\right)^{d}
 \end{equation}
