@@ -290,23 +290,34 @@ The random forest technique, firstly introduce in 1995 \cite{ho1995random}, repr
 
 \clearpage
 \subsection{Support vector machines}
-The basic idea of the support vector machines is to consider the input set \textbf{X} ($n\times P$, where n stands for the observations and p for the features) as an ensemble of n-points immersed in to a p-dimensional space. Furthermore each point is labelled only in two way \footnote{The approaches described here can be extended to a multiple classes problem as shown in \cite{james2013introduction}, however since in this work only two classes are allowed (habitable or not) this such implementation will not be reviewed}. Thus, with this representation, the classification problem is recast in to a partition of a hyperspace. The simple form by which an hyperspace can be partitioned is an hyperplane: 
-
+The basic idea of the support vector machines is to consider the input set \textbf{X} ($n\times P$, where n stands for the observations and p for the features) as an ensemble of n-points immersed in to a p-dimensional space. Furthermore each point is labelled only in two way \footnote{The approaches described here can be extended to a multiple classes problem as shown in \cite{james2013introduction}, however since in this work only two classes are allowed (habitable or not) this such implementation will not be reviewed}. Thus, with this representation, the classification problem is recast in to a partition of a hyperspace. The simple form by which an hyperspace can be partitioned is an hyperplane \cite{james2013introduction}: 
 \begin{equation}
 \beta_{0}+\beta_{1}x_{i1}+\beta_{1}x_{i2}+...+\beta_{p}x_{ip} > 0\quad if \quad y_{i}=1
 \end{equation}
 \begin{equation}
 \beta_{0}+\beta_{1}x_{i1}+\beta_{1}x_{i2}+...+\beta_{p}x_{ip} < 0\quad if \quad y_{i}=0
 \end{equation}
-
-The problem now is how to choose the hyperplane: this is a first discriminant between the SVM methods, moreover anything guarantee that the boundary is linear and thus a simple hypoerplane can be used; this is a second discriminant between the SVM methods. It is worth nothing that in principle one can introduce a further dimension, as shown in Fig \ref{Kernel_methods} in order to have a linear hyperplane: this is the idea of the kernel methods (further details are provided in \cite{james2013introduction,marsland2015machine}. 
+The problem now is how to choose the hyperplane: this is a first discriminant between the SVM methods, moreover anything guarantee that the boundary is linear and thus a simple hyperplane can be used; this is a second discriminant between the SVM methods. It is worth nothing that in principle one can introduce a further dimension, as shown in Fig \ref{Kernel_methods} in order to have a linear hyperplane: this is the idea of the kernel methods (further details are provided in \cite{james2013introduction,marsland2015machine}. 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{Pic/kernel_trick.png}
-\caption{The trick of the kernel methods: introducing an extra dimension they transform a non-linear boundary in to a linear one.  Image taken from \cite{kernel}}
+\caption{The trick of the kernel methods: introducing an extra dimension they transform a non-linear boundary in to a linear one. Image taken from \cite{kernel}}
 \label{Kernel_methods}
 \end{center}
 \end{figure}
+\paragraph{Maximal margin Classifier}
+The maximal margin classifier approach consist in tracing the separating hyperplane so that it has the  farthest minimum distance with respect to the training observation or more formally \cite{james2013introduction}: 
+\begin{equation}
+\max\limits_{{\beta_{0},\beta_{1}...\beta_{p},M}} M
+\end{equation}
+\begin{equation}
+subject\;to\;\sum_{j=1}^{p}\beta_{j}^{2}=1
+\end{equation}
+\begin{equation}
+y_{i}\left( \beta_{0} + \beta_{1} x_{i1} + \beta_{2} x_{i2}+...+\beta x_{ip}\right)\geq M
+\end{equation}
+\paragraph{Support vector Classifier}
+The maximal margin approach assumes that the separating hyperplane exists, however this is far from be the most of classification problems. To overcome to this point the 
 
 \section{Results and discussion}
 

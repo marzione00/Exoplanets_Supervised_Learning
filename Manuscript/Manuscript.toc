@@ -6,6 +6,8 @@
 \contentsline {paragraph}{{Bagging}}{13}{paragraph*.8}%
 \contentsline {paragraph}{{Random forest}}{13}{paragraph*.9}%
 \contentsline {subsection}{\numberline {3.2}{Support vector machines}}{15}{subsection.3.2}%
-\contentsline {section}{\numberline {4}{Results and discussion}}{15}{section.4}%
-\contentsline {section}{\numberline {5}{Conclusions}}{16}{section.5}%
-\contentsline {section}{\numberline {6}{R code}}{17}{section.6}%
+\contentsline {paragraph}{{Maximal margin Classifier}}{15}{paragraph*.12}%
+\contentsline {paragraph}{{Support vector Classifier}}{16}{paragraph*.13}%
+\contentsline {section}{\numberline {4}{Results and discussion}}{16}{section.4}%
+\contentsline {section}{\numberline {5}{Conclusions}}{17}{section.5}%
+\contentsline {section}{\numberline {6}{R code}}{18}{section.6}%
