@@ -26,6 +26,12 @@ library(ROCR)
 library(logistf)
 library(MASS)
 library(pca3d)
+library(doParallel) 
+
+
+
+cl <- makeCluster(8, type='PSOCK')
+registerDoParallel(cl)
 
 
 
@@ -38,7 +44,7 @@ set.seed(2)
 
 #########Splitting training vs test set
 
-Planets_dataset_train<- sample(500,400)
+Planets_dataset_train<- sample(500,350)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 
@@ -129,9 +135,12 @@ train["H"]<-pca.train[,12]
 test["H"]<-pca.test[,12]
 
 
-svm.planet <- svm(H~., data=train,type = 'C-classification', kernel="linear")
+svm.planet <- svm(H~., data=train,type = 'C-classification', kernel="linear",cost=163)
 summary(svm.planet)
 plot(svm.planet,train)
+
+#tune.out=tune(svm ,H~.,data=train, kernel="linear", ranges =list(cost=c(1:200)))
+#summary(tune.out)
 
 svm.predict<-data.frame(predict(svm.planet,pca.planet.test[,1:2],type = "class"))
 colnames(svm.predict)[1]<-"H"

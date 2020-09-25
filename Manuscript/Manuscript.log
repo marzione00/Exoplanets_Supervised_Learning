@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  24 SEP 2020 20:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  25 SEP 2020 08:59
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1368,13 +1368,13 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
  [4]
-<Pic/press-web25_exoplanet_populations.jpg, id=93, 1156.32pt x 650.43pt>
+<Pic/press-web25_exoplanet_populations.jpg, id=95, 1156.32pt x 650.43pt>
 File: Pic/press-web25_exoplanet_populations.jpg Graphic file (type jpg)
 <use Pic/press-web25_exoplanet_populations.jpg>
 Package pdftex.def Info: Pic/press-web25_exoplanet_populations.jpg  used on inp
 ut line 153.
 (pdftex.def)             Requested size: 370.0pt x 208.122pt.
-<Pic/PT_Confirmed.jpg, id=96, 1674.255pt x 1084.05pt>
+<Pic/PT_Confirmed.jpg, id=98, 1674.255pt x 1084.05pt>
 File: Pic/PT_Confirmed.jpg Graphic file (type jpg)
 <use Pic/PT_Confirmed.jpg>
 Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 161.
@@ -1383,7 +1383,7 @@ Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 161.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Greenhouse-effect-t2.png, id=99, 1927.2pt x 1168.365pt>
+<Pic/Greenhouse-effect-t2.png, id=101, 1927.2pt x 1168.365pt>
 File: Pic/Greenhouse-effect-t2.png Graphic file (type png)
 <use Pic/Greenhouse-effect-t2.png>
 Package pdftex.def Info: Pic/Greenhouse-effect-t2.png  used on input line 170.
@@ -1391,7 +1391,7 @@ Package pdftex.def Info: Pic/Greenhouse-effect-t2.png  used on input line 170.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Planets_habitability_Seager.png, id=103, 1035.11719pt x 686.565pt>
+<Pic/Planets_habitability_Seager.png, id=105, 1035.11719pt x 686.565pt>
 File: Pic/Planets_habitability_Seager.png Graphic file (type png)
 <use Pic/Planets_habitability_Seager.png>
 Package pdftex.def Info: Pic/Planets_habitability_Seager.png  used on input lin
@@ -1411,7 +1411,7 @@ Overfull \hbox (19.96396pt too wide) in paragraph at lines 194--214
 [][]
  []
 
-<Pic/S_T_T_explanation.png, id=143, 455.301pt x 481.8pt>
+<Pic/S_T_T_explanation.png, id=145, 455.301pt x 481.8pt>
 File: Pic/S_T_T_explanation.png Graphic file (type png)
 <use Pic/S_T_T_explanation.png>
 Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 218.
@@ -1423,7 +1423,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
-<Pic/Noisy_channel.png, id=169, 624.83438pt x 320.69812pt>
+<Pic/Noisy_channel.png, id=171, 624.83438pt x 320.69812pt>
 File: Pic/Noisy_channel.png Graphic file (type png)
 <use Pic/Noisy_channel.png>
 Package pdftex.def Info: Pic/Noisy_channel.png  used on input line 237.
@@ -1452,7 +1452,7 @@ File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 ) [12
 
 ]
-<Pic/random-forest-algorithm2.png, id=219, 602.25pt x 501.875pt>
+<Pic/random-forest-algorithm2.png, id=221, 602.25pt x 501.875pt>
 File: Pic/random-forest-algorithm2.png Graphic file (type png)
 <use Pic/random-forest-algorithm2.png>
 Package pdftex.def Info: Pic/random-forest-algorithm2.png  used on input line 2
@@ -1468,13 +1468,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+fvm on input line 30
-1.
+3.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 301.
+(Font)              scaled to size 9.30756pt on input line 303.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1559,11 +1559,11 @@ Overfull \hbox (70.17654pt too wide) in paragraph at lines 232--233
  []
 
 ) [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
  (Manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 323.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1573,13 +1573,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 321.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
  ) 
 Here is how much of TeX's memory you used:
- 20300 strings out of 481212
- 364249 string characters out of 2913848
+ 20302 strings out of 481212
+ 364268 string characters out of 2913848
  807242 words of memory out of 3000000
- 35296 multiletter control sequences out of 15000+200000
+ 35297 multiletter control sequences out of 15000+200000
  676682 words of font info for 224 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  67i,22n,97p,10634b,1755s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1602,9 +1602,9 @@ C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/palatino/uplri8a.pfb>
-Output written on Manuscript.pdf (20 pages, 5244350 bytes).
+Output written on Manuscript.pdf (20 pages, 5245738 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 94 named destinations out of 1000 (max. 500000)
- 43612 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 407 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 43620 words of extra memory for PDF output out of 51595 (max. 10000000)
 
