@@ -1,0 +1,150 @@
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 309  10
+      1   1  30
+                                          
+               Accuracy : 0.9686          
+                 95% CI : (0.9445, 0.9842)
+    No Information Rate : 0.8857          
+    P-Value [Acc > NIR] : 1.608e-08       
+                                          
+                  Kappa : 0.8279          
+                                          
+ Mcnemar's Test P-Value : 0.01586         
+                                          
+            Sensitivity : 0.9968          
+            Specificity : 0.7500          
+         Pos Pred Value : 0.9687          
+         Neg Pred Value : 0.9677          
+             Prevalence : 0.8857          
+         Detection Rate : 0.8829          
+   Detection Prevalence : 0.9114          
+      Balanced Accuracy : 0.8734          
+                                          
+       'Positive' Class : 0               
+                                          
+[[1]]
+[1]       NaN 0.3112045       NaN
+
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 310  19
+      1   0  21
+                                         
+               Accuracy : 0.9457         
+                 95% CI : (0.9165, 0.967)
+    No Information Rate : 0.8857         
+    P-Value [Acc > NIR] : 8.582e-05      
+                                         
+                  Kappa : 0.6619         
+                                         
+ Mcnemar's Test P-Value : 3.636e-05      
+                                         
+            Sensitivity : 1.0000         
+            Specificity : 0.5250         
+         Pos Pred Value : 0.9422         
+         Neg Pred Value : 1.0000         
+             Prevalence : 0.8857         
+         Detection Rate : 0.8857         
+   Detection Prevalence : 0.9400         
+      Balanced Accuracy : 0.7625         
+                                         
+       'Positive' Class : 0              
+                                         
+[[1]]
+[1]       NaN 0.2133654       NaN
+
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 310   7
+      1   0  33
+                                          
+               Accuracy : 0.98            
+                 95% CI : (0.9592, 0.9919)
+    No Information Rate : 0.8857          
+    P-Value [Acc > NIR] : 3.02e-11        
+                                          
+                  Kappa : 0.8931          
+                                          
+ Mcnemar's Test P-Value : 0.02334         
+                                          
+            Sensitivity : 1.0000          
+            Specificity : 0.8250          
+         Pos Pred Value : 0.9779          
+         Neg Pred Value : 1.0000          
+             Prevalence : 0.8857          
+         Detection Rate : 0.8857          
+   Detection Prevalence : 0.9057          
+      Balanced Accuracy : 0.9125          
+                                          
+       'Positive' Class : 0               
+                                          
+[[1]]
+[1]       NaN 0.3741565       NaN
+
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 310   6
+      1   0  34
+                                          
+               Accuracy : 0.9829          
+                 95% CI : (0.9631, 0.9937)
+    No Information Rate : 0.8857          
+    P-Value [Acc > NIR] : 4.64e-12        
+                                          
+                  Kappa : 0.9094          
+                                          
+ Mcnemar's Test P-Value : 0.04123         
+                                          
+            Sensitivity : 1.0000          
+            Specificity : 0.8500          
+         Pos Pred Value : 0.9810          
+         Neg Pred Value : 1.0000          
+             Prevalence : 0.8857          
+         Detection Rate : 0.8857          
+   Detection Prevalence : 0.9029          
+      Balanced Accuracy : 0.9250          
+                                          
+       'Positive' Class : 0               
+                                          
+[[1]]
+[1]       NaN 0.3901766       NaN
+
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 309  10
+      1   1  30
+                                          
+               Accuracy : 0.9686          
+                 95% CI : (0.9445, 0.9842)
+    No Information Rate : 0.8857          
+    P-Value [Acc > NIR] : 1.608e-08       
+                                          
+                  Kappa : 0.8279          
+                                          
+ Mcnemar's Test P-Value : 0.01586         
+                                          
+            Sensitivity : 0.9968          
+            Specificity : 0.7500          
+         Pos Pred Value : 0.9687          
+         Neg Pred Value : 0.9677          
+             Prevalence : 0.8857          
+         Detection Rate : 0.8829          
+   Detection Prevalence : 0.9114          
+      Balanced Accuracy : 0.8734          
+                                          
+       'Positive' Class : 0               
+                                          
+[[1]]
+[1]       NaN 0.3112045       NaN
+

@@ -28,13 +28,14 @@ library(MASS)
 library(pca3d)
 library(doParallel) 
 library(kernlab)
+library(klaR)
 
 
 
 cl <- makeCluster(8, type='PSOCK')
 registerDoParallel(cl)
 
-sink('analysis-output.txt')
+sink('exoplanet_log_output.txt')
 
 #########Loading data
 
@@ -121,18 +122,19 @@ autoplot(roc_for.perf)+theme_bw()
 #########SVM 
 
 
-tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T,data=Planets_dataset[Planets_dataset_train,], kernel="linear", ranges =list(cost=c(seq(0.009, 2, by = 0.005))))
+tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.009, 2, by = 0.005))))
 print(tune_svm_full.out)
 plot(tune_svm_full.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="linear",cost=0.048)
-
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=0.5)
 
 plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
 svm.predict_full<-data.frame(predict(svm.full,Planets_dataset[Planets_dataset_train,],type = "class"))
 
 svm.predict_full["T"]<-as.factor(Planets_dataset[Planets_dataset_train,12])
+
+svm_fin_full<-data.frame(svm.predict_full,stringsAsFactors = TRUE)
 
 colnames(svm_fin_full)<-c("Predict","Test")
 
@@ -164,9 +166,6 @@ autoplot(pca.planet,data=pca.train[,2:15],col="P_H")
 autoplot(pca.planet.test)
 
 fviz_pca_var(pca.planet,col.var = "contrib",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black",arrowsize = 1,labelsize = 0.5,jitter = list(what = "both", width = 1, height = 1) ) +theme_bw()+theme(plot.title = element_text(hjust = 0.5))
-
-pca_out<-data.frame(pca.planet[["x"]])
-pca_out_test<-data.frame(pca.planet.test[["x"]])
 
 train<-pca_out[1:2]
 test<-pca_out_test[1:2]
@@ -214,16 +213,19 @@ autoplot(roc_svm.perf)+theme_bw()
 
 #########QDA
 
+
 qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset, subset=Planets_dataset_train)
 
-plot(qda.planet)
+#partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
+
+#plot(qda.planet,P_H~S_L)
 
 #glm.planet
 
 #summary(glm.planet)
 
 
-qda.prob<-data.frame(predict(qda.planet,pca.test,type = "response"))
+qda.prob<-data.frame(predict(qda.planet,Planets_dataset[-Planets_dataset_train,],type = "response"))
 qda.prob<-qda.prob["class"]
 
 qda_fin<-data.frame(qda.prob,stringsAsFactors = TRUE)
@@ -257,7 +259,7 @@ plot(lda.planet)
 #summary(glm.planet)
 
 
-lda.prob<-data.frame(predict(lda.planet,pca.test,type = "response"))
+lda.prob<-data.frame(predict(lda.planet,Planets_dataset[-Planets_dataset_train,],type = "response"))
 lda.prob<-lda.prob["class"]
 
 lda_fin<-data.frame(lda.prob,stringsAsFactors = TRUE)
