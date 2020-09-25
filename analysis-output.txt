@@ -97,3 +97,246 @@ Parameter tuning of ‘svm’:
 
 - best performance: 0.04774954 
 
+
+Parameter tuning of ‘svm’:
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+  cost
+ 0.324
+
+- best performance: 0.04774954 
+
+
+Parameter tuning of ‘svm’:
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+  cost
+ 0.324
+
+- best performance: 0.04774954 
+
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 134   5
+      1   1  10
+                                         
+               Accuracy : 0.96           
+                 95% CI : (0.915, 0.9852)
+    No Information Rate : 0.9            
+    P-Value [Acc > NIR] : 0.005602       
+                                         
+                  Kappa : 0.7479         
+                                         
+ Mcnemar's Test P-Value : 0.220671       
+                                         
+            Sensitivity : 0.9926         
+            Specificity : 0.6667         
+         Pos Pred Value : 0.9640         
+         Neg Pred Value : 0.9091         
+             Prevalence : 0.9000         
+         Detection Rate : 0.8933         
+   Detection Prevalence : 0.9267         
+      Balanced Accuracy : 0.8296         
+                                         
+       'Positive' Class : 0              
+                                         
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 134   5
+      1   1  10
+                                         
+               Accuracy : 0.96           
+                 95% CI : (0.915, 0.9852)
+    No Information Rate : 0.9            
+    P-Value [Acc > NIR] : 0.005602       
+                                         
+                  Kappa : 0.7479         
+                                         
+ Mcnemar's Test P-Value : 0.220671       
+                                         
+            Sensitivity : 0.9926         
+            Specificity : 0.6667         
+         Pos Pred Value : 0.9640         
+         Neg Pred Value : 0.9091         
+             Prevalence : 0.9000         
+         Detection Rate : 0.8933         
+   Detection Prevalence : 0.9267         
+      Balanced Accuracy : 0.8296         
+                                         
+       'Positive' Class : 0              
+                                         
+[[1]]
+[1]      NaN 0.229651      NaN
+
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 134   5
+      1   1  10
+                                         
+               Accuracy : 0.96           
+                 95% CI : (0.915, 0.9852)
+    No Information Rate : 0.9            
+    P-Value [Acc > NIR] : 0.005602       
+                                         
+                  Kappa : 0.7479         
+                                         
+ Mcnemar's Test P-Value : 0.220671       
+                                         
+            Sensitivity : 0.9926         
+            Specificity : 0.6667         
+         Pos Pred Value : 0.9640         
+         Neg Pred Value : 0.9091         
+             Prevalence : 0.9000         
+         Detection Rate : 0.8933         
+   Detection Prevalence : 0.9267         
+      Balanced Accuracy : 0.8296         
+                                         
+       'Positive' Class : 0              
+                                         
+[[1]]
+[1]      NaN 0.229651      NaN
+
+
+Parameter tuning of ‘svm’:
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+  cost
+ 1.954
+
+- best performance: 0.02296453 
+
+
+Parameter tuning of ‘svm’:
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+  cost
+ 0.807
+
+- best performance: 0.02262301 
+
+ Setting default kernel parameters  
+Confusion Matrix and Statistics
+
+                                                                           T
+predict.svm.full..Planets_dataset.Planets_dataset_train.....type....class..   0   1
+                                                                          0 310  19
+                                                                          1   0  21
+                                         
+               Accuracy : 0.9457         
+                 95% CI : (0.9165, 0.967)
+    No Information Rate : 0.8857         
+    P-Value [Acc > NIR] : 8.582e-05      
+                                         
+                  Kappa : 0.6619         
+                                         
+ Mcnemar's Test P-Value : 3.636e-05      
+                                         
+            Sensitivity : 1.0000         
+            Specificity : 0.5250         
+         Pos Pred Value : 0.9422         
+         Neg Pred Value : 1.0000         
+             Prevalence : 0.8857         
+         Detection Rate : 0.8857         
+   Detection Prevalence : 0.9400         
+      Balanced Accuracy : 0.7625         
+                                         
+       'Positive' Class : 0              
+                                         
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 135   0
+      1   0  15
+                                     
+               Accuracy : 1          
+                 95% CI : (0.9757, 1)
+    No Information Rate : 0.9        
+    P-Value [Acc > NIR] : 1.369e-07  
+                                     
+                  Kappa : 1          
+                                     
+ Mcnemar's Test P-Value : NA         
+                                     
+            Sensitivity : 1.0        
+            Specificity : 1.0        
+         Pos Pred Value : 1.0        
+         Neg Pred Value : 1.0        
+             Prevalence : 0.9        
+         Detection Rate : 0.9        
+   Detection Prevalence : 0.9        
+      Balanced Accuracy : 1.0        
+                                     
+       'Positive' Class : 0          
+                                     
+Confusion Matrix and Statistics
+
+                                                                           T
+predict.svm.full..Planets_dataset.Planets_dataset_train.....type....class..   0   1
+                                                                          0 310  19
+                                                                          1   0  21
+                                         
+               Accuracy : 0.9457         
+                 95% CI : (0.9165, 0.967)
+    No Information Rate : 0.8857         
+    P-Value [Acc > NIR] : 8.582e-05      
+                                         
+                  Kappa : 0.6619         
+                                         
+ Mcnemar's Test P-Value : 3.636e-05      
+                                         
+            Sensitivity : 1.0000         
+            Specificity : 0.5250         
+         Pos Pred Value : 0.9422         
+         Neg Pred Value : 1.0000         
+             Prevalence : 0.8857         
+         Detection Rate : 0.8857         
+   Detection Prevalence : 0.9400         
+      Balanced Accuracy : 0.7625         
+                                         
+       'Positive' Class : 0              
+                                         
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 135   0
+      1   0  15
+                                     
+               Accuracy : 1          
+                 95% CI : (0.9757, 1)
+    No Information Rate : 0.9        
+    P-Value [Acc > NIR] : 1.369e-07  
+                                     
+                  Kappa : 1          
+                                     
+ Mcnemar's Test P-Value : NA         
+                                     
+            Sensitivity : 1.0        
+            Specificity : 1.0        
+         Pos Pred Value : 1.0        
+         Neg Pred Value : 1.0        
+             Prevalence : 0.9        
+         Detection Rate : 0.9        
+   Detection Prevalence : 0.9        
+      Balanced Accuracy : 1.0        
+                                     
+       'Positive' Class : 0          
+                                     
+[[1]]
+[1]       NaN 0.4689956       NaN
+

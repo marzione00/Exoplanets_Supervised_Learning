@@ -118,24 +118,40 @@ roc_for.perf <- performance(pred_for, measure = "tpr", x.measure = "fpr")
 autoplot(roc_for.perf)+theme_bw()
 
 
-#########PCA+SVM 
+#########SVM 
 
 
+tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T,data=Planets_dataset[Planets_dataset_train,], kernel="linear", ranges =list(cost=c(seq(0.009, 2, by = 0.005))))
+print(tune_svm_full.out)
+plot(tune_svm_full.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="linear")
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="linear",cost=0.048)
+
+
+plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
 svm.predict_full<-data.frame(predict(svm.full,Planets_dataset[Planets_dataset_train,],type = "class"))
 
 svm.predict_full["T"]<-as.factor(Planets_dataset[Planets_dataset_train,12])
 
+colnames(svm_fin_full)<-c("Predict","Test")
+
+caret::confusionMatrix(table(svm_fin_full))
+
+fourfoldplot(table(svm_fin_full), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM_FULL")
+
+pred_svm_full<-prediction(as.numeric(svm_fin_full$Predict),as.numeric(svm_fin_full$Test))
+
+roc_svm_full.perf <- performance(pred_svm_full, measure = "tpr", x.measure = "fpr")
+
+phi_svm_full<-performance(pred_svm_full, "mi")
+
+phi_svm_full@y.values
+
+autoplot(roc_svm_full.perf)+theme_bw()
 
 
-
-
-
-
-
-
+#########PCA+SVM
 
 
 pca.train<-Planets_dataset[Planets_dataset_train,]
@@ -162,37 +178,25 @@ print(svm.planet)
 par(mar = c(5, 5, 5, 5))
 plot(svm.planet,data=train,nlevels = 40)
 
-
-svm.planet <- ksvm(H~.,data=train,type = 'C-svc', kernel="vanilladot",C=0.569)
-plot(svm.planet,data=train)
-
-
-#plot(svm.full,pca.train[,2:14], S_L ~ P_H,slice = list(S_L = 1, P_H = 2))
-
-
-
-tune_svm.out=tune(svm ,H~.,data=train, kernel="linear", ranges =list(cost=c(seq(0.009, 2, by = 0.005))))
-par(mar = c(5, 5, 5, 5))
+tune_svm.out=tune(svm ,H~.,data=train, kernel="linear", ranges =list(cost=c(seq(0.009, 1, by = 0.001))))
 print(tune_svm.out)
 plot(tune_svm.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
+svm.planet <- ksvm(H~.,data=train,type = 'C-svc', kernel="vanilladot",C=0.1)
+plot(svm.planet,data=train)
 
-
-svm.predict<-data.frame(predict(svm.planet,pca.planet.test[,1:2],type = "class"))
+svm.predict<-data.frame(predict(svm.planet,pca.planet.test[,1:2]))
 colnames(svm.predict)[1]<-"H"
 
 svm.predict["T"]<-as.factor(pca.test[,12])
 
-svm.predict_full["T"]<-as.factor(pca.test[,12])
 
 svm_fin<-data.frame(svm.predict,stringsAsFactors = TRUE)
-svm_fin_full<-data.frame(svm.predict_full,stringsAsFactors = TRUE)
 
 colnames(svm_fin)<-c("Predict","Test")
-colnames(svm_fin_full)<-c("Predict","Test")
+
 
 caret::confusionMatrix(table(svm_fin))
-caret::confusionMatrix(table(svm_fin_full))
 
 
 fourfoldplot(table(svm_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM")
