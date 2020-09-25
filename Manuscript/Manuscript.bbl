@@ -239,4 +239,7 @@ Stephen Marsland.
 \newblock {\em Machine learning: an algorithmic perspective}.
 \newblock CRC press, 2015.
 
+\bibitem{ker_svm}
+\url{https://www.r-bloggers.com/2019/10/support-vector-machines-with-the-mlr-packag}.
+
 \end{thebibliography}
