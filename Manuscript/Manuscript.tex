@@ -314,10 +314,26 @@ The maximal margin classifier approach consist in tracing the separating hyperpl
 subject\;to\;\sum_{j=1}^{p}\beta_{j}^{2}=1
 \end{equation}
 \begin{equation}
-y_{i}\left( \beta_{0} + \beta_{1} x_{i1} + \beta_{2} x_{i2}+...+\beta x_{ip}\right)\geq M
+y_{i}\left( \beta_{0} + \beta_{1} x_{i1} + \beta_{2} x_{i2}+...+\beta x_{ip}\right)\geq M\quad\forall\; i=1,...,n
 \end{equation}
 \paragraph{Support vector Classifier}
-The maximal margin approach assumes that the separating hyperplane exists, however this is far from be the most of classification problems. To overcome to this point the 
+The maximal margin approach assumes that the separating hyperplane exists, however this is far from be the most common type of classification problem. To overcome to this point the support vector classifier: in this approach the margin is considered soft allowing some point to be on the wrong side of the margin or on the wrong side of the hyperplane. The tolerance threshold is fixed by a quantity that is called budget $C$, more formally:
+\begin{equation}
+\max\limits_{{\beta_{0},\beta_{1}...\beta_{p},M}} M
+\end{equation}
+\begin{equation}
+subject\;to\;\sum_{j=1}^{p}\beta_{j}^{2}=1
+\end{equation}
+\begin{equation}
+y_{i}\left( \beta_{0} + \beta_{1} x_{i1} + \beta_{2} x_{i2}+...+\beta x_{ip}\right)\geq M\left(1-\epsilon_{i}\right)
+\end{equation}
+\begin{equation}
+\epsilon_{i}\geq 0 \sum_{i=1}^{n}\epsilon_{i}\leq C
+\end{equation}
+It is worth noting that if the budged is large a low variance will be found but with the toll of high bias; on the other side if the budget is low a low bias will be obtained but with the toll of high variance. Thus the selection of this parameter is crucial.  
+\paragraph{Support vector machines}
+This is the overall generalization of the method previously described: in particular the idea is to go beyond to the linear boundary. Fort this purpose the linear boundary 
+
 
 \section{Results and discussion}
 
