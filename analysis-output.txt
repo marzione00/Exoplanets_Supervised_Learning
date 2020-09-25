@@ -1,0 +1,99 @@
+
+Parameter tuning of ‘rpart’:
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ minsplit
+       29
+
+- best performance: 0.01669755 
+
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 134   2
+      1   1  13
+                                          
+               Accuracy : 0.98            
+                 95% CI : (0.9427, 0.9959)
+    No Information Rate : 0.9             
+    P-Value [Acc > NIR] : 0.0001248       
+                                          
+                  Kappa : 0.8855          
+                                          
+ Mcnemar's Test P-Value : 1.0000000       
+                                          
+            Sensitivity : 0.9926          
+            Specificity : 0.8667          
+         Pos Pred Value : 0.9853          
+         Neg Pred Value : 0.9286          
+             Prevalence : 0.9000          
+         Detection Rate : 0.8933          
+   Detection Prevalence : 0.9067          
+      Balanced Accuracy : 0.9296          
+                                          
+       'Positive' Class : 0               
+                                          
+Confusion Matrix and Statistics
+
+       Test
+Predict   0   1
+      0 134   3
+      1   1  12
+                                          
+               Accuracy : 0.9733          
+                 95% CI : (0.9331, 0.9927)
+    No Information Rate : 0.9             
+    P-Value [Acc > NIR] : 0.0005475       
+                                          
+                  Kappa : 0.8425          
+                                          
+ Mcnemar's Test P-Value : 0.6170751       
+                                          
+            Sensitivity : 0.9926          
+            Specificity : 0.8000          
+         Pos Pred Value : 0.9781          
+         Neg Pred Value : 0.9231          
+             Prevalence : 0.9000          
+         Detection Rate : 0.8933          
+   Detection Prevalence : 0.9133          
+      Balanced Accuracy : 0.8963          
+                                          
+       'Positive' Class : 0               
+                                          
+ Setting default kernel parameters  
+Support Vector Machine object of class "ksvm" 
+
+SV type: C-svc  (classification) 
+ parameter : cost C = 0.569 
+
+Linear (vanilla) kernel function. 
+
+Number of Support Vectors : 11 
+
+Objective Function Value : -3.6659 
+Training error : 0.005714 
+
+Parameter tuning of ‘svm’:
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+  cost
+ 1.999
+
+- best performance: 0.02218497 
+
+
+Parameter tuning of ‘svm’:
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+  cost
+ 0.324
+
+- best performance: 0.04774954 
+

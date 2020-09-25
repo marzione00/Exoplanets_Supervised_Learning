@@ -34,7 +34,7 @@ library(kernlab)
 cl <- makeCluster(8, type='PSOCK')
 registerDoParallel(cl)
 
-
+sink('analysis-output.txt')
 
 #########Loading data
 
@@ -63,11 +63,10 @@ heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c
 
 
 tune_dec.out=tune(rpart ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data= Planets_dataset[Planets_dataset_train,], ranges =list(minsplit=c(seq(1, 30, by = 1))))
-par(mar = c(5, 5, 5, 5))
 print(tune_dec.out)
 plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 4)
+tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 9)
 
 fancyRpartPlot(tree.planet,sub = "Planets Habitability", palettes = "OrRd")
 
@@ -122,10 +121,28 @@ autoplot(roc_for.perf)+theme_bw()
 #########PCA+SVM 
 
 
+
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_T_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="linear")
+
+svm.predict_full<-data.frame(predict(svm.full,Planets_dataset[Planets_dataset_train,],type = "class"))
+
+svm.predict_full["T"]<-as.factor(Planets_dataset[Planets_dataset_train,12])
+
+
+
+
+
+
+
+
+
+
+
 pca.train<-Planets_dataset[Planets_dataset_train,]
 pca.test<-Planets_dataset[-Planets_dataset_train,]
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca.planet.test  <-  predict(pca.planet, pca.test[,2:14])
+
 
 autoplot(pca.planet,data=pca.train[,2:15],col="P_H")
 autoplot(pca.planet.test)
@@ -141,22 +158,15 @@ train["H"]<-pca.train[,12]
 test["H"]<-pca.test[,12]
 
 
-
-sink('analysis-output.txt')
-for ( i in 1:1000)
-{
-svm.planet <- ksvm(H~.,data=train,type = 'C-svc', kernel="vanilladot",C=i/1000,cross=5)
 print(svm.planet)
-}
-sink()
+par(mar = c(5, 5, 5, 5))
+plot(svm.planet,data=train,nlevels = 40)
+
 
 svm.planet <- ksvm(H~.,data=train,type = 'C-svc', kernel="vanilladot",C=0.569)
 plot(svm.planet,data=train)
 
-svm.full <- svm(P_H~., data=pca.train[,2:14],type = 'C-classification', kernel="linear")
-print(svm.planet)
-par(mar = c(5, 5, 5, 5))
-plot(svm.planet,data=train,nlevels = 40)
+
 #plot(svm.full,pca.train[,2:14], S_L ~ P_H,slice = list(S_L = 1, P_H = 2))
 
 
@@ -166,7 +176,7 @@ par(mar = c(5, 5, 5, 5))
 print(tune_svm.out)
 plot(tune_svm.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-svm.predict_full<-data.frame(predict(svm.full,pca.test[,2:14],type = "class"))
+
 
 svm.predict<-data.frame(predict(svm.planet,pca.planet.test[,1:2],type = "class"))
 colnames(svm.predict)[1]<-"H"
@@ -182,7 +192,7 @@ colnames(svm_fin)<-c("Predict","Test")
 colnames(svm_fin_full)<-c("Predict","Test")
 
 caret::confusionMatrix(table(svm_fin))
-caret::confusionMatrix(table(svm_fin_full)
+caret::confusionMatrix(table(svm_fin_full))
 
 
 fourfoldplot(table(svm_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM")
@@ -265,7 +275,7 @@ plot(phi_lda)
 
 autoplot(roc_lda.perf)+theme_bw()
 
-
+sink()
 
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12]) 
