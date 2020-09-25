@@ -231,4 +231,12 @@ Tin~Kam Ho.
 \bibitem{rand_for_fig}
 \url{https://www.javatpoint.com/machine-learning-random-forest-algorithm}.
 
+\bibitem{kernel}
+\url{https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f}.
+
+\bibitem{marsland2015machine}
+Stephen Marsland.
+\newblock {\em Machine learning: an algorithmic perspective}.
+\newblock CRC press, 2015.
+
 \end{thebibliography}

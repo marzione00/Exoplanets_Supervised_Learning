@@ -6,45 +6,45 @@ The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: bibliography.bib
 Warning--can't use both volume and number fields in pierrehumbert2011infrared
-You've used 45 entries,
+You've used 47 entries,
             1791 wiz_defined-function locations,
-            708 strings with 10420 characters,
-and the built_in function-call counts, 8786 in all, are:
-= -- 785
-> -- 308
+            714 strings with 10581 characters,
+and the built_in function-call counts, 9022 in all, are:
+= -- 803
+> -- 313
 < -- 7
-+ -- 126
-- -- 81
-* -- 549
-:= -- 1302
-add.period$ -- 118
-call.type$ -- 45
++ -- 129
+- -- 82
+* -- 552
+:= -- 1331
+add.period$ -- 122
+call.type$ -- 47
 change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 397
-empty$ -- 983
-format.name$ -- 81
-if$ -- 1998
+cite$ -- 48
+duplicate$ -- 412
+empty$ -- 1020
+format.name$ -- 82
+if$ -- 2058
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 40
-newline$ -- 208
-num.names$ -- 35
-pop$ -- 149
+int.to.str$ -- 47
+missing$ -- 42
+newline$ -- 216
+num.names$ -- 36
+pop$ -- 162
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 222
+skip$ -- 232
 stack$ -- 0
 substring$ -- 585
-swap$ -- 75
+swap$ -- 77
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 82
-width$ -- 47
-write$ -- 434
+while$ -- 83
+width$ -- 49
+write$ -- 449
 (There was 1 warning)
