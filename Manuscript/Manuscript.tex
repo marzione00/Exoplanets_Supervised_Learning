@@ -36,6 +36,7 @@ BCOR5mm, % Binding correction
 \usepackage{epigraph}
 \usepackage{mathcomp}
 \usepackage{textcomp}
+\usepackage{mathtools}
 \usepackage[LGR,T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{url}
@@ -356,8 +357,33 @@ where $\gamma$ is a positive constant.
 \label{SVM_kernels}
 \end{center}
 \end{figure}
+\paragraph{Linear and quadratic vector classifier}
+The linear and quadratic classifier are an improvement of the logistic model approach \cite{james2013introduction}: 
+\begin{equation}
+p(Y=1|X)=\dfrac{e^{\beta_{0}+\beta_{1}X+...+\beta_{p}X_{p}}}{1+e^{\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}}}
+\end{equation}
+since the logistic one is unstable when the classes are well-separated \footnote{In this work a preliminary classification tentative with the logistic regression was performed, but a careful inspection of the classes with the PCA shown that the two classes are almost separated, in fact the evaluation of the parameters involved in the logistic regression failed. This moved the author to consider the methods described here}, moreover these two are more stable if $n$ is small. The starting point is the is the Bayes theorem \cite{james2013introduction}:
+\begin{equation}
+p(Y=k|X=x)=\dfrac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}
+\end{equation}
+where $f(x)$ is the density function of X from an observation from k$^{th}$ class  $f_{k}\coloneqq Pr(X=x|Y=k)$ and $\pi_{k}$ the prior probability that a random observation come from the k$^{th}$ class \cite{james2013introduction}. 
 
-
+\subparagraph{Linear discriminat analysis}
+Here the density $f(x)$ is assumed to be a multivariate gaussian distribution\cite{james2013introduction}: 
+\begin{equation}
+f(\textbf{x})=\dfrac{1}{\left(2 \pi\right)^{p/2}\lvert \boldsymbol {\Sigma}\rvert^{-1/2} }exp \left(-\frac{1}{2}\left(\textbf{x}-\boldsymbol{\mu}\right)^{T}\boldsymbol {\Sigma}^{-1}\left(\textbf{x}-\boldsymbol{\mu}\right)\right)
+\end{equation}
+While the covariance matrix $\boldsymbol {\Sigma}$ is common for all classes while $\boldsymbol{\mu}$ is different for each of them. Thus, by some manipulation one obtains that the Bayes classifier put an observation $X=\textbf{x}$ for which \cite{james2013introduction}:
+\begin{equation}
+\delta(\textbf{x})=x^{T} \boldsymbol {\Sigma}^{-1} \mu_{k}-\frac{1}{2}\mu^{T}_{k}\boldsymbol {\Sigma}^{-1}\mu_{k}+log\pi_{k}
+\end{equation}
+is largest. Note the linearity of the expression with respect to the \textbf{x} vector, that give the name to the method 
+\subparagraph{Quadratic discriminat analysis}
+In this case, differently with respect to the linear analysis, a covariance matrix for each class is considered: thus the Bayes classifier has the following form 
+\begin{equation}
+\delta(\textbf{x})=-\dfrac{1}{2}\textbf{x}^{T}\boldsymbol {\Sigma}^{-1}_{k}\textbf{x}+\textbf{x}^{T}\boldsymbol {\Sigma}^{-1}_{k}\boldsymbol{\mu}_{k}-\dfrac{1}{2}\boldsymbol{\mu}_{k}^{T}\boldsymbol {\Sigma}^{-1}_{k}\boldsymbol{\mu}_{k}-\dfrac{1}{2}log\lvert \boldsymbol {\Sigma}\rvert+log\pi_{k}
+\end{equation}
+where in this case the dependence from $x$ is quadratic 
 
 \section{Results and discussion}
 
