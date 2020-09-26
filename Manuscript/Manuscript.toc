@@ -9,9 +9,9 @@
 \contentsline {paragraph}{{Maximal margin Classifier}}{15}{paragraph*.12}%
 \contentsline {paragraph}{{Support vector Classifier}}{16}{paragraph*.13}%
 \contentsline {paragraph}{{Support vector machines}}{16}{paragraph*.14}%
-\contentsline {paragraph}{{Linear and quadratic vector classifier}}{17}{paragraph*.16}%
-\contentsline {subparagraph}{{Linear discriminat analysis}}{18}{subparagraph*.17}%
-\contentsline {subparagraph}{{Quadratic discriminat analysis}}{18}{subparagraph*.18}%
-\contentsline {section}{\numberline {4}{Results and discussion}}{18}{section.4}%
-\contentsline {section}{\numberline {5}{Conclusions}}{19}{section.5}%
-\contentsline {section}{\numberline {6}{R code}}{20}{section.6}%
+\contentsline {subsection}{\numberline {3.3}{Linear and quadratic vector classifier}}{18}{subsection.3.3}%
+\contentsline {subparagraph}{{Linear discriminat analysis}}{18}{subparagraph*.16}%
+\contentsline {subparagraph}{{Quadratic discriminat analysis}}{18}{subparagraph*.17}%
+\contentsline {section}{\numberline {4}{Results and discussion}}{19}{section.4}%
+\contentsline {section}{\numberline {5}{Conclusions}}{20}{section.5}%
+\contentsline {section}{\numberline {6}{R code}}{21}{section.6}%
