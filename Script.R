@@ -29,6 +29,7 @@ library(pca3d)
 library(doParallel) 
 library(kernlab)
 library(klaR)
+library(PCAmixdata)
 
 
 
@@ -41,6 +42,9 @@ sink('exoplanet_log_output.txt')
 
 
 Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
+
+Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
+Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
 set.seed(10)
 
@@ -126,11 +130,11 @@ autoplot(roc_for.perf)+theme_bw()
 #########SVM 
 
 
-tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.009, 2, by = 0.005))))
+tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.009, 4, by = 0.005))))
 print(tune_svm_full.out)
 plot(tune_svm_full.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=0.5)
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=2)
 
 plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
@@ -162,51 +166,75 @@ autoplot(roc_svm_full.perf)+theme_bw()
 
 pca.train<-Planets_dataset[Planets_dataset_train,]
 pca.test<-Planets_dataset[-Planets_dataset_train,]
-pca.planet <- prcomp(pca.train[,2:15], center = TRUE,scale. = TRUE)
-pca.planet.test  <-  predict(pca.planet, pca.test[,2:15])
+#pca.planet <- prcomp(pca.train[,2:15], center = TRUE,scale. = TRUE)
+#pca.planet.test  <-  predict(pca.planet, pca.test[,2:15])
+#pca.train[,12]<-as.factor(pca.train[,12])
+#pca.train[,15]<-as.factor(pca.train[,15])
+#pca.test[,12]<-as.factor(pca.test[,12])
+#pca.test[,15]<-as.factor(pca.test[,15])
+
+pca_mix_out<-PCAmix(pca.train[,-c(1,12,15)],pca.train[,c(12,15)],rename.level=TRUE)
+
+plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
 
 
-autoplot(pca.planet,data=pca.train[,2:15],col="P_H")
-#autoplot(pca.planet.test)
-
-fviz_pca_var(pca.planet,col.var = "contrib",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black",arrowsize = 1,labelsize = 0.5,jitter = list(what = "both", width = 1, height = 1) ) +theme_bw()+theme(plot.title = element_text(hjust = 0.5))
-
-pca_out<-data.frame(pca.planet[["x"]])
 
 
-train<-pca_out[1:2]
-
-train["H"]<-pca.train[,12]
+pca_mix.planet.test  <-  predict(pca_mix_out, pca.test[,-c(1,12,15)],pca.test[,c(12,15)])
 
 
-#print(svm.planet)
-#par(mar = c(5, 5, 5, 5))
-#plot(svm.planet,data=train,nlevels = 40)
+
+#fviz_pca_var(pca.planet,col.var = "contrib",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black",arrowsize = 1,labelsize = 0.5,jitter = list(what = "both", width = 1, height = 1) ) +theme_bw()+theme(plot.title = element_text(hjust = 0.5))
+
+
+
+pca_mix_out<-data.frame(pca_mix_out[["ind"]][["coord"]])
+
+
+train_mix<-pca_mix_out[1:2]
+
+
+train_mix["H"]<-pca.train[,12]
+
 
 tune_svm.out=tune(svm ,H~.,data=train, kernel="linear", ranges =list(cost=c(seq(0.009, 1, by = 0.001))))
-print(tune_svm.out)
-plot(tune_svm.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-svm.planet <- ksvm(H~.,data=train,type = 'C-svc', kernel="vanilladot",C=0.44)
-plot(svm.planet,data=train)
+tune_svm_mix.out=tune(svm ,H~.,data=train_mix, kernel="linear", ranges =list(cost=c(seq(0.009, 1, by = 0.001))))
 
-svm.predict<-data.frame(predict(svm.planet,pca.planet.test[,1:2]))
-colnames(svm.predict)[1]<-"H"
-
-svm.predict["T"]<-as.factor(pca.test[,12])
+print(tune_svm_mix.out)
+plot(tune_svm_mix.out,type="contour",mar = c(2, 1, 1, 2))
 
 
-svm_fin<-data.frame(svm.predict,stringsAsFactors = TRUE)
-
-colnames(svm_fin)<-c("Predict","Test")
+svm.planet_mix <- ksvm(H~.,data=train_mix,type = 'C-svc', kernel="vanilladot",C=0.1)
 
 
-caret::confusionMatrix(table(svm_fin))
+plot(svm.planet_mix,data=train_mix)
 
 
-fourfoldplot(table(svm_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM")
 
-pred_svm<-prediction(as.numeric(svm_fin$Predict),as.numeric(svm_fin$Test))
+svm.predict_mix<-data.frame(predict(svm.planet_mix,pca_mix.planet.test[,1:2]))
+
+
+
+colnames(svm.predict_mix)[1]<-"H"
+
+
+
+svm.predict_mix["T"]<-as.factor(pca.test[,12])
+
+
+svm_fin_mix<-data.frame(svm.predict_mix,stringsAsFactors = TRUE)
+
+
+colnames(svm_fin_mix)<-c("Predict","Test")
+
+
+caret::confusionMatrix(table(svm_fin_mix))
+
+
+fourfoldplot(table(svm_fin_mix), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM")
+
+pred_svm<-prediction(as.numeric(svm_fin_mix$Predict),as.numeric(svm_fin_mix$Test))
 
 roc_svm.perf <- performance(pred_svm, measure = "tpr", x.measure = "fpr")
 
@@ -220,7 +248,7 @@ autoplot(roc_svm.perf)+theme_bw()
 #########QDA
 
 
-qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data=Planets_dataset, subset=Planets_dataset_train)
+qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
 
 #partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
 
