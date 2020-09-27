@@ -30,10 +30,11 @@ library(doParallel)
 library(kernlab)
 library(klaR)
 library(PCAmixdata)
+library(ggplotify)
+library(FactoMineR)
 
 
-
-cl <- makeCluster(8, type='PSOCK')
+l <- makeCluster(8, type='PSOCK')
 registerDoParallel(cl)
 
 sink('exoplanet_log_output.txt')
@@ -46,7 +47,7 @@ Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
-set.seed(10)
+set.seed(13)
 
 #########Splitting training vs test set
 
@@ -67,9 +68,11 @@ heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c
 #########Decision Tree 
 
 
-tune_dec.out=tune(rpart ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data= Planets_dataset[Planets_dataset_train,], ranges =list(minsplit=c(seq(1, 30, by = 1))))
-print(tune_dec.out)
-plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
+
+#tune_dec.out=tune(rpart ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data= Planets_dataset[Planets_dataset_train,], ranges =list(minsplit=c(seq(1, 50, by = 1))))
+
+#print(tune_dec.out)
+#plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
 tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 5)
 
@@ -96,10 +99,10 @@ autoplot(roc_dec.perf)+theme_bw()
 
 #########Random Forest
 
-pippo<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
-
-
-rfor.planet <-randomForest(as.factor(P_H)~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=4)
+RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
+RF_perf_out<-data.frame(RF_perf_out)
+ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=2)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
 #explain_forest(rfor.planet)
 
@@ -130,11 +133,12 @@ autoplot(roc_for.perf)+theme_bw()
 #########SVM 
 
 
-tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.009, 4, by = 0.005))))
+tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.01, 15, by = 0.2))))
 print(tune_svm_full.out)
-plot(tune_svm_full.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
+perf_svm<-data.frame(tune_svm_full.out[["performances"]])
+ggplot(perf_svm,aes(x=cost, y=error))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 
-svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=0.5)
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=2)
 
 plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
@@ -173,18 +177,27 @@ pca.test<-Planets_dataset[-Planets_dataset_train,]
 #pca.test[,12]<-as.factor(pca.test[,12])
 #pca.test[,15]<-as.factor(pca.test[,15])
 
-pca_mix_out<-PCAmix(pca.train[,-c(1,12,15)],pca.train[,c(12,15)],rename.level=TRUE)
-
-plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
+pca_mix_out<-PCAmix(pca.train[,-c(1,12,15)],pca.train[,c(12)],rename.level=TRUE)
 
 
+plot(pca_mix_out,choice="sqload",coloring.var = TRUE,main="All variables",posleg="topright")
+
+FAMD_planets.out<-FAMD(pca.train[,-c(1,15)])
+
+
+
+plot(FAMD_planets.out)
+fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib")
+
+quali.var <- get_famd_var(FAMD_planets.out, "quali.var")
+
+fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib")
 
 
 pca_mix.planet.test  <-  predict(pca_mix_out, pca.test[,-c(1,12,15)],pca.test[,c(12,15)])
 
 
-
-#fviz_pca_var(pca.planet,col.var = "contrib",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black",arrowsize = 1,labelsize = 0.5,jitter = list(what = "both", width = 1, height = 1) ) +theme_bw()+theme(plot.title = element_text(hjust = 0.5))
+fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black" ) +theme_bw()
 
 
 
@@ -195,9 +208,6 @@ train_mix<-pca_mix_out[1:2]
 
 
 train_mix["H"]<-pca.train[,12]
-
-
-tune_svm.out=tune(svm ,H~.,data=train, kernel="linear", ranges =list(cost=c(seq(0.009, 1, by = 0.001))))
 
 tune_svm_mix.out=tune(svm ,H~.,data=train_mix, kernel="linear", ranges =list(cost=c(seq(0.009, 1, by = 0.001))))
 
