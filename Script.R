@@ -47,7 +47,7 @@ Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
-set.seed(13)
+set.seed(10)
 
 #########Splitting training vs test set
 
@@ -329,3 +329,5 @@ sink()
 
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12]) 
+
+
