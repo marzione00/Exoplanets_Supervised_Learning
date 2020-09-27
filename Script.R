@@ -130,11 +130,11 @@ autoplot(roc_for.perf)+theme_bw()
 #########SVM 
 
 
-tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.009, 4, by = 0.005))))
+tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.009, 4, by = 0.005))))
 print(tune_svm_full.out)
 plot(tune_svm_full.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=2)
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=0.5)
 
 plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
