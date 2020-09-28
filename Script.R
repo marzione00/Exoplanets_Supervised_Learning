@@ -340,9 +340,9 @@ pca3d(pca.planet,group= pca.train[,12])
 
 caret::confusionMatrix(Conf_matrix_SVM)
 
-fourfoldplot(Conf_matrix_SVM, color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Conf_matrix_SVM")
+fourfoldplot(table(Conf_matrix_SVM), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM Performance")
 
-pred_gen<-prediction(as.numeric(Conf_matrix_random_forest$P),as.numeric(Conf_matrix_random_forest$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_SVM$P),as.numeric(Conf_matrix_SVM$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 
