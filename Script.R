@@ -338,9 +338,9 @@ pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12]) 
 
 
-caret::confusionMatrix(table(Conf_matrix_random_forest))
+caret::confusionMatrix(Conf_matrix_SVM)
 
-fourfoldplot(table(Conf_matrix_random_forest), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Random Forest Performance")
+fourfoldplot(Conf_matrix_SVM, color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Conf_matrix_SVM")
 
 pred_gen<-prediction(as.numeric(Conf_matrix_random_forest$P),as.numeric(Conf_matrix_random_forest$T))
 
