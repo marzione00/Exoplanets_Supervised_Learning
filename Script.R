@@ -32,6 +32,7 @@ library(klaR)
 library(PCAmixdata)
 library(ggplotify)
 library(FactoMineR)
+library(plotly)
 
 
 l <- makeCluster(8, type='PSOCK')
@@ -47,7 +48,7 @@ Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
-set.seed(10)
+set.seed(3)
 
 #########Splitting training vs test set
 
@@ -102,7 +103,7 @@ autoplot(roc_dec.perf)+theme_bw()
 RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
 RF_perf_out<-data.frame(RF_perf_out)
 ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
-rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=2)
+rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=3)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
 #explain_forest(rfor.planet)
 
@@ -133,18 +134,22 @@ autoplot(roc_for.perf)+theme_bw()
 #########SVM 
 
 
-tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,], kernel="polynomial", ranges =list(cost=c(seq(0.01, 15, by = 0.2))))
+tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,], type = 'C-classification',kernel="polynomial",
+ ranges =list(cost=(1:10),degree=(1:5)))
 print(tune_svm_full.out)
 perf_svm<-data.frame(tune_svm_full.out[["performances"]])
-ggplot(perf_svm,aes(x=cost, y=error))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 
-svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=2)
+ggplot(perf_svm,aes(x=cost,y=degree, z=error))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+
+plot_ly(x=perf_svm$degree, y=perf_svm$cost, z=perf_svm$error, type="scatter3d", mode="markers")
+
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=5,degree=2,)
 
 plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
-svm.predict_full<-data.frame(predict(svm.full,Planets_dataset[Planets_dataset_train,],type = "class"))
+svm.predict_full<-data.frame(predict(svm.full,Planets_dataset[-Planets_dataset_train,],type = "class"))
 
-svm.predict_full["T"]<-as.factor(Planets_dataset[Planets_dataset_train,12])
+svm.predict_full["T"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
 
 svm_fin_full<-data.frame(svm.predict_full,stringsAsFactors = TRUE)
 
@@ -327,7 +332,24 @@ autoplot(roc_lda.perf)+theme_bw()
 
 sink()
 
+#################################################
+
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12]) 
+
+
+caret::confusionMatrix(table(Conf_matrix_random_forest))
+
+fourfoldplot(table(Conf_matrix_random_forest), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Random Forest Performance")
+
+pred_gen<-prediction(as.numeric(Conf_matrix_random_forest$P),as.numeric(Conf_matrix_random_forest$T))
+
+roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
+
+phi_gen<-performance(pred_gen, "phi")
+
+plot(phi_lda)
+
+autoplot(roc_gen.perf)+ggtitle("Random Forest Performance")+theme_bw()
 
 
