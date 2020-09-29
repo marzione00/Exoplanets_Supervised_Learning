@@ -48,7 +48,7 @@ Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
-set.seed(3)
+set.seed(1)
 
 #########Splitting training vs test set
 
@@ -173,23 +173,20 @@ autoplot(roc_svm_full.perf)+theme_bw()
 #########PCA+SVM
 
 
-pca.train<-Planets_dataset[Planets_dataset_train,]
-pca.test<-Planets_dataset[-Planets_dataset_train,]
-#pca.planet <- prcomp(pca.train[,2:15], center = TRUE,scale. = TRUE)
-#pca.planet.test  <-  predict(pca.planet, pca.test[,2:15])
-#pca.train[,12]<-as.factor(pca.train[,12])
-#pca.train[,15]<-as.factor(pca.train[,15])
-#pca.test[,12]<-as.factor(pca.test[,12])
-#pca.test[,15]<-as.factor(pca.test[,15])
 
-pca_mix_out<-PCAmix(pca.train[,-c(1,12,15)],pca.train[,c(12)],rename.level=TRUE)
+pca_mix_out<-PCAmix(Planets_dataset[Planets_dataset_train,-c(1,12,15)],Planets_dataset[Planets_dataset_train,c(12,15)],rename.level=TRUE)
 
 
-plot(pca_mix_out,choice="sqload",coloring.var = TRUE,main="All variables",posleg="topright")
-
-FAMD_planets.out<-FAMD(pca.train[,-c(1,15)])
 
 
+
+
+pca_mix.planet.test  <-  predict(pca_mix_out, Planets_dataset[-Planets_dataset_train,-c(1,12,15)],Planets_dataset[-Planets_dataset_train,c(12,15)])
+
+
+plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
+
+FAMD_planets.out<-FAMD(Planets_dataset[,-c(1,15)])
 
 plot(FAMD_planets.out)
 fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib")
@@ -199,28 +196,23 @@ quali.var <- get_famd_var(FAMD_planets.out, "quali.var")
 fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib")
 
 
-pca_mix.planet.test  <-  predict(pca_mix_out, pca.test[,-c(1,12,15)],pca.test[,c(12,15)])
-
-
 fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black" ) +theme_bw()
 
 
-
-pca_mix_out<-data.frame(pca_mix_out[["ind"]][["coord"]])
-
-
-train_mix<-pca_mix_out[1:2]
+train_mix<-data.frame(pca_mix_out[["ind"]][["coord"]])
+train_mix<-train_mix[1:2]
 
 
-train_mix["H"]<-pca.train[,12]
+train_mix["H"]<-Planets_dataset[Planets_dataset_train,12]
 
-tune_svm_mix.out=tune(svm ,H~.,data=train_mix, kernel="linear", ranges =list(cost=c(seq(0.009, 1, by = 0.001))))
+
+#tune_svm_mix.out=tune(svm ,H~.,data=train_mix, kernel="linear", ranges =list(cost=c(seq(0.01, 2, by = 0.01))))
 
 print(tune_svm_mix.out)
 plot(tune_svm_mix.out,type="contour",mar = c(2, 1, 1, 2))
 
 
-svm.planet_mix <- ksvm(H~.,data=train_mix,type = 'C-svc', kernel="vanilladot",C=0.1)
+svm.planet_mix <- ksvm(H~.,data=train_mix,type = 'C-svc', kernel="vanilladot",C=0.13)
 
 
 plot(svm.planet_mix,data=train_mix)
@@ -235,7 +227,7 @@ colnames(svm.predict_mix)[1]<-"H"
 
 
 
-svm.predict_mix["T"]<-as.factor(pca.test[,12])
+svm.predict_mix["T"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
 
 
 svm_fin_mix<-data.frame(svm.predict_mix,stringsAsFactors = TRUE)
