@@ -33,6 +33,7 @@ library(PCAmixdata)
 library(ggplotify)
 library(FactoMineR)
 library(plotly)
+library(klaR)
 
 
 l <- makeCluster(8, type='PSOCK')
@@ -257,6 +258,13 @@ autoplot(roc_svm.perf)+theme_bw()
 
 qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
 
+print(qda.planet)
+#X11(width=60, height=60)
+peppo<-partimat(P_H~S_T+P_D+P_PN+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,],method="qda",nplots.vert=4
+)
+
+plot(qda.planet,dimen = 1, type = "b")
+
 #partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
 
 #plot(qda.planet,P_H~S_L)
@@ -270,7 +278,7 @@ qda.prob<-data.frame(predict(qda.planet,Planets_dataset[-Planets_dataset_train,]
 qda.prob<-qda.prob["class"]
 
 qda_fin<-data.frame(qda.prob,stringsAsFactors = TRUE)
-qda_fin["Test"]<-as.factor(pca.test[,12])
+qda_fin["Test"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
 
 colnames(qda_fin)<-c("Predict","Test")
 
@@ -287,6 +295,10 @@ phi_qda<-performance(pred_qda, "phi")
 plot(phi_qda)
 
 autoplot(roc_qda.perf)+theme_bw()
+
+
+
+partimat(P_H ~ P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M , data = Planets_dataset_train, method = "qda")
 
 
 #########LDA
@@ -330,9 +342,13 @@ pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12]) 
 
 
-caret::confusionMatrix(Conf_matrix_SVM)
 
-fourfoldplot(table(Conf_matrix_SVM), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM Performance")
+
+
+
+caret::confusionMatrix(Conf_matrix_SVM_PCA)
+
+fourfoldplot(table(Conf_matrix_SVM_PCA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM Performance")
 
 pred_gen<-prediction(as.numeric(Conf_matrix_SVM$P),as.numeric(Conf_matrix_SVM$T))
 
@@ -342,6 +358,6 @@ phi_gen<-performance(pred_gen, "phi")
 
 plot(phi_lda)
 
-autoplot(roc_gen.perf)+ggtitle("Random Forest Performance")+theme_bw()
+autoplot(roc_gen.perf)+ggtitle("Conf_matrix_SVM Performance")+theme_bw()
 
 
