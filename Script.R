@@ -49,7 +49,7 @@ Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
-set.seed(9)
+set.seed(2)
 
 #########Splitting training vs test set
 
@@ -297,12 +297,16 @@ autoplot(roc_qda.perf)+theme_bw()
 
 
 
-partimat(P_H ~ P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M , data = Planets_dataset_train, method = "qda")
+
 
 
 #########LDA
 
-lda.planet<- lda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data=Planets_dataset, subset=Planets_dataset_train)
+lda.planet<- lda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
+
+#X11(width=60, height=60)
+#partimat(P_H~S_T+S_L+P_T_E,data=Planets_dataset[Planets_dataset_train,],method="lda",nplots.vert=4)
+
 
 plot(lda.planet)
 
@@ -315,13 +319,13 @@ lda.prob<-data.frame(predict(lda.planet,Planets_dataset[-Planets_dataset_train,]
 lda.prob<-lda.prob["class"]
 
 lda_fin<-data.frame(lda.prob,stringsAsFactors = TRUE)
-lda_fin["Test"]<-as.factor(pca.test[,12])
+lda_fin["Test"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
 
 colnames(lda_fin)<-c("Predict","Test")
 
 caret::confusionMatrix(table(lda_fin))
 
-fourfoldplot(table(lda_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "QDA")
+fourfoldplot(table(lda_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA")
 
 pred_lda<-prediction(as.numeric(lda_fin$Predict),as.numeric(lda_fin$Test))
 
@@ -345,11 +349,11 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-caret::confusionMatrix(Conf_matrix_SVM_PCA)
+caret::confusionMatrix(table(Conf_matrix_QDA))
 
-fourfoldplot(table(Conf_matrix_SVM_PCA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM Performance")
+fourfoldplot(table(Conf_matrix_QDA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "QDA Performance")
 
-pred_gen<-prediction(as.numeric(Conf_matrix_SVM$P),as.numeric(Conf_matrix_SVM$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_QDA$P),as.numeric(Conf_matrix_QDA$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 
@@ -357,6 +361,6 @@ phi_gen<-performance(pred_gen, "phi")
 
 plot(phi_lda)
 
-autoplot(roc_gen.perf)+ggtitle("Conf_matrix_SVM Performance")+theme_bw()
+autoplot(roc_gen.perf)+ggtitle("Conf_matrix_QDA Performance")+theme_bw()
 
 
