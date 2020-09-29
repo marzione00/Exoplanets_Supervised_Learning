@@ -48,7 +48,7 @@ Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
-set.seed(1)
+set.seed(4)
 
 #########Splitting training vs test set
 
@@ -186,17 +186,17 @@ pca_mix.planet.test  <-  predict(pca_mix_out, Planets_dataset[-Planets_dataset_t
 
 plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
 
-FAMD_planets.out<-FAMD(Planets_dataset[,-c(1,15)])
+#FAMD_planets.out<-FAMD(Planets_dataset[,-c(1,15)])
 
-plot(FAMD_planets.out)
-fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib")
+#plot(FAMD_planets.out)
+#fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib")
 
 quali.var <- get_famd_var(FAMD_planets.out, "quali.var")
 
-fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib")
+#fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib")
 
 
-fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black" ) +theme_bw()
+#fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black" ) +theme_bw()
 
 
 train_mix<-data.frame(pca_mix_out[["ind"]][["coord"]])
