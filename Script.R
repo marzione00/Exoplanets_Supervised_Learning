@@ -49,7 +49,7 @@ Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
-set.seed(2)
+set.seed(8)
 
 #########Splitting training vs test set
 
@@ -349,11 +349,11 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-caret::confusionMatrix(table(Conf_matrix_QDA))
+caret::confusionMatrix(table(Conf_matrix_LDA))
 
-fourfoldplot(table(Conf_matrix_QDA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "QDA Performance")
+fourfoldplot(table(Conf_matrix_LDA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
 
-pred_gen<-prediction(as.numeric(Conf_matrix_QDA$P),as.numeric(Conf_matrix_QDA$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_LDA$P),as.numeric(Conf_matrix_LDA$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 
@@ -361,6 +361,6 @@ phi_gen<-performance(pred_gen, "phi")
 
 plot(phi_lda)
 
-autoplot(roc_gen.perf)+ggtitle("Conf_matrix_QDA Performance")+theme_bw()
+autoplot(roc_gen.perf)+ggtitle("Conf_matrix_LDA Performance")+theme_bw()
 
 
