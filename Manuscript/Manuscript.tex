@@ -32,10 +32,12 @@ BCOR5mm, % Binding correction
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{afterpage}
 \usepackage{titlepic}
 \usepackage{epigraph}
 \usepackage{mathcomp}
 \usepackage{textcomp}
+\usepackage{placeins}
 \usepackage{mathtools}
 \usepackage[LGR,T1]{fontenc}
 \usepackage{amsmath}
@@ -385,16 +387,34 @@ In this case, differently with respect to the linear analysis, a covariance matr
 \end{equation}
 where in this case the dependence from $x$ is quadratic. Since QDA has a covariance matrix for each class, it requires a larger parameter estimation, thus a larger dataset is required for it with respect to the LDA. On the other side the assumption of common covariance matrix expose the LDA to the bias error.
 
+
+
 \section{Results and discussion}
 
-The first approach that was considered is the classification decision tree: as we can see from Fig \ref{DecisionTree} the main discriminant is the stellar luminosity: this feature discriminate the largest part of the habitable planet from the non-habitable. The nodes $4$, $9$ and $19$ discriminates deeply the habitability on the basis of stellar temperature planet temperature and its main distance from the host star. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation, is reported in Fig \ref{Decision_tree_performances}
+The first approach that was considered is the classification decision tree: as we can see from Fig \ref{DecisionTree} the main discriminant is the stellar luminosity: this feature discriminate the largest part of the habitable planet from the non-habitable. The nodes $4$, $9$ and $19$ discriminates deeply the habitability on the basis of stellar temperature planet temperature and its main distance from the host star. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}
 
 
-  
+
+
+\clearpage
+
+\begin{table}[]
+\caption{Performances of decision tree algorithm for the exoplanets habitability as evaluated by the accuracy, the no-information rate (NIR), and the $\phi$ factor.}
+\begin{center}
+\begin{tabular}{l|l}
+\multicolumn{1}{c|}{Feature} & Value \\ \hline
+\multicolumn{1}{c|}{Accuracy} & 0.978 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.901 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.874 \\ 
+\label{DecisionTree_perf_tab}
+\end{tabular}
+\end{center}
+\end{table}
+
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=1\textwidth]{Pic/DecisionTree.pdf}
+\includegraphics[width=0.8\textwidth]{Pic/DecisionTree.pdf}
 \caption{The classification of exoplanets habitability obtained by the decision tree algorithm (1 stands for habitable while 0 not habitable). The highest node $1$ involves the Stellar Luminosity (S\_L), then follows the nodes $2$ and $4$ that involve the stellar temperature (S\_T), and finally the $9$ and $19$ that involve the planet temperature equilibrium (P\_T\_E) and the mean planet distance (P\_D). The units of measure are reported in the table \ref{features_table}. The highest number in each boxc refers to the output of the classifier give the condition reported on his bottom, the two number in the middle the percentages of the splitting and the last number the overall percentage of the planes classified by the node. Note that, since only boxes for which more than 5 items were considered, the overall sum is lower than $100 \%$}
 \label{DecisionTree}
 \end{center}
@@ -403,12 +423,12 @@ The first approach that was considered is the classification decision tree: as w
 
 \begin{figure}[htp]
   \centering
-\label{Decision_tree_performances}
-
 \subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_CV.png}}\\
 \subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_ROC.png}}
 \caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. An predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0}
+\label{Decision_tree_performances}
 \end{figure}
+
 
 
 \clearpage
