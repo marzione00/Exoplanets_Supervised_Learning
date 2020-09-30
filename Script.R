@@ -71,7 +71,7 @@ heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c
 
 
 
-#tune_dec.out=tune(rpart ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data= Planets_dataset[Planets_dataset_train,], ranges =list(minsplit=c(seq(1, 50, by = 1))))
+#tune_dec.out=tune.rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,], minsplit=seq(1,20,1))
 
 #print(tune_dec.out)
 #plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
@@ -349,17 +349,17 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-caret::confusionMatrix(table(Conf_matrix_LDA))
+caret::confusionMatrix(table(Conf_matrix_dec_tree))
 
-fourfoldplot(table(Conf_matrix_LDA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
+fourfoldplot(table(Conf_matrix_dec_tree), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
 
-pred_gen<-prediction(as.numeric(Conf_matrix_LDA$P),as.numeric(Conf_matrix_LDA$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_dec_tree$P),as.numeric(Conf_matrix_dec_tree$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 
 phi_gen<-performance(pred_gen, "phi")
 
-plot(phi_lda)
+print(phi_gen)
 
 autoplot(roc_gen.perf)+ggtitle("Conf_matrix_LDA Performance")+theme_bw()
 
