@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  26 SEP 2020 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  30 SEP 2020 10:40
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1220,6 +1220,12 @@ File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
 
 LaTeX Warning: Label `Noisy_channel' multiply defined.
 
+
+LaTeX Warning: Label `Decision_Tree_FINAL_CV' multiply defined.
+
+
+LaTeX Warning: Label `sub@Decision_Tree_FINAL_CV' multiply defined.
+
 )
 \openout1 = `Manuscript.aux'.
 
@@ -1515,17 +1521,49 @@ File: Pic/Kernels_Type.png Graphic file (type png)
 <use Pic/Kernels_Type.png>
 Package pdftex.def Info: Pic/Kernels_Type.png  used on input line 355.
 (pdftex.def)             Requested size: 332.99774pt x 246.59322pt.
- [17 <./Pic/Kernels_Type.png>] [18] [19] [20
+ [17 <./Pic/Kernels_Type.png>]
+
+Package caption Warning: \label without proper reference on input line 406.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `Decision_tree_performances' on page 18 undefined on i
+nput line 390.
+
+[18]
+<Pic/DecisionTree.pdf, id=322, 462.72874pt x 403.5075pt>
+File: Pic/DecisionTree.pdf Graphic file (type pdf)
+<use Pic/DecisionTree.pdf>
+Package pdftex.def Info: Pic/DecisionTree.pdf  used on input line 397.
+(pdftex.def)             Requested size: 370.0pt x 322.65251pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Pic/Decision_Tree_FINAL_CV.png, id=325, 557.08125pt x 536.75531pt>
+File: Pic/Decision_Tree_FINAL_CV.png Graphic file (type png)
+<use Pic/Decision_Tree_FINAL_CV.png>
+Package pdftex.def Info: Pic/Decision_Tree_FINAL_CV.png  used on input line 407
+.
+(pdftex.def)             Requested size: 222.00226pt x 213.89568pt.
+<Pic/Decision_Tree_FINAL_ROC.png, id=326, 588.69937pt x 619.56468pt>
+File: Pic/Decision_Tree_FINAL_ROC.png Graphic file (type png)
+<use Pic/Decision_Tree_FINAL_ROC.png>
+Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.png  used on input line 40
+8.
+(pdftex.def)             Requested size: 222.00226pt x 233.6408pt.
+[19] [20 <./Pic/DecisionTree.pdf>] [21 <./Pic/Decision_Tree_FINAL_CV.png> <./Pi
+c/Decision_Tree_FINAL_ROC.png>] [22
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 39
-7.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 42
+0.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 397.
+(Font)              scaled to size 9.30756pt on input line 420.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1544,7 +1582,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--57
  . html #
  []
 
-[21
+[23
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
@@ -1581,7 +1619,7 @@ Overfull \hbox (5.64812pt too wide) in paragraph at lines 123--124
 anets-[]catalog /
  []
 
-[22]
+[24]
 Overfull \hbox (5.64812pt too wide) in paragraph at lines 151--152
 [][][]$\T1/fvm/m/n/12 http : / / phl . upr . edu / projects / habitable-[]exopl
 anets-[]catalog /
@@ -1598,7 +1636,7 @@ Overfull \hbox (16.41257pt too wide) in paragraph at lines 154--155
 entation$[][]\T1/pplj/m/n/12 . 
  []
 
-[23]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 229--230
 [][][]$\T1/fvm/m/n/12 https : / / builtin . com / data-[]science /
  []
@@ -1619,12 +1657,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--244
 [][][]$\T1/fvm/m/n/12 https : / / www . r-[]bloggers . com / 2019 / 10 /
  []
 
-) [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
+) [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
  (Manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 417.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1632,16 +1670,19 @@ Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 417.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
  ) 
 Here is how much of TeX's memory you used:
- 20975 strings out of 481212
- 375806 string characters out of 2913848
+ 21013 strings out of 481212
+ 376730 string characters out of 2913848
  822028 words of memory out of 3000000
- 35907 multiletter control sequences out of 15000+200000
- 688257 words of font info for 248 fonts, out of 3000000 for 9000
+ 35938 multiletter control sequences out of 15000+200000
+ 694517 words of font info for 250 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  67i,23n,97p,10634b,1754s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\Marzio\Ap
@@ -1666,9 +1707,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files
 nts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on Manuscript.pdf (24 pages, 5448687 bytes).
+Output written on Manuscript.pdf (26 pages, 5515783 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
- 48246 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 539 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
+ 49285 words of extra memory for PDF output out of 51595 (max. 10000000)
 
