@@ -392,7 +392,7 @@ where in this case the dependence from $x$ is quadratic. Since QDA has a covaria
 \section{Results and discussion}
 
 The first approach that was considered is the classification decision tree: as we can see from Fig \ref{DecisionTree} the main discriminant is the stellar luminosity: this feature discriminate,as one expects, the largest part of the habitable planet from the non-habitable. The nodes $4$, $9$ and $19$ discriminates deeply the habitability on the basis of stellar temperature planet temperature and its main distance from the host star. Note that the mean distance (P\_D) has a less importance: this can be ascribed to the fact that the habitability was extended beyond the "earth zone" by considering habitable planets that, with a particular atmosphere as shown in fig \ref{Planets_habitability_Seager}, have the correct surface temperature for liquid water. 
-\footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.}. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}
+\footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.}. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}. Next the random forest approach was considered.First consider the plot in Fig. \ref{Random_forest_trees}: at first when the number of trees is moved is increased the error for
 
 
 
@@ -428,6 +428,14 @@ The first approach that was considered is the classification decision tree: as w
 \subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_ROC.png}}
 \caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. An predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0}
 \label{Decision_tree_performances}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Pic/Random_forest_trees.pdf}
+\caption{}
+\label{Random_forest_trees}
+\end{center}
 \end{figure}
 
 
