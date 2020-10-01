@@ -199,7 +199,9 @@ perf_svm<-data.frame(tune_svm_full.out[["performances"]])
 
 ggplot(perf_svm,aes(x=cost,y=degree, z=error))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 
-plot_ly(x=perf_svm$degree, y=perf_svm$cost, z=perf_svm$error, type="scatter3d", mode="markers")
+X11(width=60, height=60)
+plot_ly(perf_svm[,1:3],x = ~cost, y = ~degree, z = ~error, type="scatter3d", mode="markers") 
+
 
 svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=5,degree=2,)
 
@@ -406,11 +408,11 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-caret::confusionMatrix(table(Conf_matrix_dec_tree))
+caret::confusionMatrix(table(Conf_matrix_SVM))
 
-fourfoldplot(table(Conf_matrix_dec_tree), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
+fourfoldplot(table(Conf_matrix_SVM), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
 
-pred_gen<-prediction(as.numeric(Conf_matrix_dec_tree$P),as.numeric(Conf_matrix_dec_tree$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_SVM$P),as.numeric(Conf_matrix_SVM$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 

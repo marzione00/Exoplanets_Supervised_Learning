@@ -392,7 +392,7 @@ where in this case the dependence from $x$ is quadratic. Since QDA has a covaria
 \section{Results and discussion}
 
 The first approach that was considered is the classification decision tree. First the complexity parameter (CP) was checked (a 10-fold cross-validation on the training set \footnote{In this work, for all the approaches undertaken, the training ensemble consist in a set of 350 exoplanets while the test one is composed by 150 items} was undertaken): as can be seen from Fig \ref{Decision_tree_performances} the default parameter $0.01$ can be used. Then the decision tree algorithm was applied to the dataset: as it can be seen from Fig \ref{DecisionTree} the main discriminant is the stellar luminosity: this feature discriminate, as one expects, the largest part of the habitable planet from the non-habitable. The nodes $2$, $4$, $9$, $16$, $33$ and $67$ discriminates deeply the habitability on the basis of stellar temperature ($S_T$), the planet distance from the host star ($P\_D$ mean distance and $P\_PN$ periastron) and the planet temperature equilibrium temperature ($P\_T\_E$). Note that the mean distance and the periastron has a less importance with respect to the stellar features: this can be ascribed to the fact that the habitability was extended beyond the "earth zone" by considering habitable planets that, with a particular atmosphere as shown in fig \ref{Planets_habitability_Seager}, have the correct surface temperature for liquid water
-\footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.}. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation \footnote{For this procedure the test set and the validation sets where reshuffled 10 times by modifying the numerical seed by which the exoplanets are assigned to the training or to the test set. The proportion 150/500 for test and training sets was keep constant}, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}. Next the random forest approach was undertaken. As shown in Fig. \ref{Random_forest_tree_perfs} the main parameters for this algorithm were previously checked. Its results are reported in Fig \ref{Random_forest_tree_results}: as one can point out the importance of the variables is slightly changed with respect to the decision tree. Such changes reflects on the performances of the model when the overall CV (as described before) is performed: as one can note from Fig the performances are slightly improved with respect to the ones reported in Fig \ref{Decision_tree_performances}, in particular the ratio of the false positive is reduced with a percentage of 40 $\%$. Such improvement is captured by the accuracy and $\phi$ factors reported in table \ref{Random Forest_perf_tab}
+\footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.}. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation \footnote{For this procedure the test set and the validation sets where reshuffled 10 times by modifying the numerical seed by which the exoplanets are assigned to the training or to the test set. The proportion 150/500 for test and training sets was keep constant}, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}. Next the random forest approach was undertaken. As shown in Fig. \ref{Random_forest_tree_perfs} the main parameters for this algorithm were previously checked. Its results are reported in Fig \ref{Random_forest_tree_results}: as one can point out the importance of the variables is slightly changed with respect to the decision tree. Such changes reflects on the performances of the model when the overall CV (as described before) is performed: as one can note from Fig the performances are slightly improved with respect to the ones reported in Fig \ref{Decision_tree_performances}, in particular the ratio of the false positive is reduced with a percentage of 40 $\%$. Such improvement is captured by the accuracy and $\phi$ factors reported in table \ref{Random Forest_perf_tab}. Next the SVM classification algorithm was considered: as the previous cases the most important parameters , in this case the budget and the polynomial degree , were tuned (see Fig. \ref{SVM_tuning}). The performances of this approach are reported in the Fig \ref{SVM_results} and in the table \ref{SVM_perf_tab}: these seems to be worst with respect to the decision tree and random forest. Such behaviour can be ascribed to the large flexibility of the algorithm that produce a slight overfitting. In order to improve the performance of SVM the dimensionality reduction with PCA was considered: this, as it will be show, allows not only to improve the model but also to plot in to a 2D graph the support vector and the decision boundary. 
 
 
 
@@ -421,6 +421,19 @@ The first approach that was considered is the classification decision tree. Firs
 \multicolumn{1}{c|}{NIR} & 0.899 \\ \hline
 \multicolumn{1}{c|}{$\phi$} & 0.894 \\ 
 \label{Random Forest_perf_tab}
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[]
+\caption{Performances of SVM for the exoplanets habitability as evaluated by the accuracy, the no-information rate (NIR), and the $\phi$ factor.}
+\begin{center}
+\begin{tabular}{l|l}
+\multicolumn{1}{c|}{Feature} & Value \\ \hline
+\multicolumn{1}{c|}{Accuracy} & 0.965 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.901 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.794 \\ 
+\label{SVM_perf_tab}
 \end{tabular}
 \end{center}
 \end{table}
@@ -478,6 +491,24 @@ The first approach that was considered is the classification decision tree. Firs
 \caption{The performances of the random forest algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. An predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
 \label{Random_forest_tree_results}
 \end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Pic/SVM_tuning.png}
+\caption{The tuning of the budget parameter and the polynomial degree for the SVM classification algorithm. The selected point represent the parameters chosen for this work}
+\label{SVM_tuning}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_FINAL_CV.png}}\\
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_FINAL_ROC.png}}
+\caption{The performances of the SVM on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. An predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
+\label{SVM_results}
+\end{figure}
+
+
 
 
 
