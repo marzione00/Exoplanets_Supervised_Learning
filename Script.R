@@ -44,7 +44,7 @@ sink('exoplanet_log_output.txt')
 #########Loading data
 
 
-Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"))
+Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"),stringsAsFactors = FALSE)
 
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
@@ -73,10 +73,42 @@ heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c
 
 #tune_dec.out=tune.rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,], minsplit=seq(1,20,1))
 
-#print(tune_dec.out)
-#plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
+print(tune_dec.out)
+plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
+levels(Planets_dataset$P_H) <- c("False","True")
+tuneGrid <- expand.grid(cp = seq(0, 1, 0.001))
+fitControl <- trainControl(method = 'repeatedcv',
+                           number = 10,
+                           classProbs = TRUE,
+                           summaryFunction = twoClassSummary)
+cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
 
-tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset,method="class", subset=Planets_dataset_train,minsplit = 5)
+
+plot(caret::varImp(cp_vs_ROC))
+
+
+
+#cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
+#ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+
+
+
+tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,method="class",data=Planets_dataset, subset=Planets_dataset_train,minsplit = 5)
+
+
+var_imp_dec_tree<-data.frame(caret::varImp(tree.planet) %>% 
+  rownames_to_column() %>% 
+  arrange(desc(Overall)) %>% 
+  slice(1:10))
+
+
+ggplot(var_imp_dec_tree, aes(y=reorder(rowname,Overall),x=Overall,color="red")) + 
+  geom_point() +
+  geom_segment(aes(x=0,xend=Overall,yend=rowname)) +
+  scale_color_discrete(name="Variable Group") +
+  ylab("Overall importance") +
+  xlab("Variable Name") + guides(color = FALSE, size = FALSE)
+
 
 fancyRpartPlot(tree.planet,sub = "Planets Habitability", palettes = "OrRd")
 
@@ -90,6 +122,8 @@ colnames(tree.predict)<-c("Predict","Test")
 
 
 caret::confusionMatrix(table(tree.predict))
+
+plot(caret::varImp(tree.planet,surrogates = FALSE, competes = TRUE))
 
 fourfoldplot(table(tree.predict), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Decision Tree")
 
@@ -109,17 +143,14 @@ rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "clas
 explain_forest(rfor.planet)
 
 tree_plot<-data.frame(rfor.planet[["err.rate"]])
-tree_plot[4]<-seq(1:500)
+tree_plot[4]<-seq(1:1000)
 colnames(tree_plot)<-c("OOB","Not_habitable","Habitable","Trees")
 ggplot(tree_plot,aes(x=V4, y=value,color = variable))+geom_line(aes(y=X0,col="OOB"))+geom_point(aes(y=X0,col="OOB"))+geom_line(aes(y=X0,col="X0"))+geom_point(aes(y=X0,col="X0"))+theme_bw()
 
 
 ggplot() + geom_line(data = tree_plot, aes(x = Trees, y = OOB,color = "OOB") ) + 
   geom_line(data = tree_plot, aes(x = Trees, y = Not_habitable,color = "Not H") ) +
-  geom_line(data = tree_plot, aes(x = Trees, y = Habitable,color = "H") )+labs(color = "Legend")+theme()
-
-xlab('Dates') +
-  ylab('percent.change')
+  geom_line(data = tree_plot, aes(x = Trees, y = Habitable,color = "H") )+labs(color = "Legend")+theme() + xlab('Trees') + ylab('Error')+theme_bw()
 
 
 plot(rfor.planet)
