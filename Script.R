@@ -140,7 +140,20 @@ RF_perf_out<-data.frame(RF_perf_out)
 ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=3)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
-explain_forest(rfor.planet)
+#explain_forest(rfor.planet)
+
+
+var_imp_dec_tree<-data.frame(varImp(rfor.planet))
+colnames(var_imp_dec_tree)<-c("Variable Name","Overall importance")
+var_imp_dec_tree[,1]<-rownames(var_imp_dec_tree)
+rownames(var_imp_dec_tree)<-seq(1:13)
+
+ggplot(var_imp_dec_tree, aes(y=reorder(rowname,Overall),x=Overall,color="red")) + 
+  geom_point() +
+  geom_segment(aes(x=0,xend=Overall,yend=rowname)) +
+  scale_color_discrete(name="Variable Group") +
+  xlab("Overall importance") +
+  ylab("Variable Name") + guides(color = FALSE, size = FALSE) + theme_bw()
 
 tree_plot<-data.frame(rfor.planet[["err.rate"]])
 tree_plot[4]<-seq(1:1000)

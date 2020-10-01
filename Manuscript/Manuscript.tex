@@ -392,7 +392,7 @@ where in this case the dependence from $x$ is quadratic. Since QDA has a covaria
 \section{Results and discussion}
 
 The first approach that was considered is the classification decision tree. First the complexity parameter (CP) was checked (a 10-fold cross-validation was undertaken): as can be seen from Fig \ref{Decision_tree_performances} the default parameter $0.01$ can be used. Then the decision tree algorithm was applied to the dataset: as it can be seen from Fig \ref{DecisionTree} the main discriminant is the stellar luminosity: this feature discriminate, as one expects, the largest part of the habitable planet from the non-habitable. The nodes $2$, $4$, $9$, $16$, $33$ and $67$ discriminates deeply the habitability on the basis of stellar temperature ($S_T$), the planet distance from the host star ($P\_D$ mean distance and $P\_PN$ periastron) and the planet temperature equilibrium temperature ($P\_T\_E$). Note that the mean distance and the periastron has a less importance with respect to the stellar features: this can be ascribed to the fact that the habitability was extended beyond the "earth zone" by considering habitable planets that, with a particular atmosphere as shown in fig \ref{Planets_habitability_Seager}, have the correct surface temperature for liquid water
-\footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.}. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}. Next the random forest approach was undertaken. As shown in Fig. \ref{Random_forest_tree_perfs} the main parameters for this algorithm were previously checked. Its results are reported in Fig 
+\footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.}. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}. Next the random forest approach was undertaken. As shown in Fig. \ref{Random_forest_tree_perfs} the main parameters for this algorithm were previously checked. Its results are reported in Fig \ref{Random_forest_tree_results}
 
 
 
@@ -417,7 +417,7 @@ The first approach that was considered is the classification decision tree. Firs
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{Pic/cp_vs_ROC.pdf}
-\caption{Perfomance of the decision tree as the cp parameter grows evaluated with the ROC metric. }
+\caption{Perfomance of the decision tree as the complexity parameter (CP) is modified evaluated via the ROC metric. }
 \label{cp_vs_ROC}
 \end{center}
 \end{figure}
@@ -446,9 +446,16 @@ The first approach that was considered is the classification decision tree. Firs
   \centering
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/Random_forest_trees.pdf}}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/mtry_Random_forest.pdf}}
-\caption{The performances of the random forest algorithm: as the ensemble grew (panel a) accompanied by the optimization of the number of variables available (mtry). For the calculations presented in this work an ensemble of 500 trees (the default one) was considered while the mytry parameter was set equal to 3.}
+\caption{The performances of the random forest algorithm as the main parameters are modified: as the ensemble grew (panel a) accompanied by the optimization of the number of variables available (mtry). For the calculations presented in this work an ensemble of 500 trees (the default one) was considered while the mytry parameter was set equal to 3.}
 \label{Random_forest_tree_perfs}
+\end{figure}
 
+\begin{figure}[h]
+  \centering
+\subfloat[]{\includegraphics[width=0.8\textwidth]{Pic/Proximity_Random_forest.pdf}}\\
+\subfloat[]{\includegraphics[width=0.8\textwidth]{Pic/Random_forest_importance.pdf}}
+\caption{Main results achieved with the random forest algorithm: on the left panel (a) the random Forest proximity scores is reported while on the left panel (b) the overall importance of each variable is plotted. Note that in this case the hierarchy importance of the variables is slightly changed with respect to the Fig \ref{DecisionTree} }
+\label{Random_forest_tree_results}
 \end{figure}
 
 
