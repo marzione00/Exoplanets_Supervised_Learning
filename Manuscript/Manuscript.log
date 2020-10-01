@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  1 OCT 2020 10:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  1 OCT 2020 11:12
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1535,17 +1535,17 @@ Package pdftex.def Info: Pic/Kernels_Type.png  used on input line 357.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 402.
 
-<Pic/cp_vs_ROC.pdf, id=334, 462.72874pt x 403.5075pt>
+<Pic/cp_vs_ROC.pdf, id=335, 462.72874pt x 403.5075pt>
 File: Pic/cp_vs_ROC.pdf Graphic file (type pdf)
 <use Pic/cp_vs_ROC.pdf>
 Package pdftex.def Info: Pic/cp_vs_ROC.pdf  used on input line 419.
 (pdftex.def)             Requested size: 296.00113pt x 258.12077pt.
-<Pic/DecisionTree.pdf, id=335, 462.72874pt x 403.5075pt>
+<Pic/DecisionTree.pdf, id=336, 462.72874pt x 403.5075pt>
 File: Pic/DecisionTree.pdf Graphic file (type pdf)
 <use Pic/DecisionTree.pdf>
 Package pdftex.def Info: Pic/DecisionTree.pdf  used on input line 429.
 (pdftex.def)             Requested size: 296.00113pt x 258.12077pt.
-<Pic/Var_imp_dec_tree.pdf, id=336, 462.72874pt x 403.5075pt>
+<Pic/Var_imp_dec_tree.pdf, id=337, 462.72874pt x 403.5075pt>
 File: Pic/Var_imp_dec_tree.pdf Graphic file (type pdf)
 <use Pic/Var_imp_dec_tree.pdf>
 Package pdftex.def Info: Pic/Var_imp_dec_tree.pdf  used on input line 430.
@@ -1556,24 +1556,24 @@ LaTeX Warning: Float too large for page by 40.02206pt on input line 434.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Decision_Tree_FINAL_CV.png, id=339, 557.08125pt x 536.75531pt>
+<Pic/Decision_Tree_FINAL_CV.png, id=340, 557.08125pt x 536.75531pt>
 File: Pic/Decision_Tree_FINAL_CV.png Graphic file (type png)
 <use Pic/Decision_Tree_FINAL_CV.png>
 Package pdftex.def Info: Pic/Decision_Tree_FINAL_CV.png  used on input line 439
 .
 (pdftex.def)             Requested size: 222.00226pt x 213.89568pt.
-<Pic/Decision_Tree_FINAL_ROC.png, id=340, 588.69937pt x 619.56468pt>
+<Pic/Decision_Tree_FINAL_ROC.png, id=341, 588.69937pt x 619.56468pt>
 File: Pic/Decision_Tree_FINAL_ROC.png Graphic file (type png)
 <use Pic/Decision_Tree_FINAL_ROC.png>
 Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.png  used on input line 44
 0.
 (pdftex.def)             Requested size: 222.00226pt x 233.6408pt.
-<Pic/Random_forest_trees.pdf, id=341, 462.72874pt x 403.5075pt>
+<Pic/Random_forest_trees.pdf, id=342, 462.72874pt x 403.5075pt>
 File: Pic/Random_forest_trees.pdf Graphic file (type pdf)
 <use Pic/Random_forest_trees.pdf>
 Package pdftex.def Info: Pic/Random_forest_trees.pdf  used on input line 447.
 (pdftex.def)             Requested size: 185.0pt x 161.32625pt.
-<Pic/mtry_Random_forest.pdf, id=342, 462.72874pt x 403.5075pt>
+<Pic/mtry_Random_forest.pdf, id=343, 462.72874pt x 403.5075pt>
 File: Pic/mtry_Random_forest.pdf Graphic file (type pdf)
 <use Pic/mtry_Random_forest.pdf>
 Package pdftex.def Info: Pic/mtry_Random_forest.pdf  used on input line 448.
@@ -1708,8 +1708,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
  ) 
 Here is how much of TeX's memory you used:
  21089 strings out of 481212
- 378348 string characters out of 2913848
- 822598 words of memory out of 3000000
+ 378353 string characters out of 2913848
+ 823598 words of memory out of 3000000
  35998 multiletter control sequences out of 15000+200000
  694517 words of font info for 250 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -1736,9 +1736,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files
 nts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on Manuscript.pdf (28 pages, 5600513 bytes).
+Output written on Manuscript.pdf (28 pages, 5601810 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
+ 578 PDF objects out of 1000 (max. 8388607)
  138 named destinations out of 1000 (max. 500000)
  49305 words of extra memory for PDF output out of 51595 (max. 10000000)
 
