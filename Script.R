@@ -45,23 +45,26 @@ sink('exoplanet_log_output.txt')
 #########Loading data and randomly extracting the no-habitable planets
 
 
-phl_exoplanet_catalog_RENAMED <- data.frame(read_excel("phl_exoplanet_catalog_RENAMED.xlsx"),stringsAsFactors = FALSE)
-Planet_not_habitable_l<-subset(phl_exoplanet_catalog_RENAMED,P_H==0)
-Planet_habitable<-subset(phl_exoplanet_catalog_RENAMED,P_H==1)
+#phl_exoplanet_catalog_RENAMED <- data.frame(read_excel("phl_exoplanet_catalog_RENAMED.xlsx"),stringsAsFactors = FALSE)
+#Planet_not_habitable_l<-subset(phl_exoplanet_catalog_RENAMED,P_H==0)
+#Planet_habitable<-subset(phl_exoplanet_catalog_RENAMED,P_H==1)
 
 
-Planet_dataset_no_habit<- sample(3657,445)
+#Planet_dataset_no_habit<- sample(3657,445)
 
-phl_exoplanet_not_habitable<-phl_exoplanet_catalog_RENAMED[Planet_dataset_no_habit,]
+#phl_exoplanet_not_habitable<-phl_exoplanet_catalog_RENAMED[Planet_dataset_no_habit,]
 
-Planets_dataset<-rbind(Planet_habitable,phl_exoplanet_not_habitable)
+#Planets_dataset<-rbind(Planet_habitable,phl_exoplanet_not_habitable)
 
+#save(Planets_dataset,file="Planets_dataset.rda")
+
+load("Planets_dataset.rda")
 
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
 
-set.seed(1)
+set.seed(4)
 
 #########Splitting training vs test set
 
@@ -89,19 +92,19 @@ levels(Planets_dataset$P_H) <- c("False","True")
 #print(tune_dec.out)
 #plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-tuneGrid <- expand.grid(cp = seq(0, 1, 0.001))
-fitControl <- trainControl(method = 'repeatedcv',
-                           number = 10,
-                           classProbs = TRUE,
-                           summaryFunction = twoClassSummary)
-cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
+#tuneGrid <- expand.grid(cp = seq(0, 1, 0.001))
+#fitControl <- trainControl(method = 'repeatedcv',
+#                           number = 10,
+#classProbs = TRUE,
+#                           summaryFunction = twoClassSummary)
+#cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
 
 
 
 
 
-cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
-ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+#cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
+#ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 
 
 
@@ -118,7 +121,7 @@ ggplot(var_imp_dec_tree, aes(y=reorder(rowname,Overall),x=Overall,color="red")) 
   geom_segment(aes(x=0,xend=Overall,yend=rowname)) +
   scale_color_discrete(name="Variable Group") +
   ylab("Overall importance") +
-  xlab("Variable Name") + guides(color = FALSE, size = FALSE)
+  xlab("Variable Name") + guides(color = FALSE, size = FALSE) + theme_bw()
 
 
 
@@ -151,30 +154,33 @@ autoplot(roc_dec.perf)+theme_bw()
 
 #########Random Forest
 
-RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
-RF_perf_out<-data.frame(RF_perf_out)
-ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
-rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=6)
+#RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
+#RF_perf_out<-data.frame(RF_perf_out)
+#ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,ntree=500,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=3)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
-explain_forest(rfor.planet)
+#explain_forest(rfor.planet)
 
 
-var_imp_dec_tree<-data.frame(varImp(rfor.planet))
-colnames(var_imp_dec_tree)<-c("Variable Name","Overall importance")
-var_imp_dec_tree[,1]<-rownames(var_imp_dec_tree)
-rownames(var_imp_dec_tree)<-seq(1:13)
+var_imp_rforest<-data.frame(varImp(rfor.planet))
+colnames(var_imp_rforest)<-c("Variable","Overall")
+var_imp_rforest[,1]<-rownames(var_imp_rforest)
+rownames(var_imp_rforest)<-seq(1:13)
 
-ggplot(var_imp_dec_tree, aes(y=reorder(rowname,Overall),x=Overall,color="red")) + 
+ggplot(var_imp_rforest, aes(y=reorder(Variable,Overall),x=Overall,color="red")) + 
   geom_point() +
-  geom_segment(aes(x=0,xend=Overall,yend=rowname)) +
+  geom_segment(aes(x=0,xend=Overall,yend=Variable)) +
   scale_color_discrete(name="Variable Group") +
   xlab("Overall importance") +
   ylab("Variable Name") + guides(color = FALSE, size = FALSE) + theme_bw()
 
+
+plot(rfor.planet)
 tree_plot<-data.frame(rfor.planet[["err.rate"]])
 tree_plot[4]<-seq(1:1000)
 colnames(tree_plot)<-c("OOB","Not_habitable","Habitable","Trees")
-ggplot(tree_plot,aes(x=V4, y=value,color = variable))+geom_line(aes(y=X0,col="OOB"))+geom_point(aes(y=X0,col="OOB"))+geom_line(aes(y=X0,col="X0"))+geom_point(aes(y=X0,col="X0"))+theme_bw()
+
+
 
 
 ggplot() + geom_line(data = tree_plot, aes(x = Trees, y = OOB,color = "OOB") ) + 
@@ -422,13 +428,13 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_random_forest.xlsx")
 
+caret::confusionMatrix(table(Conf_matrix_dec_tree))
 
-caret::confusionMatrix(table(Conf_matrix_LDA))
+fourfoldplot(table(Conf_matrix_dec_tree), color = c("red","darkgreen"),conf.level = 0, margin = 1)
 
-fourfoldplot(table(Conf_matrix_QDA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
-
-pred_gen<-prediction(as.numeric(Conf_matrix_QDA$P),as.numeric(Conf_matrix_QDA$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_dec_tree$P),as.numeric(Conf_matrix_dec_tree$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 
@@ -436,7 +442,7 @@ phi_gen<-performance(pred_gen, "phi")
 
 print(phi_gen)
 
-autoplot(roc_gen.perf)+ggtitle("Conf_matrix_QDA Performance")+theme_bw()
+autoplot(roc_gen.perf)+theme_bw()
 
 
 #################################

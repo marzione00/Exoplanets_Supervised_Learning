@@ -418,9 +418,9 @@ Before applying the algorithm previously described, a preliminary survey via the
 \begin{center}
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{Feature} & Value \\ \hline
-\multicolumn{1}{c|}{Accuracy} & 0.978 \\ \hline
-\multicolumn{1}{c|}{NIR} & 0.901 \\ \hline
-\multicolumn{1}{c|}{$\phi$} & 0.874 \\ 
+\multicolumn{1}{c|}{Accuracy} & 0.972 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.869 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.8746\\ 
 \label{DecisionTree_perf_tab}
 \end{tabular}
 \end{center}
@@ -431,9 +431,9 @@ Before applying the algorithm previously described, a preliminary survey via the
 \begin{center}
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{Feature} & Value \\ \hline
-\multicolumn{1}{c|}{Accuracy} & 0.981 \\ \hline
-\multicolumn{1}{c|}{NIR} & 0.899 \\ \hline
-\multicolumn{1}{c|}{$\phi$} & 0.894 \\ 
+\multicolumn{1}{c|}{Accuracy} & 0.964 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.869 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.835 \\ 
 \label{Random Forest_perf_tab}
 \end{tabular}
 \end{center}
@@ -515,9 +515,9 @@ Before applying the algorithm previously described, a preliminary survey via the
 
 \begin{figure}[htp]
   \centering
-\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_CV.png}}\\
-\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_ROC.png}}
-\caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0}
+\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_CV.pdf}}\\
+\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_ROC.pdf}}
+\caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as \textit{True} while a test (T) non-habitable exoplanet is classified as \textit{False}}
 \label{Decision_tree_performances}
 \end{figure}
 

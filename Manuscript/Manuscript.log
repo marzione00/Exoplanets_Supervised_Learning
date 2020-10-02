@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  2 OCT 2020 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  2 OCT 2020 23:03
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1579,67 +1579,67 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 481.
 
-<Pic/cp_vs_ROC.pdf, id=365, 462.72874pt x 403.5075pt>
+<Pic/cp_vs_ROC.pdf, id=365, 426.59375pt x 393.47pt>
 File: Pic/cp_vs_ROC.pdf Graphic file (type pdf)
 <use Pic/cp_vs_ROC.pdf>
 Package pdftex.def Info: Pic/cp_vs_ROC.pdf  used on input line 498.
-(pdftex.def)             Requested size: 296.00113pt x 258.12077pt.
+(pdftex.def)             Requested size: 296.00113pt x 273.03157pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/DecisionTree.pdf, id=366, 462.72874pt x 403.5075pt>
+<Pic/DecisionTree.pdf, id=366, 426.59375pt x 393.47pt>
 File: Pic/DecisionTree.pdf Graphic file (type pdf)
 <use Pic/DecisionTree.pdf>
 Package pdftex.def Info: Pic/DecisionTree.pdf  used on input line 508.
-(pdftex.def)             Requested size: 296.00113pt x 258.12077pt.
-<Pic/Var_imp_dec_tree.pdf, id=367, 462.72874pt x 403.5075pt>
+(pdftex.def)             Requested size: 296.00113pt x 273.03157pt.
+<Pic/Var_imp_dec_tree.pdf, id=367, 456.70625pt x 403.5075pt>
 File: Pic/Var_imp_dec_tree.pdf Graphic file (type pdf)
 <use Pic/Var_imp_dec_tree.pdf>
 Package pdftex.def Info: Pic/Var_imp_dec_tree.pdf  used on input line 509.
-(pdftex.def)             Requested size: 296.00113pt x 258.12077pt.
+(pdftex.def)             Requested size: 296.00113pt x 261.53177pt.
 
-LaTeX Warning: Float too large for page by 40.02206pt on input line 513.
+LaTeX Warning: Float too large for page by 58.34386pt on input line 513.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Decision_Tree_FINAL_CV.png, id=370, 557.08125pt x 536.75531pt>
-File: Pic/Decision_Tree_FINAL_CV.png Graphic file (type png)
-<use Pic/Decision_Tree_FINAL_CV.png>
-Package pdftex.def Info: Pic/Decision_Tree_FINAL_CV.png  used on input line 518
+<Pic/Decision_Tree_FINAL_CV.pdf, id=370, 426.59375pt x 393.47pt>
+File: Pic/Decision_Tree_FINAL_CV.pdf Graphic file (type pdf)
+<use Pic/Decision_Tree_FINAL_CV.pdf>
+Package pdftex.def Info: Pic/Decision_Tree_FINAL_CV.pdf  used on input line 518
 .
-(pdftex.def)             Requested size: 222.00226pt x 213.89568pt.
-<Pic/Decision_Tree_FINAL_ROC.png, id=371, 588.69937pt x 619.56468pt>
-File: Pic/Decision_Tree_FINAL_ROC.png Graphic file (type png)
-<use Pic/Decision_Tree_FINAL_ROC.png>
-Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.png  used on input line 51
+(pdftex.def)             Requested size: 222.00226pt x 204.76767pt.
+<Pic/Decision_Tree_FINAL_ROC.pdf, id=371, 426.59375pt x 393.47pt>
+File: Pic/Decision_Tree_FINAL_ROC.pdf Graphic file (type pdf)
+<use Pic/Decision_Tree_FINAL_ROC.pdf>
+Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.pdf  used on input line 51
 9.
-(pdftex.def)             Requested size: 222.00226pt x 233.6408pt.
-<Pic/Random_forest_trees.pdf, id=372, 462.72874pt x 403.5075pt>
+(pdftex.def)             Requested size: 222.00226pt x 204.76767pt.
+<Pic/Random_forest_trees.pdf, id=372, 456.70625pt x 403.5075pt>
 File: Pic/Random_forest_trees.pdf Graphic file (type pdf)
 <use Pic/Random_forest_trees.pdf>
 Package pdftex.def Info: Pic/Random_forest_trees.pdf  used on input line 526.
-(pdftex.def)             Requested size: 185.0pt x 161.32625pt.
-<Pic/mtry_Random_forest.pdf, id=373, 462.72874pt x 403.5075pt>
+(pdftex.def)             Requested size: 185.0pt x 163.45042pt.
+<Pic/mtry_Random_forest.pdf, id=373, 456.70625pt x 403.5075pt>
 File: Pic/mtry_Random_forest.pdf Graphic file (type pdf)
 <use Pic/mtry_Random_forest.pdf>
 Package pdftex.def Info: Pic/mtry_Random_forest.pdf  used on input line 527.
-(pdftex.def)             Requested size: 185.0pt x 161.32625pt.
+(pdftex.def)             Requested size: 185.0pt x 163.45042pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Proximity_Random_forest.pdf, id=374, 462.72874pt x 403.5075pt>
+<Pic/Proximity_Random_forest.pdf, id=374, 456.70625pt x 403.5075pt>
 File: Pic/Proximity_Random_forest.pdf Graphic file (type pdf)
 <use Pic/Proximity_Random_forest.pdf>
 Package pdftex.def Info: Pic/Proximity_Random_forest.pdf  used on input line 53
 4.
-(pdftex.def)             Requested size: 296.00113pt x 258.12077pt.
-<Pic/Random_forest_importance.pdf, id=375, 434.62375pt x 393.47pt>
+(pdftex.def)             Requested size: 296.00113pt x 261.53177pt.
+<Pic/Random_forest_importance.pdf, id=375, 456.70625pt x 403.5075pt>
 File: Pic/Random_forest_importance.pdf Graphic file (type pdf)
 <use Pic/Random_forest_importance.pdf>
 Package pdftex.def Info: Pic/Random_forest_importance.pdf  used on input line 5
 35.
-(pdftex.def)             Requested size: 296.00113pt x 267.98833pt.
+(pdftex.def)             Requested size: 296.00113pt x 261.53177pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1727,8 +1727,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
  <./Pic/FAMD_squared_loadings.pdf> <./Pic/FAMD_quantitative_variables.pdf> <./P
 ic/FAMD_Qualitative_VAR.pdf>] [22] [23 <./Pic/cp_vs_ROC.pdf>] [24 <./Pic/Decisi
-onTree.pdf> <./Pic/Var_imp_dec_tree.pdf>] [25 <./Pic/Decision_Tree_FINAL_CV.png
-> <./Pic/Decision_Tree_FINAL_ROC.png>] [26 <./Pic/Random_forest_trees.pdf> <./P
+onTree.pdf> <./Pic/Var_imp_dec_tree.pdf>] [25 <./Pic/Decision_Tree_FINAL_CV.pdf
+> <./Pic/Decision_Tree_FINAL_ROC.pdf>] [26 <./Pic/Random_forest_trees.pdf> <./P
 ic/mtry_Random_forest.pdf>] [27 <./Pic/Proximity_Random_forest.pdf> <./Pic/Rand
 om_forest_importance.pdf>] [28 <./Pic/Random_Forest_FINAL_CV.png> <./Pic/Random
 _Forest_FINAL_ROC.png>] [29 <./Pic/SVM_tuning.png>] [30 <./Pic/SVM_FINAL_CV.png
@@ -1856,11 +1856,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 625.
  ) 
 Here is how much of TeX's memory you used:
- 21240 strings out of 481212
- 381883 string characters out of 2913848
+ 21245 strings out of 481212
+ 381997 string characters out of 2913848
  837598 words of memory out of 3000000
- 36106 multiletter control sequences out of 15000+200000
- 697242 words of font info for 254 fonts, out of 3000000 for 9000
+ 36108 multiletter control sequences out of 15000+200000
+ 699967 words of font info for 258 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  67i,23n,97p,10634b,1754s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\Marzio\Ap
@@ -1885,9 +1885,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files
 nts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on Manuscript.pdf (38 pages, 5979124 bytes).
+Output written on Manuscript.pdf (38 pages, 5962490 bytes).
 PDF statistics:
- 709 PDF objects out of 1000 (max. 8388607)
+ 719 PDF objects out of 1000 (max. 8388607)
  161 named destinations out of 1000 (max. 500000)
- 49902 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 50414 words of extra memory for PDF output out of 51595 (max. 10000000)
 
