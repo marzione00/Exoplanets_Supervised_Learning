@@ -246,17 +246,17 @@ pca_mix.planet.test  <-  predict(pca_mix_out, Planets_dataset[-Planets_dataset_t
 
 plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
 
-#FAMD_planets.out<-FAMD(Planets_dataset[,-c(1,15)])
+FAMD_planets.out<-FAMD(Planets_dataset[,-c(1,15)])
 
 #plot(FAMD_planets.out)
-#fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib")
+fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib")
 
 quali.var <- get_famd_var(FAMD_planets.out, "quali.var")
 
-#fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib")
+fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib")
 
 
-#fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black" ) +theme_bw()
+fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black" ) +theme_bw()
 
 
 train_mix<-data.frame(pca_mix_out[["ind"]][["coord"]])
@@ -408,11 +408,11 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-caret::confusionMatrix(table(Conf_matrix_SVM))
+caret::confusionMatrix(table(Conf_matrix_SVM_PCA))
 
-fourfoldplot(table(Conf_matrix_SVM), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
+fourfoldplot(table(Conf_matrix_SVM_PCA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
 
-pred_gen<-prediction(as.numeric(Conf_matrix_SVM$P),as.numeric(Conf_matrix_SVM$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_SVM_PCA$P),as.numeric(Conf_matrix_SVM_PCA$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 
