@@ -34,20 +34,32 @@ library(ggplotify)
 library(FactoMineR)
 library(plotly)
 library(klaR)
-
+library(car)
+library(ggpubr)
 
 l <- makeCluster(8, type='PSOCK')
 registerDoParallel(cl)
 
 sink('exoplanet_log_output.txt')
 
-#########Loading data
+#########Loading data and randomly extracting the no-habitable planets
 
 
-Planets_dataset <- data.frame(read_excel("phl_exoplanet_catalog_FINAL.xlsx"),stringsAsFactors = FALSE)
+phl_exoplanet_catalog_RENAMED <- data.frame(read_excel("phl_exoplanet_catalog_RENAMED.xlsx"),stringsAsFactors = FALSE)
+Planet_not_habitable_l<-subset(phl_exoplanet_catalog_RENAMED,P_H==0)
+Planet_habitable<-subset(phl_exoplanet_catalog_RENAMED,P_H==1)
+
+
+Planet_dataset_no_habit<- sample(3657,445)
+
+phl_exoplanet_not_habitable<-phl_exoplanet_catalog_RENAMED[Planet_dataset_no_habit,]
+
+Planets_dataset<-rbind(Planet_habitable,phl_exoplanet_not_habitable)
+
 
 Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
+
 
 set.seed(1)
 
@@ -56,13 +68,14 @@ set.seed(1)
 Planets_dataset_train<- sample(500,350)
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
+levels(Planets_dataset$P_H) <- c("False","True")
 
 #########Plotting the correlation chart
 
 
 #chart.Correlation(Planets_dataset[,2:15], histogram=FALSE)
-palette = colorRampPalette(c("green", "blue", "red")) (20)
-heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c(10, 10),main = 'Planet Features',dist(Planets_dataset[,2:15],method = 'euclidean'))
+#palette = colorRampPalette(c("green", "blue", "red")) (20)
+#heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c(10, 10),main = 'Planet Features',dist(Planets_dataset[,2:15],method = 'euclidean'))
 
 
 
@@ -73,33 +86,31 @@ heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c
 
 #tune_dec.out=tune.rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,], minsplit=seq(1,20,1))
 
-print(tune_dec.out)
-plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
-levels(Planets_dataset$P_H) <- c("False","True")
+#print(tune_dec.out)
+#plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
+
 tuneGrid <- expand.grid(cp = seq(0, 1, 0.001))
 fitControl <- trainControl(method = 'repeatedcv',
                            number = 10,
                            classProbs = TRUE,
                            summaryFunction = twoClassSummary)
-cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
-
-
-plot(caret::varImp(cp_vs_ROC))
+cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
 
 
 
-#cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
-#ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+
+
+cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
+ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 
 
 
 tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,method="class",data=Planets_dataset, subset=Planets_dataset_train,minsplit = 5)
 
-
 var_imp_dec_tree<-data.frame(caret::varImp(tree.planet) %>% 
-  rownames_to_column() %>% 
-  arrange(desc(Overall)) %>% 
-  slice(1:10))
+                               rownames_to_column() %>% 
+                               arrange(desc(Overall)) %>% 
+                               slice(1:10))
 
 
 ggplot(var_imp_dec_tree, aes(y=reorder(rowname,Overall),x=Overall,color="red")) + 
@@ -108,6 +119,11 @@ ggplot(var_imp_dec_tree, aes(y=reorder(rowname,Overall),x=Overall,color="red")) 
   scale_color_discrete(name="Variable Group") +
   ylab("Overall importance") +
   xlab("Variable Name") + guides(color = FALSE, size = FALSE)
+
+
+
+plot(caret::varImp(cp_vs_ROC))
+
 
 
 fancyRpartPlot(tree.planet,sub = "Planets Habitability", palettes = "OrRd")
@@ -138,9 +154,9 @@ autoplot(roc_dec.perf)+theme_bw()
 RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
 RF_perf_out<-data.frame(RF_perf_out)
 ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
-rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=3)
+rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=6)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
-#explain_forest(rfor.planet)
+explain_forest(rfor.planet)
 
 
 var_imp_dec_tree<-data.frame(varImp(rfor.planet))
@@ -408,11 +424,11 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-caret::confusionMatrix(table(Conf_matrix_SVM_PCA))
+caret::confusionMatrix(table(Conf_matrix_LDA))
 
-fourfoldplot(table(Conf_matrix_SVM_PCA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
+fourfoldplot(table(Conf_matrix_QDA), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA Performance")
 
-pred_gen<-prediction(as.numeric(Conf_matrix_SVM_PCA$P),as.numeric(Conf_matrix_SVM_PCA$T))
+pred_gen<-prediction(as.numeric(Conf_matrix_QDA$P),as.numeric(Conf_matrix_QDA$T))
 
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
 
@@ -420,6 +436,15 @@ phi_gen<-performance(pred_gen, "phi")
 
 print(phi_gen)
 
-autoplot(roc_gen.perf)+ggtitle("Conf_matrix_LDA Performance")+theme_bw()
+autoplot(roc_gen.perf)+ggtitle("Conf_matrix_QDA Performance")+theme_bw()
 
 
+#################################
+
+
+
+
+ggdensity(Planet_not_habitable$S_L)
+Planet_not_habitable<-subset(phl_exoplanet_catalog,P_HABITABLE==0)
+
+ggdensity(Planet_not_habitable$S_LUMINOSITY)
