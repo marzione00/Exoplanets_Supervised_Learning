@@ -46,6 +46,7 @@ BCOR5mm, % Binding correction
 \usepackage[dvipsnames,table,xcdraw,svgnames]{xcolor}
 \usepackage{listings}
 \usepackage{booktabs}
+\usepackage{lipsum}
 \newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
 \usepackage{url}
 \lstset{language=R,
@@ -57,7 +58,13 @@ BCOR5mm, % Binding correction
     keywordstyle=\color{blue},
     commentstyle=\color{DarkGreen},
 }
-
+\usepackage[pdftex,
+            pdfauthor={Marzio De Corato},
+            pdftitle={A bird's-eye view on the habitability of exoplanets via statistical learning techniques},
+            pdfsubject={Project for the exam: Machine learning, statistical learning, deep learning and artificial intelligenc},
+            pdfproducer={Latex},
+            pdfcreator={pdflatex}]{hyperref}
+            
 
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 \sloppy
@@ -69,8 +76,7 @@ BCOR5mm, % Binding correction
 
 \begin{document}
 
-
-
+\thispagestyle{empty}
 \title{\normalfont{A bird's-eye view on the habitability of exoplanets via statistical learning techniques}} % The article title
 
 \subtitle{Project for the exam: Machine learning, statistical learning, deep learning and artificial intelligence} % Uncomment to display a subtitle
@@ -104,7 +110,7 @@ BCOR5mm, % Binding correction
 %----------------------------------------------------------------------------------------
 
 \maketitle % Print the title/author/date block
-
+\thispagestyle{empty}
 \newpage
 \setlength\epigraphwidth{.7\textwidth}
 \epigraph{ "Listen to me again. Just outside the Galaxy are the Magellanic Clouds, where no human ship has ever penetrated. Beyond that are other small galaxies, and not very far away is the giant Andromeda Galaxy, larger than our own. Beyond that are galaxies by the billions. Our own Galaxy has developed only one species of an intelligence great enough to develop a technological society, but what do we know of the other galaxies? Ours may be atypical. In some of the others-perhaps even in all-there may be many competing intelligent species, struggling with each other, and each incomprehensible to us. Perhaps it is their mutual struggle that preoccupies them, but what if, in some galaxy, one species gains domination over the rest and then has time to consider the possibility of penetrating other galaxies" \newline (I.Asimov, Foundation and Earth)
@@ -359,6 +365,16 @@ where $\gamma$ is a positive constant.
 \label{SVM_kernels}
 \end{center}
 \end{figure}
+\subsection{Logistic regression}
+Beside the methods previously described one may consider to model the relationship between $p(X)=Pr(Y=1|X)$ and $X$ with the logistic function \footnote{The logistic function was originally developed in to a very different context: indeed it was proposed by Pierre Francois Verhulst \cite{verhulst1838correspondance} for the development of a grown population model. Later this function was considered into other fields such as the statistical learning}  \cite{james2013introduction}
+\begin{equation}
+p(X)=\dfrac{e^{\beta_{0}+\beta_{1}X}}{1+e^{\beta_{0}+\beta_{1}X}}
+\end{equation}
+or, as in this work, a multidimensional set is considered \cite{james2013introduction}
+\begin{equation}
+p(\textbf{X})=\dfrac{e^{\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}}}{1+e^{\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}}}
+\end{equation}
+where the estimation of the parameters $\beta$ is achieved via the maximum likehood method. Such approach is for a binary response, as in our case, but it can be extended to a multiple one.
 \subsection{Linear and quadratic vector classifier}
 The linear and quadratic classifier are an improvement of the logistic model approach \cite{james2013introduction}: 
 \begin{equation}
