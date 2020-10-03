@@ -13,5 +13,10 @@
 \contentsline {subparagraph}{{Linear discriminat analysis}}{18}{subparagraph*.16}%
 \contentsline {subparagraph}{{Quadratic discriminat analysis}}{18}{subparagraph*.17}%
 \contentsline {section}{\numberline {4}{Results and discussion}}{19}{section.4}%
-\contentsline {section}{\numberline {5}{Conclusions}}{36}{section.5}%
-\contentsline {section}{\numberline {6}{R code}}{37}{section.6}%
+\contentsline {subsection}{\numberline {4.1}{A survey on the correlations via FAMD}}{19}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}{The decision tree and the random forest}}{19}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}{Support Vector Classifiers}}{20}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}{Logistic regression}}{21}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}{Linear and quadratic analysis}}{21}{subsection.4.5}%
+\contentsline {section}{\numberline {5}{Conclusions}}{37}{section.5}%
+\contentsline {section}{\numberline {6}{R code}}{38}{section.6}%
