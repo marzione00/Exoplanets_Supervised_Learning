@@ -73,17 +73,11 @@ Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 levels(Planets_dataset$P_H) <- c("False","True")
 
-#########Plotting the correlation chart
 
 
-#chart.Correlation(Planets_dataset[,2:15], histogram=FALSE)
-#palette = colorRampPalette(c("green", "blue", "red")) (20)
-#heatmap(x = cor(Planets_dataset[,2:15]), col = palette, symm = TRUE, margins = c(10, 10),main = 'Planet Features',dist(Planets_dataset[,2:15],method = 'euclidean'))
-
-
-
-
-#########Decision Tree 
+##############
+#Decision Tree 
+##############
 
 
 
@@ -152,7 +146,9 @@ roc_dec.perf <- performance(pred_dec, measure = "tpr", x.measure = "fpr")
 
 autoplot(roc_dec.perf)+theme_bw()
 
-#########Random Forest
+##############
+#Random Forest 
+##############
 
 #RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
 #RF_perf_out<-data.frame(RF_perf_out)
@@ -211,7 +207,9 @@ roc_for.perf <- performance(pred_for, measure = "tpr", x.measure = "fpr")
 autoplot(roc_for.perf)+theme_bw()
 
 
-#########SVM 
+####
+#SVM
+####
 
 
 tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset[Planets_dataset_train,], type = 'C-classification',kernel="polynomial",
@@ -252,7 +250,9 @@ phi_svm_full@y.values
 autoplot(roc_svm_full.perf)+theme_bw()
 
 
-#########PCA+SVM
+########
+#PCA+SVM
+########
 
 
 
@@ -339,7 +339,9 @@ phi_svm@y.values
 autoplot(roc_svm.perf)+theme_bw()
 
 
-#########QDA
+####
+#QDA
+####
 
 
 qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
@@ -386,7 +388,9 @@ autoplot(roc_qda.perf)+theme_bw()
 
 
 
-#########LDA
+####
+#LDA
+####
 
 lda.planet<- lda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
 
@@ -423,9 +427,34 @@ plot(phi_lda)
 
 autoplot(roc_lda.perf)+theme_bw()
 
-sink()
 
-#################################################
+
+##########################
+#Logistic classitification 
+##########################
+
+
+
+model <- glm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,family=binomial(link='logit'),data=Planets_dataset[,-c(1)])
+
+summary(model)
+
+logistic.prob<-data.frame(predict(model ,Planets_dataset[-Planets_dataset_train,],type = "response"))
+colnames(logistic.prob)<-c("P")
+logistic.prob<- data.frame(ifelse(logistic.prob > 0.5, "True", "False"))
+logistic.prob["T"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
+
+fourfoldplot(table(logistic.prob), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Logistic")
+
+
+
+
+
+
+sink()
+###############
+#Auxiliary code
+###############
 
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12]) 
@@ -450,25 +479,33 @@ print(phi_gen)
 autoplot(roc_gen.perf)+theme_bw()
 
 
-#################################
-
-
-
-model <- glm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,family=binomial(link='logit'),data=Planets_dataset[,-c(1)])
-
-summary(model)
-
-logistic.prob<-data.frame(predict(model ,Planets_dataset[-Planets_dataset_train,],type = "response"))
-colnames(logistic.prob)<-c("P")
-logistic.prob<- data.frame(ifelse(logistic.prob > 0.5, "True", "False"))
-logistic.prob["T"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
-
-fourfoldplot(table(logistic.prob), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Logistic")
 
 
 
 
-ggdensity(Planet_not_habitable$S_L)
-Planet_not_habitable<-subset(phl_exoplanet_catalog,P_HABITABLE==0)
+###################################################
+#Check on the radomization of non habitable planets 
+###################################################
+
+
+phl_exoplanet_FULLC <- data.frame(read_excel("phl_exoplanet_catalog_RENAMED.xlsx"),stringsAsFactors = FALSE)
+Planet_not_habitable_FULLC<-subset(phl_exoplanet_FULLC,P_H="False")
+levels(Planet_not_habitable_FULLC$P_H) <- c("False","True")
+levels(Planets_dataset$P_H) <- c("False","True")
+Planet_not_habitable_FULLC$Full<-c("True")
+Planets_dataset$Full<-c("False")
+Planet_not_habitable<-subset(Planets_dataset,P_H="False")
+check_final<-rbind(Planet_not_habitable,Planet_not_habitable_FULLC)
+ggdensity(check_final,x="P_T_E",rug = TRUE, color = "Full",fill = "Full" )+theme_bw()
+
+####################################
+#Check on the variable distributions 
+####################################
+
+Planet_not_habitable<-subset(Planets_dataset,P_H="False")
+Planet_habitable<-subset(Planets_dataset,P_H="True")
+
+ggdensity(Planets_dataset,x="P_T_E",rug = TRUE, color = "P_H",fill = "P_H" )+theme_bw()
+
 
 ggdensity(Planet_not_habitable$S_LUMINOSITY)

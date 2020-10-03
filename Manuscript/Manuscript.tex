@@ -410,8 +410,31 @@ where in this case the dependence from $x$ is quadratic. Since QDA has a covaria
 
 \subsection{A survey on the correlations via FAMD}
 
-Before applying the algorithms previously described, a preliminary insight via the factor analysis of mixed data (FAMD) was performed: this allowed to know the variables that were statistically correlated or not. As expected the planet habitability $P\_H$ is statistically correlated with the surface temperature of the hosting star ($S_T$), its spectral type ($S\_S\_T$) and the planet temperature equilibrium $P\_T\_E$. Such behaviour is obviously given by the fact that the necessary condition for habitability of an exoplanet is that the surface temperature of a planet allows the liquid water. On the other side the distances factors (such as the mean distance $P\_D$, planet apastron $P\_A$ and the planet periastron $P\_PN$) are poorly correlated with the planet habitability: this can be ascribed to the fact that the habitability was extended beyond the \textit{earth zone} by considering habitable planets that, with a particular atmosphere as shown in fig \ref{Planets_habitability_Seager}, have the correct surface temperature for liquid water
+Before applying the algorithms previously described, a preliminary insight on the densities of the quantitative variables for habitable and non habitable planets was performed: its results are reported in Fig. \ref{Desities}. Then a deep inspection using the factor analysis of mixed data (FAMD) was undertaken.  As expected the planet habitability $P\_H$ is statistically correlated with the surface temperature of the hosting star ($S_T$), its spectral type ($S\_S\_T$) and the planet temperature equilibrium $P\_T\_E$. Such behaviour is obviously given by the fact that the necessary condition for habitability of an exoplanet is that the surface temperature of a planet allows the liquid water. On the other side the distances factors (such as the mean distance $P\_D$, planet apastron $P\_A$ and the planet periastron $P\_PN$) are poorly correlated with the planet habitability: this can be ascribed to the fact that the habitability was extended beyond the \textit{earth zone} by considering habitable planets that, with a particular atmosphere as shown in fig \ref{Planets_habitability_Seager}, have the correct surface temperature for liquid water
 \footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.} thus the statistical correlation between the distance factors and the habitability is strongly lowered. Interesting also the dimension and the mass of the exoplanet seems to be weakly correlated with the habitability. An insight about its possible causality relation requires very complicated models, that, as described in the introduction, involve the tectonic phenomena of the exoplanets: for this reason the explanation will be not considered here \footnote{But may be considered in future developments}.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{Pic/Merge.png}
+\caption{The density plots, for the habitable (red) and non habitable planets (light blue), of the quantitative variable considered in this work}
+\label{Desities}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure}[h]
+\begin{center}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/FAMD_squared_loadings.pdf}}\\
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/FAMD_quantitative_variables.pdf}}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/FAMD_Qualitative_VAR.pdf}}\\
+\caption{The FAMD analysis of the dataset: on the panel (a)  the relationship square, on  the panel (b) the correlation circle is provided and on panel (c) the representation of the categories is given.}
+\label{PCA+SVM_PLOT}
+\end{center}
+\end{figure}
+
+\clearpage
 
 \subsection{The decision tree and the random forest}
 The first approach that was considered is the classification decision tree. First the complexity parameter (CP) was checked (a 10-fold cross-validation on the training set \footnote{In this work, for all the approaches undertaken, the training ensemble consist in a set of 350 exoplanets while the test one is composed by 150 items} was undertaken): as can be seen from Fig \ref{Decision_tree_performances} the default parameter $0.01$ can be safely used. Then the decision tree algorithm was applied to the dataset with the tuned parameter: as it can be seen from Fig \ref{DecisionTree}, where the decision tree is given accompanied by a plot that provides the variables importance,  the main discriminant parameters, as expected, are the stellar temperature $S\_T$ and the planet temperature equilibrium $P\_T\_E$: this features discriminates, as one expects, the largest part of the habitable planet from the non-habitable. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation \footnote{For this procedure the test set and the validation sets where reshuffled 10 times by modifying the numerical seed by which the exoplanets are assigned to the training or to the test set. The proportion 150/500 for test and training sets was keep constant}, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{DecisionTree_perf_tab}. Next, in order to improve the performance of this classification, the random forest was considered. As shown in Fig. \ref{Random_forest_tree_perfs} the main parameters for this algorithm were previously checked. Its results are reported in Fig \ref{Random_forest_tree_results}: here the most important variable became the $P\_T\_E$ followed by the $S\_T$: such swap is resonable since the $P\_T\_E$ determinate directly the state of water on the exoplanet. Furthermore the importance of the planet period is increased: such behaviour can be explained by considering that an habitable planet needs  to have a night-day cycle not too long in order to have a stable temperature that allows the water to keep the liquid state.  This reshuffling of the variable importance positively reflects on the performances of the model when the overall CV (as described before) is performed: as one can note from Fig the performances are slightly improved with respect to the ones reported in Fig \ref{Decision_tree_performances}, in particular the ratio of the false positive is reduced with a percentage of 40 $\%$. Such improvement is captured by the accuracy and $\phi$ factors reported in table \ref{Random Forest_perf_tab}. 
@@ -435,15 +458,6 @@ Finally the liner and quadratic discriminant analysis algorithms were used: thei
 \clearpage
 
 
-\begin{figure}[h]
-\begin{center}
-\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/FAMD_squared_loadings.pdf}}\\
-\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/FAMD_quantitative_variables.pdf}}
-\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/FAMD_Qualitative_VAR.pdf}}\\
-\caption{The FAMD analysis of the dataset: on the panel (a)  the relationship square, on  the panel (b) the correlation circle is provided and on panel (c) the representation of the categories is given.}
-\label{PCA+SVM_PLOT}
-\end{center}
-\end{figure}
 
 \begin{table}[]
 \caption{Performances of decision tree algorithm for the exoplanets habitability as evaluated by the accuracy, the no-information rate (NIR), and the $\phi$ factor.}
