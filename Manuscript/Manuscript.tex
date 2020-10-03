@@ -418,7 +418,7 @@ Before applying the algorithm previously described, a preliminary survey via the
 \begin{center}
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{Feature} & Value \\ \hline
-\multicolumn{1}{c|}{Accuracy} & 0.9523\\ \hline
+\multicolumn{1}{c|}{Accuracy} & 0.952\\ \hline
 \multicolumn{1}{c|}{NIR} & 0.867 \\ \hline
 \multicolumn{1}{c|}{$\phi$} & 0.790\\ 
 \label{DecisionTree_perf_tab}
@@ -444,9 +444,9 @@ Before applying the algorithm previously described, a preliminary survey via the
 \begin{center}
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{Feature} & Value \\ \hline
-\multicolumn{1}{c|}{Accuracy} & 0.965 \\ \hline
-\multicolumn{1}{c|}{NIR} & 0.901 \\ \hline
-\multicolumn{1}{c|}{$\phi$} & 0.794 \\ 
+\multicolumn{1}{c|}{Accuracy} & 0.907 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.869 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.527 \\ 
 \label{SVM_perf_tab}
 \end{tabular}
 \end{center}
@@ -457,9 +457,9 @@ Before applying the algorithm previously described, a preliminary survey via the
 \begin{center}
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{Feature} & Value \\ \hline
-\multicolumn{1}{c|}{Accuracy} & 0.991 \\ \hline
-\multicolumn{1}{c|}{NIR} & 0.899 \\ \hline
-\multicolumn{1}{c|}{$\phi$} & 0.952 \\ 
+\multicolumn{1}{c|}{Accuracy} & 0.932 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.869 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.667 \\ 
 \label{SVM+PCA_perf_tab}
 \end{tabular}
 \end{center}
@@ -505,9 +505,9 @@ Before applying the algorithm previously described, a preliminary survey via the
 \begin{figure}[h]
  \centering
 \begin{center}
-\subfloat[]{\includegraphics[width=0.8\textwidth]{Pic/DecisionTree.pdf}}\\
-\subfloat[]{\includegraphics[width=0.8\textwidth]{Pic/Var_imp_dec_tree.pdf}}
-\caption{The classification of exoplanets habitability obtained by the decision tree algorithm (1 stands for habitable while 0 not habitable). The units of measure are reported in the table \ref{features_table}. In the  upper panel (a) the decision tree representation is plotted: the highest number in each box refers to the output of the classifier give the condition reported on his bottom, the two number in the middle the percentages of the splitting and the last number the overall percentage of the planes classified by the node. Note that, since only boxes for which more than 5 items were considered, the overall sum is lower than $100 \%$. In the lower panel (b) is reported the overall importance of each variable.}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/DecisionTree.pdf}}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/Var_imp_dec_tree.pdf}}
+\caption{The classification of exoplanets habitability obtained by the decision tree algorithm (\textit{True} stands for habitable while \textit{False} not habitable). The units of measure are reported in the table \ref{features_table}. In the  upper panel (a) the decision tree representation is plotted: the highest number in each box refers to the output of the classifier give the condition reported on his bottom, the two number in the middle the percentages of the splitting and the last number the overall percentage of the planes classified by the node. Note that, since only boxes for which more than 5 items were considered, the overall sum is lower than $100 \%$. In the lower panel (b) is reported the overall importance of each variable.}
 \label{DecisionTree}
 \end{center}
 \end{figure}
@@ -517,7 +517,7 @@ Before applying the algorithm previously described, a preliminary survey via the
   \centering
 \subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_CV.png}}\\
 \subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_ROC.png}}
-\caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as \textit{True} while a test (T) non-habitable exoplanet is classified as \textit{False}}
+\caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0}
 \label{Decision_tree_performances}
 \end{figure}
 

@@ -64,7 +64,7 @@ Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
 
-set.seed(4)
+set.seed(8)
 
 #########Splitting training vs test set
 
@@ -157,41 +157,41 @@ autoplot(roc_dec.perf)+theme_bw()
 #RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
 #RF_perf_out<-data.frame(RF_perf_out)
 #ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
-rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,ntree=500,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE, mtry=3)
+rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE,ntry=4)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
 #explain_forest(rfor.planet)
 
 
-var_imp_rforest<-data.frame(varImp(rfor.planet))
-colnames(var_imp_rforest)<-c("Variable","Overall")
-var_imp_rforest[,1]<-rownames(var_imp_rforest)
-rownames(var_imp_rforest)<-seq(1:13)
+#var_imp_rforest<-data.frame(varImp(rfor.planet))
+#colnames(var_imp_rforest)<-c("Variable","Overall")
+#var_imp_rforest[,1]<-rownames(var_imp_rforest)
+#rownames(var_imp_rforest)<-seq(1:13)
 
-ggplot(var_imp_rforest, aes(y=reorder(Variable,Overall),x=Overall,color="red")) + 
-  geom_point() +
-  geom_segment(aes(x=0,xend=Overall,yend=Variable)) +
-  scale_color_discrete(name="Variable Group") +
-  xlab("Overall importance") +
-  ylab("Variable Name") + guides(color = FALSE, size = FALSE) + theme_bw()
-
-
-plot(rfor.planet)
-tree_plot<-data.frame(rfor.planet[["err.rate"]])
-tree_plot[4]<-seq(1:1000)
-colnames(tree_plot)<-c("OOB","Not_habitable","Habitable","Trees")
+#ggplot(var_imp_rforest, aes(y=reorder(Variable,Overall),x=Overall,color="red")) + 
+#  geom_point() +
+#  geom_segment(aes(x=0,xend=Overall,yend=Variable)) +
+#  scale_color_discrete(name="Variable Group") +
+#  xlab("Overall importance") +
+#  ylab("Variable Name") + guides(color = FALSE, size = FALSE) + theme_bw()
 
 
+#plot(rfor.planet)
+#tree_plot<-data.frame(rfor.planet[["err.rate"]])
+#tree_plot[4]<-seq(1:1000)
+#colnames(tree_plot)<-c("OOB","Not_habitable","Habitable","Trees")
 
 
-ggplot() + geom_line(data = tree_plot, aes(x = Trees, y = OOB,color = "OOB") ) + 
-  geom_line(data = tree_plot, aes(x = Trees, y = Not_habitable,color = "Not H") ) +
-  geom_line(data = tree_plot, aes(x = Trees, y = Habitable,color = "H") )+labs(color = "Legend")+theme() + xlab('Trees') + ylab('Error')+theme_bw()
 
 
-plot(rfor.planet)
-legend("top", colnames(rfor.planet$err.rate), fill=1:ncol(rfor.planet$err.rate))
-varImpPlot(rfor.planet)
-proximityPlot(rfor.planet)
+#ggplot() + geom_line(data = tree_plot, aes(x = Trees, y = OOB,color = "OOB") ) + 
+#  geom_line(data = tree_plot, aes(x = Trees, y = Not_habitable,color = "Not H") ) +
+#  geom_line(data = tree_plot, aes(x = Trees, y = Habitable,color = "H") )+labs(color = "Legend")+theme() + xlab('Trees') + ylab('Error')+theme_bw()
+
+
+#plot(rfor.planet)
+#legend("top", colnames(rfor.planet$err.rate), fill=1:ncol(rfor.planet$err.rate))
+#varImpPlot(rfor.planet)
+#proximityPlot(rfor.planet)
 #print(rfor.planet)
 #print(importance(rfor.planet,type=2))
 
@@ -214,7 +214,7 @@ autoplot(roc_for.perf)+theme_bw()
 #########SVM 
 
 
-tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,], type = 'C-classification',kernel="polynomial",
+tune_svm_full.out<-tune(svm ,P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset[Planets_dataset_train,], type = 'C-classification',kernel="polynomial",
  ranges =list(cost=(1:10),degree=(1:5)))
 print(tune_svm_full.out)
 perf_svm<-data.frame(tune_svm_full.out[["performances"]])
@@ -225,7 +225,7 @@ X11(width=60, height=60)
 plot_ly(perf_svm[,1:3],x = ~cost, y = ~degree, z = ~error, type="scatter3d", mode="markers") 
 
 
-svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=5,degree=2,)
+svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=4,degree=2,)
 
 plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
@@ -266,19 +266,20 @@ pca_mix_out<-PCAmix(Planets_dataset[Planets_dataset_train,-c(1,12,15)],Planets_d
 pca_mix.planet.test  <-  predict(pca_mix_out, Planets_dataset[-Planets_dataset_train,-c(1,12,15)],Planets_dataset[-Planets_dataset_train,c(12,15)])
 
 
-plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
 
-FAMD_planets.out<-FAMD(Planets_dataset[,-c(1,15)])
+#plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
+
+#FAMD_planets.out<-FAMD(Planets_dataset[,-c(1)])
 
 #plot(FAMD_planets.out)
-fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib")
+#fviz_famd_var(FAMD_planets.out, "var", col.var = "contrib",repel=TRUE)
 
-quali.var <- get_famd_var(FAMD_planets.out, "quali.var")
+#quali.var <- get_famd_var(FAMD_planets.out, "quali.var")
 
-fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib")
+#fviz_famd_var(FAMD_planets.out, "quali.var",col.var = "contrib",repel=TRUE)
 
 
-fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black" ) +theme_bw()
+#fviz_famd_var(FAMD_planets.out,"quanti.var", col.var = "cos2",gradient.cols = c("red","orange","blue"),repel = TRUE,col.circle = "black") +theme_bw()
 
 
 train_mix<-data.frame(pca_mix_out[["ind"]][["coord"]])
@@ -288,13 +289,17 @@ train_mix<-train_mix[1:2]
 train_mix["H"]<-Planets_dataset[Planets_dataset_train,12]
 
 
-#tune_svm_mix.out=tune(svm ,H~.,data=train_mix, kernel="linear", ranges =list(cost=c(seq(0.01, 2, by = 0.01))))
+#tune_svm_mix.out=tune(svm ,H~.,data=train_mix, type = 'C-classification',kernel="polynomial",ranges =list(cost=(1:20),degree=(1:5)))
 
-print(tune_svm_mix.out)
-plot(tune_svm_mix.out,type="contour",mar = c(2, 1, 1, 2))
+#perf_svm<-data.frame(tune_svm_mix.out[["performances"]])
+
+#plot_ly(perf_svm[,1:3],x = ~cost, y = ~degree, z = ~error, type="scatter3d", mode="markers") 
+
+#print(tune_svm_mix.out)
+#plot(tune_svm_mix.out,type="contour")
 
 
-svm.planet_mix <- ksvm(H~.,data=train_mix,type = 'C-svc', kernel="vanilladot",C=0.13)
+svm.planet_mix <- ksvm(H~.,data=train_mix,type = 'C-svc', kernel="polydot",kpar = list(degree = 2),C=1)
 
 
 plot(svm.planet_mix,data=train_mix)
@@ -345,7 +350,7 @@ print(qda.planet)
 
 plot(qda.planet,dimen = 1, type = "b")
 
-#partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
+partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
 
 #plot(qda.planet,P_H~S_L)
 
@@ -428,7 +433,7 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_random_forest.xlsx")
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_SVM+PCA.xlsx")
 
 caret::confusionMatrix(table(Conf_matrix_dec_tree))
 
