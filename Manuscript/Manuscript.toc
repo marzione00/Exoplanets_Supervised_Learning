@@ -18,5 +18,5 @@
 \contentsline {subsection}{\numberline {4.3}{Support Vector Classifiers}}{20}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}{Logistic regression}}{21}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}{Linear and quadratic analysis}}{21}{subsection.4.5}%
-\contentsline {section}{\numberline {5}{Conclusions}}{37}{section.5}%
-\contentsline {section}{\numberline {6}{R code}}{38}{section.6}%
+\contentsline {section}{\numberline {5}{Conclusions}}{39}{section.5}%
+\contentsline {section}{\numberline {6}{R code}}{40}{section.6}%

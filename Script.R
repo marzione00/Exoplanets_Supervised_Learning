@@ -394,7 +394,7 @@ lda.planet<- lda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, dat
 #partimat(P_H~S_T+S_L+P_T_E,data=Planets_dataset[Planets_dataset_train,],method="lda",nplots.vert=4)
 
 
-plot(lda.planet)
+#plot(lda.planet)
 
 #glm.planet
 
@@ -433,7 +433,7 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA.xlsx")
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_log.xlsx")
 
 caret::confusionMatrix(table(Conf_matrix_dec_tree))
 
@@ -451,6 +451,19 @@ autoplot(roc_gen.perf)+theme_bw()
 
 
 #################################
+
+
+
+model <- glm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,family=binomial(link='logit'),data=Planets_dataset[,-c(1)])
+
+summary(model)
+
+logistic.prob<-data.frame(predict(model ,Planets_dataset[-Planets_dataset_train,],type = "response"))
+colnames(logistic.prob)<-c("P")
+logistic.prob<- data.frame(ifelse(logistic.prob > 0.5, "True", "False"))
+logistic.prob["T"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
+
+fourfoldplot(table(logistic.prob), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Logistic")
 
 
 
