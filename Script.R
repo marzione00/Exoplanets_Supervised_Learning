@@ -64,7 +64,7 @@ Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
 
-set.seed(8)
+set.seed(10)
 
 #########Splitting training vs test set
 
@@ -344,13 +344,13 @@ autoplot(roc_svm.perf)+theme_bw()
 
 qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data=Planets_dataset, subset=Planets_dataset_train)
 
-print(qda.planet)
+#print(qda.planet)
 #X11(width=60, height=60)
 #partimat(P_H~S_T+P_D+P_PN+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,],method="qda",nplots.vert=4)
 
-plot(qda.planet,dimen = 1, type = "b")
+#plot(qda.planet,dimen = 1, type = "b")
 
-partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
+#partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
 
 #plot(qda.planet,P_H~S_L)
 
@@ -433,7 +433,7 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_SVM+PCA.xlsx")
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA.xlsx")
 
 caret::confusionMatrix(table(Conf_matrix_dec_tree))
 

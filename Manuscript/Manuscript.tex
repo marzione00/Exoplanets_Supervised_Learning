@@ -381,7 +381,7 @@ While the covariance matrix $\boldsymbol {\Sigma}$ is common for all classes whi
 \end{equation}
 is largest. Note the linearity of the expression with respect to the \textbf{x} vector, that give the name to the method 
 \subparagraph{Quadratic discriminat analysis}
-In this case, differently with respect to the linear analysis, a covariance matrix for each class is considered: thus the Bayes classifier has the following form 
+In this case, differently with respect to the linear analysis, a covariance matrix for each class is considered: thus the Bayes classifier has the following form \cite{james2013introduction}:  
 \begin{equation}
 \delta(\textbf{x})=-\dfrac{1}{2}\textbf{x}^{T}\boldsymbol {\Sigma}^{-1}_{k}\textbf{x}+\textbf{x}^{T}\boldsymbol {\Sigma}^{-1}_{k}\boldsymbol{\mu}_{k}-\dfrac{1}{2}\boldsymbol{\mu}_{k}^{T}\boldsymbol {\Sigma}^{-1}_{k}\boldsymbol{\mu}_{k}-\dfrac{1}{2}log\lvert \boldsymbol {\Sigma}\rvert+log\pi_{k}
 \end{equation}
@@ -466,13 +466,26 @@ Before applying the algorithm previously described, a preliminary survey via the
 \end{table}
 
 \begin{table}[]
+\caption{Performances of multiple attribute logistic regression algorithm for the exoplanets habitability, evaluated by the accuracy, the no-information rate (NIR), and the $\phi$ factor.}
+\begin{center}
+\begin{tabular}{l|l}
+\multicolumn{1}{c|}{Feature} & Value \\ \hline
+\multicolumn{1}{c|}{Accuracy} & 0.914 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.869 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.566 \\ 
+\label{LDA_perf_tab}
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[]
 \caption{Performances of LDA algorithm for the exoplanets habitability, evaluated by the accuracy, the no-information rate (NIR), and the $\phi$ factor.}
 \begin{center}
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{Feature} & Value \\ \hline
-\multicolumn{1}{c|}{Accuracy} & 0.957 \\ \hline
+\multicolumn{1}{c|}{Accuracy} & 0.902 \\ \hline
 \multicolumn{1}{c|}{NIR} & 0.898 \\ \hline
-\multicolumn{1}{c|}{$\phi$} & 0.738 \\ 
+\multicolumn{1}{c|}{$\phi$} & 0.526 \\ 
 \label{LDA_perf_tab}
 \end{tabular}
 \end{center}
@@ -483,9 +496,9 @@ Before applying the algorithm previously described, a preliminary survey via the
 \begin{center}
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{Feature} & Value \\ \hline
-\multicolumn{1}{c|}{Accuracy} & 0.957 \\ \hline
-\multicolumn{1}{c|}{NIR} & 0.899 \\ \hline
-\multicolumn{1}{c|}{$\phi$} & 0.887 \\ 
+\multicolumn{1}{c|}{Accuracy} & 0.941 \\ \hline
+\multicolumn{1}{c|}{NIR} & 0.869 \\ \hline
+\multicolumn{1}{c|}{$\phi$} & 0.757 \\ 
 \label{QDA_perf_tab}
 \end{tabular}
 \end{center}
@@ -587,6 +600,14 @@ Before applying the algorithm previously described, a preliminary survey via the
 \subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/QDA_FULL_ROC.png}}
 \caption{The performances of the LDA (left panels a and c) and QDA (right panels b and d) on the habitability of exoplanets as obtained by a 10-fold cross validation.  A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
 \label{LDA+QDA_results}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/LOG_ROC.png}}\\
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/LOG_FULL.png}}
+\caption{The performances of the multiple logistic regression on the habitability of exoplanets (as obtained by a 10-fold cross validation) once the the dimensionality reduction via was applied (to 2 dimension): on the panel (a) the confusion matrix is given  while on panel (b) the ROC curve (lower panel) is reported. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
+\label{SVM+PCA_results}
 \end{figure}
 
 
