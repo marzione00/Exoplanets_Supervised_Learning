@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  4 OCT 2020 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.27)  4 OCT 2020 14:47
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1415,8 +1415,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 {C:/Users/Marzio/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<Pic/Exoplanet_picture.jpg, id=10, 803.0pt x 752.8125pt>
+File: Pic/Exoplanet_picture.jpg Graphic file (type jpg)
+<use Pic/Exoplanet_picture.jpg>
+Package pdftex.def Info: Pic/Exoplanet_picture.jpg  used on input line 117.
+(pdftex.def)             Requested size: 370.0pt x 346.88379pt.
 LaTeX Font Info:    Trying to load font information for T1+iwona on input line 
-121.
+118.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/iwona\t1iwona.fd"
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
@@ -1425,9 +1430,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `iwona' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2]
-Package tocbasic Info: character protrusion at toc deactivated on input line 13
-4.
+ [2 <./Pic/Exoplanet_picture.jpg>] [3]
+Package tocbasic Info: character protrusion at toc deactivated on input line 14
+2.
  (Manuscript.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/12'.
@@ -1436,451 +1441,464 @@ Package microtype Info: Character `029' is missing
 \tf@toc=\write4
 \openout4 = `Manuscript.toc'.
 
-[3]
+ [4]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
- [4]
-<Pic/press-web25_exoplanet_populations.jpg, id=118, 1156.32pt x 650.43pt>
+ [5]
+<Pic/press-web25_exoplanet_populations.jpg, id=128, 1156.32pt x 650.43pt>
 File: Pic/press-web25_exoplanet_populations.jpg Graphic file (type jpg)
 <use Pic/press-web25_exoplanet_populations.jpg>
 Package pdftex.def Info: Pic/press-web25_exoplanet_populations.jpg  used on inp
-ut line 162.
+ut line 170.
 (pdftex.def)             Requested size: 370.0pt x 208.122pt.
-<Pic/PT_Confirmed.jpg, id=121, 1674.255pt x 1084.05pt>
+<Pic/PT_Confirmed.jpg, id=131, 1674.255pt x 1084.05pt>
 File: Pic/PT_Confirmed.jpg Graphic file (type jpg)
 <use Pic/PT_Confirmed.jpg>
-Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 170.
+Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 178.
 (pdftex.def)             Requested size: 370.0pt x 239.56691pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Greenhouse-effect-t2.png, id=124, 1927.2pt x 1168.365pt>
+<Pic/Greenhouse-effect-t2.png, id=134, 1927.2pt x 1168.365pt>
 File: Pic/Greenhouse-effect-t2.png Graphic file (type png)
 <use Pic/Greenhouse-effect-t2.png>
-Package pdftex.def Info: Pic/Greenhouse-effect-t2.png  used on input line 179.
+Package pdftex.def Info: Pic/Greenhouse-effect-t2.png  used on input line 187.
 (pdftex.def)             Requested size: 370.0pt x 224.30927pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Planets_habitability_Seager.png, id=128, 1035.11719pt x 686.565pt>
+<Pic/Planets_habitability_Seager.png, id=138, 1035.11719pt x 686.565pt>
 File: Pic/Planets_habitability_Seager.png Graphic file (type png)
 <use Pic/Planets_habitability_Seager.png>
 Package pdftex.def Info: Pic/Planets_habitability_Seager.png  used on input lin
-e 187.
+e 195.
 (pdftex.def)             Requested size: 370.0pt x 245.4137pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5 <./Pic/press-web25_exoplanet_populations.jpg>] [6 <./Pic/PT_Confirmed.jpg> <
-./Pic/Greenhouse-effect-t2.png>] [7 <./Pic/Planets_habitability_Seager.png>]
+[6 <./Pic/press-web25_exoplanet_populations.jpg>] [7 <./Pic/PT_Confirmed.jpg> <
+./Pic/Greenhouse-effect-t2.png>] [8 <./Pic/Planets_habitability_Seager.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 201.
+               Default added (so using `tbp') on input line 209.
 
 
-Overfull \hbox (19.96396pt too wide) in paragraph at lines 203--223
+Overfull \hbox (19.96396pt too wide) in paragraph at lines 211--231
 [][]
  []
 
-<Pic/S_T_T_explanation.png, id=171, 455.301pt x 481.8pt>
+<Pic/S_T_T_explanation.png, id=180, 455.301pt x 481.8pt>
 File: Pic/S_T_T_explanation.png Graphic file (type png)
 <use Pic/S_T_T_explanation.png>
-Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 227.
+Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 235.
 (pdftex.def)             Requested size: 332.99774pt x 352.38742pt.
-[8
+[9
 
- <./Pic/S_T_T_explanation.png>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 238--240
+ <./Pic/S_T_T_explanation.png>] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 246--248
 
  []
 
-<Pic/Noisy_channel.png, id=199, 624.83438pt x 320.69812pt>
+<Pic/Noisy_channel.png, id=208, 624.83438pt x 320.69812pt>
 File: Pic/Noisy_channel.png Graphic file (type png)
 <use Pic/Noisy_channel.png>
-Package pdftex.def Info: Pic/Noisy_channel.png  used on input line 246.
+Package pdftex.def Info: Pic/Noisy_channel.png  used on input line 254.
 (pdftex.def)             Requested size: 332.99774pt x 170.91362pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10
+[11
 
-] [11 <./Pic/Noisy_channel.png>]
+] [12 <./Pic/Noisy_channel.png>]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/b/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for LGR+pplj on input line 
-274.
-LaTeX Font Info:    No file LGRpplj.fd. on input line 274.
+282.
+LaTeX Font Info:    No file LGRpplj.fd. on input line 282.
 
 
 LaTeX Font Warning: Font shape `LGR/pplj/m/n' undefined
-(Font)              using `LGR/cmr/m/n' instead on input line 274.
+(Font)              using `LGR/cmr/m/n' instead on input line 282.
 
 LaTeX Font Info:    Trying to load font information for OT1+pplj on input line 
-274.
+282.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pplj.fd"
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
 Overfull \vbox (2.6303pt too high) has occurred while \output is active []
 
 
-[12
+[13
 
 ]
-<Pic/random-forest-algorithm2.png, id=257, 602.25pt x 501.875pt>
+<Pic/random-forest-algorithm2.png, id=267, 602.25pt x 501.875pt>
 File: Pic/random-forest-algorithm2.png Graphic file (type png)
 <use Pic/random-forest-algorithm2.png>
-Package pdftex.def Info: Pic/random-forest-algorithm2.png  used on input line 2
-94.
+Package pdftex.def Info: Pic/random-forest-algorithm2.png  used on input line 3
+02.
 (pdftex.def)             Requested size: 332.99774pt x 277.51009pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14 <./Pic/random-forest-algorithm2.png>]
-<Pic/kernel_trick.png, id=282, 875.27pt x 489.83pt>
+[14] [15 <./Pic/random-forest-algorithm2.png>]
+<Pic/kernel_trick.png, id=291, 875.27pt x 489.83pt>
 File: Pic/kernel_trick.png Graphic file (type png)
 <use Pic/kernel_trick.png>
-Package pdftex.def Info: Pic/kernel_trick.png  used on input line 312.
+Package pdftex.def Info: Pic/kernel_trick.png  used on input line 320.
 (pdftex.def)             Requested size: 332.99774pt x 186.35408pt.
- [15
+ [16
 
- <./Pic/kernel_trick.png (PNG copy)>] [16]
-<Pic/Kernels_Type.png, id=320, 435.12563pt x 322.20375pt>
+ <./Pic/kernel_trick.png (PNG copy)>] [17]
+<Pic/Kernels_Type.png, id=329, 435.12563pt x 322.20375pt>
 File: Pic/Kernels_Type.png Graphic file (type png)
 <use Pic/Kernels_Type.png>
-Package pdftex.def Info: Pic/Kernels_Type.png  used on input line 363.
+Package pdftex.def Info: Pic/Kernels_Type.png  used on input line 371.
 (pdftex.def)             Requested size: 332.99774pt x 246.59322pt.
- [17 <./Pic/Kernels_Type.png>] [18] [19]
-<Pic/Merge.png, id=369, 1102.87032pt x 1382.91656pt>
+ [18 <./Pic/Kernels_Type.png>] [19] [20]
+<Pic/Merge.png, id=378, 1102.87032pt x 1382.91656pt>
 File: Pic/Merge.png Graphic file (type png)
 <use Pic/Merge.png>
-Package pdftex.def Info: Pic/Merge.png  used on input line 419.
+Package pdftex.def Info: Pic/Merge.png  used on input line 427.
 (pdftex.def)             Requested size: 370.0pt x 463.96045pt.
-<Pic/FAMD_squared_loadings.pdf, id=370, 426.59375pt x 393.47pt>
+<Pic/FAMD_squared_loadings.pdf, id=379, 426.59375pt x 393.47pt>
 File: Pic/FAMD_squared_loadings.pdf Graphic file (type pdf)
 <use Pic/FAMD_squared_loadings.pdf>
-Package pdftex.def Info: Pic/FAMD_squared_loadings.pdf  used on input line 429.
+Package pdftex.def Info: Pic/FAMD_squared_loadings.pdf  used on input line 437.
 
 (pdftex.def)             Requested size: 185.0pt x 170.63573pt.
-<Pic/FAMD_quantitative_variables.pdf, id=371, 426.59375pt x 393.47pt>
+<Pic/FAMD_quantitative_variables.pdf, id=380, 426.59375pt x 393.47pt>
 File: Pic/FAMD_quantitative_variables.pdf Graphic file (type pdf)
 <use Pic/FAMD_quantitative_variables.pdf>
 Package pdftex.def Info: Pic/FAMD_quantitative_variables.pdf  used on input lin
-e 430.
+e 438.
 (pdftex.def)             Requested size: 185.0pt x 170.63573pt.
-<Pic/FAMD_Qualitative_VAR.pdf, id=372, 426.59375pt x 393.47pt>
+<Pic/FAMD_Qualitative_VAR.pdf, id=381, 426.59375pt x 393.47pt>
 File: Pic/FAMD_Qualitative_VAR.pdf Graphic file (type pdf)
 <use Pic/FAMD_Qualitative_VAR.pdf>
-Package pdftex.def Info: Pic/FAMD_Qualitative_VAR.pdf  used on input line 431.
+Package pdftex.def Info: Pic/FAMD_Qualitative_VAR.pdf  used on input line 439.
 (pdftex.def)             Requested size: 185.0pt x 170.63573pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 <./Pic/Merge.png>] [21 <./Pic/FAMD_squared_loadings.pdf> <./Pic/FAMD_quanti
-tative_variables.pdf> <./Pic/FAMD_Qualitative_VAR.pdf>] [22
-
-] [23] [24]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 462.
-
-<Pic/cp_vs_ROC.pdf, id=461, 426.59375pt x 393.47pt>
+[21 <./Pic/Merge.png>] [22 <./Pic/FAMD_squared_loadings.pdf> <./Pic/FAMD_quanti
+tative_variables.pdf> <./Pic/FAMD_Qualitative_VAR.pdf>]
+<Pic/cp_vs_ROC.pdf, id=421, 426.59375pt x 393.47pt>
 File: Pic/cp_vs_ROC.pdf Graphic file (type pdf)
 <use Pic/cp_vs_ROC.pdf>
-Package pdftex.def Info: Pic/cp_vs_ROC.pdf  used on input line 487.
+Package pdftex.def Info: Pic/cp_vs_ROC.pdf  used on input line 453.
 (pdftex.def)             Requested size: 296.00113pt x 273.03157pt.
-<Pic/DecisionTree.pdf, id=462, 325.215pt x 400.49625pt>
+ [23
+
+]
+<Pic/DecisionTree.pdf, id=433, 325.215pt x 400.49625pt>
 File: Pic/DecisionTree.pdf Graphic file (type pdf)
 <use Pic/DecisionTree.pdf>
-Package pdftex.def Info: Pic/DecisionTree.pdf  used on input line 497.
+Package pdftex.def Info: Pic/DecisionTree.pdf  used on input line 463.
 (pdftex.def)             Requested size: 185.0pt x 227.8269pt.
-<Pic/Var_imp_dec_tree.pdf, id=463, 325.215pt x 400.49625pt>
+<Pic/Var_imp_dec_tree.pdf, id=434, 325.215pt x 400.49625pt>
 File: Pic/Var_imp_dec_tree.pdf Graphic file (type pdf)
 <use Pic/Var_imp_dec_tree.pdf>
-Package pdftex.def Info: Pic/Var_imp_dec_tree.pdf  used on input line 498.
+Package pdftex.def Info: Pic/Var_imp_dec_tree.pdf  used on input line 464.
 (pdftex.def)             Requested size: 185.0pt x 227.8269pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Decision_Tree_FINAL_CV.png, id=466, 534.99875pt x 434.62375pt>
+<Pic/Decision_Tree_FINAL_CV.png, id=437, 534.99875pt x 434.62375pt>
 File: Pic/Decision_Tree_FINAL_CV.png Graphic file (type png)
 <use Pic/Decision_Tree_FINAL_CV.png>
-Package pdftex.def Info: Pic/Decision_Tree_FINAL_CV.png  used on input line 507
+Package pdftex.def Info: Pic/Decision_Tree_FINAL_CV.png  used on input line 473
 .
 (pdftex.def)             Requested size: 222.00226pt x 180.35222pt.
-<Pic/Decision_Tree_FINAL_ROC.png, id=467, 534.99875pt x 434.62375pt>
+<Pic/Decision_Tree_FINAL_ROC.png, id=438, 534.99875pt x 434.62375pt>
 File: Pic/Decision_Tree_FINAL_ROC.png Graphic file (type png)
 <use Pic/Decision_Tree_FINAL_ROC.png>
-Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.png  used on input line 50
-8.
+Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.png  used on input line 47
+4.
 (pdftex.def)             Requested size: 222.00226pt x 180.35222pt.
-<Pic/Random_forest_trees.pdf, id=468, 456.70625pt x 403.5075pt>
+<Pic/Random_forest_trees.pdf, id=439, 456.70625pt x 403.5075pt>
 File: Pic/Random_forest_trees.pdf Graphic file (type pdf)
 <use Pic/Random_forest_trees.pdf>
-Package pdftex.def Info: Pic/Random_forest_trees.pdf  used on input line 515.
+Package pdftex.def Info: Pic/Random_forest_trees.pdf  used on input line 481.
 (pdftex.def)             Requested size: 185.0pt x 163.45042pt.
-<Pic/mtry_Random_forest.pdf, id=469, 456.70625pt x 403.5075pt>
+<Pic/mtry_Random_forest.pdf, id=440, 456.70625pt x 403.5075pt>
 File: Pic/mtry_Random_forest.pdf Graphic file (type pdf)
 <use Pic/mtry_Random_forest.pdf>
-Package pdftex.def Info: Pic/mtry_Random_forest.pdf  used on input line 516.
+Package pdftex.def Info: Pic/mtry_Random_forest.pdf  used on input line 482.
 (pdftex.def)             Requested size: 185.0pt x 163.45042pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Proximity_Random_forest.pdf, id=470, 456.70625pt x 403.5075pt>
+<Pic/Proximity_Random_forest.pdf, id=441, 456.70625pt x 403.5075pt>
 File: Pic/Proximity_Random_forest.pdf Graphic file (type pdf)
 <use Pic/Proximity_Random_forest.pdf>
-Package pdftex.def Info: Pic/Proximity_Random_forest.pdf  used on input line 52
-3.
+Package pdftex.def Info: Pic/Proximity_Random_forest.pdf  used on input line 48
+9.
 (pdftex.def)             Requested size: 296.00113pt x 261.53177pt.
-<Pic/Random_forest_importance.pdf, id=471, 456.70625pt x 403.5075pt>
+<Pic/Random_forest_importance.pdf, id=442, 456.70625pt x 403.5075pt>
 File: Pic/Random_forest_importance.pdf Graphic file (type pdf)
 <use Pic/Random_forest_importance.pdf>
-Package pdftex.def Info: Pic/Random_forest_importance.pdf  used on input line 5
-24.
+Package pdftex.def Info: Pic/Random_forest_importance.pdf  used on input line 4
+90.
 (pdftex.def)             Requested size: 296.00113pt x 261.53177pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/Random_Forest_FINAL_CV.png, id=474, 534.99875pt x 434.62375pt>
+<Pic/Random_Forest_FINAL_CV.png, id=445, 534.99875pt x 434.62375pt>
 File: Pic/Random_Forest_FINAL_CV.png Graphic file (type png)
 <use Pic/Random_Forest_FINAL_CV.png>
-Package pdftex.def Info: Pic/Random_Forest_FINAL_CV.png  used on input line 531
+Package pdftex.def Info: Pic/Random_Forest_FINAL_CV.png  used on input line 497
 .
 (pdftex.def)             Requested size: 222.00226pt x 180.35222pt.
-<Pic/Random_Forest_FINAL_ROC.png, id=475, 343.2825pt x 324.46219pt>
+<Pic/Random_Forest_FINAL_ROC.png, id=446, 343.2825pt x 324.46219pt>
 File: Pic/Random_Forest_FINAL_ROC.png Graphic file (type png)
 <use Pic/Random_Forest_FINAL_ROC.png>
-Package pdftex.def Info: Pic/Random_Forest_FINAL_ROC.png  used on input line 53
-2.
+Package pdftex.def Info: Pic/Random_Forest_FINAL_ROC.png  used on input line 49
+8.
 (pdftex.def)             Requested size: 222.00226pt x 209.82852pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/SVM_tuning.png, id=476, 384.6872pt x 331.99031pt>
+[24 <./Pic/cp_vs_ROC.pdf>] [25 <./Pic/DecisionTree.pdf> <./Pic/Var_imp_dec_tree
+.pdf>] [26 <./Pic/Decision_Tree_FINAL_CV.png> <./Pic/Decision_Tree_FINAL_ROC.pn
+g>] [27 <./Pic/Random_forest_trees.pdf> <./Pic/mtry_Random_forest.pdf>]
+[28 <./Pic/Proximity_Random_forest.pdf> <./Pic/Random_forest_importance.pdf>]
+[29 <./Pic/Random_Forest_FINAL_CV.png> <./Pic/Random_Forest_FINAL_ROC.png>]
+<Pic/SVM_tuning.png, id=534, 384.6872pt x 331.99031pt>
 File: Pic/SVM_tuning.png Graphic file (type png)
 <use Pic/SVM_tuning.png>
-Package pdftex.def Info: Pic/SVM_tuning.png  used on input line 539.
+Package pdftex.def Info: Pic/SVM_tuning.png  used on input line 512.
 (pdftex.def)             Requested size: 296.00113pt x 255.4712pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/SVM_FINAL_CV.png, id=477, 426.84468pt x 394.47375pt>
+<Pic/SVM_FINAL_CV.png, id=535, 426.84468pt x 394.47375pt>
 File: Pic/SVM_FINAL_CV.png Graphic file (type png)
 <use Pic/SVM_FINAL_CV.png>
-Package pdftex.def Info: Pic/SVM_FINAL_CV.png  used on input line 547.
+Package pdftex.def Info: Pic/SVM_FINAL_CV.png  used on input line 520.
 (pdftex.def)             Requested size: 222.00226pt x 205.16966pt.
-<Pic/SVM_FINAL_ROC.png, id=478, 366.61969pt x 394.47375pt>
+<Pic/SVM_FINAL_ROC.png, id=536, 366.61969pt x 394.47375pt>
 File: Pic/SVM_FINAL_ROC.png Graphic file (type png)
 <use Pic/SVM_FINAL_ROC.png>
-Package pdftex.def Info: Pic/SVM_FINAL_ROC.png  used on input line 548.
+Package pdftex.def Info: Pic/SVM_FINAL_ROC.png  used on input line 521.
 (pdftex.def)             Requested size: 222.00226pt x 238.87103pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/PCA+SVM_PLOT.pdf, id=479, 426.59375pt x 393.47pt>
+<Pic/PCA+SVM_PLOT.pdf, id=537, 426.59375pt x 393.47pt>
 File: Pic/PCA+SVM_PLOT.pdf Graphic file (type pdf)
 <use Pic/PCA+SVM_PLOT.pdf>
-Package pdftex.def Info: Pic/PCA+SVM_PLOT.pdf  used on input line 555.
+Package pdftex.def Info: Pic/PCA+SVM_PLOT.pdf  used on input line 528.
 (pdftex.def)             Requested size: 370.0pt x 341.28946pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/SVM_PCA_ROC.png, id=480, 368.1253pt x 394.47375pt>
+<Pic/SVM_PCA_ROC.png, id=538, 368.1253pt x 394.47375pt>
 File: Pic/SVM_PCA_ROC.png Graphic file (type png)
 <use Pic/SVM_PCA_ROC.png>
-Package pdftex.def Info: Pic/SVM_PCA_ROC.png  used on input line 565.
+Package pdftex.def Info: Pic/SVM_PCA_ROC.png  used on input line 538.
 (pdftex.def)             Requested size: 222.00226pt x 237.89592pt.
-<Pic/SVM_PCA_CV.png, id=481, 426.84468pt x 394.47375pt>
+<Pic/SVM_PCA_CV.png, id=539, 426.84468pt x 394.47375pt>
 File: Pic/SVM_PCA_CV.png Graphic file (type png)
 <use Pic/SVM_PCA_CV.png>
-Package pdftex.def Info: Pic/SVM_PCA_CV.png  used on input line 566.
+Package pdftex.def Info: Pic/SVM_PCA_CV.png  used on input line 539.
 (pdftex.def)             Requested size: 222.00226pt x 205.16966pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/LDA_FULL_CV.png, id=482, 426.84468pt x 394.47375pt>
-File: Pic/LDA_FULL_CV.png Graphic file (type png)
-<use Pic/LDA_FULL_CV.png>
-Package pdftex.def Info: Pic/LDA_FULL_CV.png  used on input line 573.
-(pdftex.def)             Requested size: 147.99774pt x 136.77374pt.
-<Pic/QDA_FULL_CV.png, id=483, 426.84468pt x 394.47375pt>
-File: Pic/QDA_FULL_CV.png Graphic file (type png)
-<use Pic/QDA_FULL_CV.png>
-Package pdftex.def Info: Pic/QDA_FULL_CV.png  used on input line 574.
-(pdftex.def)             Requested size: 147.99774pt x 136.77374pt.
-<Pic/LDA_FULL_ROC.png, id=484, 371.88937pt x 393.72093pt>
-File: Pic/LDA_FULL_ROC.png Graphic file (type png)
-<use Pic/LDA_FULL_ROC.png>
-Package pdftex.def Info: Pic/LDA_FULL_ROC.png  used on input line 575.
-(pdftex.def)             Requested size: 147.99774pt x 156.68655pt.
-<Pic/QDA_FULL_ROC.png, id=485, 368.87813pt x 393.72093pt>
-File: Pic/QDA_FULL_ROC.png Graphic file (type png)
-<use Pic/QDA_FULL_ROC.png>
-Package pdftex.def Info: Pic/QDA_FULL_ROC.png  used on input line 576.
-(pdftex.def)             Requested size: 147.99774pt x 157.96019pt.
+[30
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Pic/LOG_ROC.png, id=486, 426.84468pt x 394.47375pt>
+] [31 <./Pic/SVM_tuning.png>] [32 <./Pic/SVM_FINAL_CV.png> <./Pic/SVM_FINAL_ROC
+.png>] [33 <./Pic/PCA+SVM_PLOT.pdf>] [34 <./Pic/SVM_PCA_ROC.png> <./Pic/SVM_PCA
+_CV.png>]
+<Pic/LOG_ROC.png, id=580, 426.84468pt x 394.47375pt>
 File: Pic/LOG_ROC.png Graphic file (type png)
 <use Pic/LOG_ROC.png>
-Package pdftex.def Info: Pic/LOG_ROC.png  used on input line 583.
+Package pdftex.def Info: Pic/LOG_ROC.png  used on input line 552.
 (pdftex.def)             Requested size: 222.00226pt x 205.16966pt.
-<Pic/LOG_FULL.png, id=487, 426.84468pt x 394.47375pt>
+<Pic/LOG_FULL.png, id=581, 426.84468pt x 394.47375pt>
 File: Pic/LOG_FULL.png Graphic file (type png)
 <use Pic/LOG_FULL.png>
-Package pdftex.def Info: Pic/LOG_FULL.png  used on input line 584.
+Package pdftex.def Info: Pic/LOG_FULL.png  used on input line 553.
 (pdftex.def)             Requested size: 222.00226pt x 205.16966pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/QDA_project_FULL.pdf, id=488, 684.5575pt x 684.5575pt>
+[35
+
+] [36 <./Pic/LOG_ROC.png> <./Pic/LOG_FULL.png>]
+<Pic/LDA_FULL_CV.png, id=599, 426.84468pt x 394.47375pt>
+File: Pic/LDA_FULL_CV.png Graphic file (type png)
+<use Pic/LDA_FULL_CV.png>
+Package pdftex.def Info: Pic/LDA_FULL_CV.png  used on input line 567.
+(pdftex.def)             Requested size: 147.99774pt x 136.77374pt.
+<Pic/QDA_FULL_CV.png, id=600, 426.84468pt x 394.47375pt>
+File: Pic/QDA_FULL_CV.png Graphic file (type png)
+<use Pic/QDA_FULL_CV.png>
+Package pdftex.def Info: Pic/QDA_FULL_CV.png  used on input line 568.
+(pdftex.def)             Requested size: 147.99774pt x 136.77374pt.
+<Pic/LDA_FULL_ROC.png, id=601, 371.88937pt x 393.72093pt>
+File: Pic/LDA_FULL_ROC.png Graphic file (type png)
+<use Pic/LDA_FULL_ROC.png>
+Package pdftex.def Info: Pic/LDA_FULL_ROC.png  used on input line 569.
+(pdftex.def)             Requested size: 147.99774pt x 156.68655pt.
+<Pic/QDA_FULL_ROC.png, id=602, 368.87813pt x 393.72093pt>
+File: Pic/QDA_FULL_ROC.png Graphic file (type png)
+<use Pic/QDA_FULL_ROC.png>
+Package pdftex.def Info: Pic/QDA_FULL_ROC.png  used on input line 570.
+(pdftex.def)             Requested size: 147.99774pt x 157.96019pt.
+<Pic/QDA_project_FULL.pdf, id=603, 684.5575pt x 684.5575pt>
 File: Pic/QDA_project_FULL.pdf Graphic file (type pdf)
 <use Pic/QDA_project_FULL.pdf>
-Package pdftex.def Info: Pic/QDA_project_FULL.pdf  used on input line 591.
+Package pdftex.def Info: Pic/QDA_project_FULL.pdf  used on input line 579.
 (pdftex.def)             Requested size: 370.0pt x 370.01068pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pic/QDA_project_RED.pdf, id=489, 426.59375pt x 393.47pt>
+<Pic/QDA_project_RED.pdf, id=604, 426.59375pt x 393.47pt>
 File: Pic/QDA_project_RED.pdf Graphic file (type pdf)
 <use Pic/QDA_project_RED.pdf>
-Package pdftex.def Info: Pic/QDA_project_RED.pdf  used on input line 599.
+Package pdftex.def Info: Pic/QDA_project_RED.pdf  used on input line 587.
 (pdftex.def)             Requested size: 370.0pt x 341.28946pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25
+[37
 
- <./Pic/cp_vs_ROC.pdf>] [26 <./Pic/DecisionTree.pdf> <./Pic/Var_imp_dec_tree.pd
-f>] [27 <./Pic/Decision_Tree_FINAL_CV.png> <./Pic/Decision_Tree_FINAL_ROC.png>]
- [28 <./Pic/Random_forest_trees.pdf> <./Pic/mtry_Random_forest.pdf>]
-[29 <./Pic/Proximity_Random_forest.pdf> <./Pic/Random_forest_importance.pdf>]
-[30 <./Pic/Random_Forest_FINAL_CV.png> <./Pic/Random_Forest_FINAL_ROC.png>]
-[31 <./Pic/SVM_tuning.png>] [32 <./Pic/SVM_FINAL_CV.png> <./Pic/SVM_FINAL_ROC.p
-ng>] [33 <./Pic/PCA+SVM_PLOT.pdf>] [34 <./Pic/SVM_PCA_ROC.png> <./Pic/SVM_PCA_C
-V.png>] [35 <./Pic/LDA_FULL_CV.png> <./Pic/QDA_FULL_CV.png> <./Pic/LDA_FULL_ROC
-.png> <./Pic/QDA_FULL_ROC.png>] [36 <./Pic/LOG_ROC.png> <./Pic/LOG_FULL.png>]
-[37 <./Pic/QDA_project_FULL.pdf>] [38 <./Pic/QDA_project_RED.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 61
-7.
+ <./Pic/LDA_FULL_CV.png> <./Pic/QDA_FULL_CV.png> <./Pic/LDA_FULL_ROC.png> <./Pi
+c/QDA_FULL_ROC.png>] [38 <./Pic/QDA_project_FULL.pdf>] [39 <./Pic/QDA_project_R
+ED.pdf>]
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/bera\t1fvm.fd"
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 596.
+
+[40]
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 62
+6.
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 617.
+(Font)              scaled to size 9.30756pt on input line 626.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  (Manuscript.bbl
-[39
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 10.20007pt on input line 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+[][][]$\T1/fvm/m/n/12 https : / / exoplanets . nasa . gov / news / 1605 /
+ []
+
+[41
+
 
 ]
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 62.
-
-Underfull \hbox (badness 2293) in paragraph at lines 59--63
+Underfull \hbox (badness 2293) in paragraph at lines 62--66
 []\T1/pplj/m/n/12 Richard P. Feyn-man.  The feyn-man lec-tures on physics.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--63
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 [][]$\T1/fvm/m/n/12 https : / / www . feynmanlectures . caltech . edu / II _ 21
  . html #
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 [][][]$\T1/fvm/m/n/12 https : / / upload . wikimedia . org / wikipedia / common
 s / 6 / 61 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 [][][]$\T1/fvm/m/n/12 https : / / upload . wikimedia . org / wikipedia / common
 s / 0 / 04 /
  []
 
 
-Underfull \hbox (badness 3364) in paragraph at lines 83--87
+Underfull \hbox (badness 3364) in paragraph at lines 86--90
 []\T1/pplj/m/n/12 François For-get and Jeremy Leconte.  Pos-si-ble cli-mates
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 83--87
+Underfull \hbox (badness 2600) in paragraph at lines 86--90
 \T1/pplj/m/n/12 on ter-res-trial ex-o-plan-ets.  \T1/pplj/m/it/12 Philo-soph-i-
 cal Trans-ac-tions of the
  []
 
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 [][][]$\T1/fvm/m/n/12 https : / / www . nasa . gov / sites / default / files / 
 thumbnails /
  []
 
 
-Overfull \hbox (5.64812pt too wide) in paragraph at lines 129--130
+Overfull \hbox (5.64812pt too wide) in paragraph at lines 132--133
 [][][]$\T1/fvm/m/n/12 http : / / phl . upr . edu / projects / habitable-[]exopl
 anets-[]catalog /
  []
 
 
-Overfull \hbox (5.64812pt too wide) in paragraph at lines 157--158
+Overfull \hbox (5.64812pt too wide) in paragraph at lines 160--161
 [][][]$\T1/fvm/m/n/12 http : / / phl . upr . edu / projects / habitable-[]exopl
 anets-[]catalog /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 [][][]$\T1/fvm/m/n/12 https : / / www . slideserve . com / ruth-[]york /
  []
 
 
-Overfull \hbox (16.41257pt too wide) in paragraph at lines 160--161
+Overfull \hbox (16.41257pt too wide) in paragraph at lines 163--164
 \T1/fvm/m/n/12 chapter-[]15-[]surveying-[]the-[]stars-[]powerpoint-[]ppt-[]pres
 entation$[][]\T1/pplj/m/n/12 . 
  []
 
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 [][][]$\T1/fvm/m/n/12 https : / / builtin . com / data-[]science /
  []
 
-
-Overfull \hbox (70.17654pt too wide) in paragraph at lines 238--239
+[44]
+Overfull \hbox (70.17654pt too wide) in paragraph at lines 241--242
 [][][]$\T1/fvm/m/n/12 https : / / www . javatpoint . com / machine-[]learning-[
 ]random-[]forest-[]algorithm$[][]\T1/pplj/m/n/12 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 [][][]$\T1/fvm/m/n/12 https : / / towardsdatascience . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 [][][]$\T1/fvm/m/n/12 https : / / www . r-[]bloggers . com / 2019 / 10 /
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 257--260
+Underfull \hbox (badness 1033) in paragraph at lines 260--263
 []\T1/pplj/m/n/12 Pierre-François Ver-hulst.  Cor-re-spon-dance math-é-ma-tique
  et
  []
 
-) [42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 637.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 637.
+) [45]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 646.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 646.
  (Manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 637.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 637.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 646.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 646.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1890,16 +1908,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 637.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 646.
  ) 
 Here is how much of TeX's memory you used:
- 21905 strings out of 481212
- 399226 string characters out of 2913848
- 938858 words of memory out of 3000000
- 36721 multiletter control sequences out of 15000+200000
+ 21925 strings out of 481212
+ 399600 string characters out of 2913848
+ 926858 words of memory out of 3000000
+ 36733 multiletter control sequences out of 15000+200000
  699967 words of font info for 258 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 71i,23n,100p,10634b,1754s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,23n,97p,10634b,1754s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\Marzio\Ap
 pData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/cbgreek/dpi600\grmn1000.pk>{C:/Pr
 ogram Files/MiKTeX 2.9/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/Program Files/
@@ -1922,9 +1940,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files
 nts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on Manuscript.pdf (42 pages, 7142292 bytes).
+Output written on Manuscript.pdf (45 pages, 7159726 bytes).
 PDF statistics:
- 840 PDF objects out of 1000 (max. 8388607)
- 187 named destinations out of 1000 (max. 500000)
- 50487 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 868 PDF objects out of 1000 (max. 8388607)
+ 194 named destinations out of 1000 (max. 500000)
+ 50492 words of extra memory for PDF output out of 51595 (max. 10000000)
 

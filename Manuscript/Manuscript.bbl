@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{exoplanet_pic}
+\url{https://exoplanets.nasa.gov/news/1605/observing-exoplanets-what-can-we-really-see/}.
+
 \bibitem{carleo2019machine}
 Giuseppe Carleo, Ignacio Cirac, Kyle Cranmer, Laurent Daudet, Maria Schuld,
   Naftali Tishby, Leslie Vogt-Maranto, and Lenka Zdeborov{\'a}.
@@ -257,5 +260,11 @@ Kerson Huang.
 Pierre-Fran{\c{c}}ois Verhulst.
 \newblock Correspondance math{\'e}matique et physique.
 \newblock {\em Ghent and Brussels}, 10:113, 1838.
+
+\bibitem{marquez2018supervised}
+Pablo M{\'a}rquez-Neila, Chloe Fisher, Raphael Sznitman, and Kevin Heng.
+\newblock Supervised machine learning for analysing spectra of exoplanetary
+  atmospheres.
+\newblock {\em Nature astronomy}, 2(9):719--724, 2018.
 
 \end{thebibliography}
