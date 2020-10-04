@@ -73,7 +73,7 @@ Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
 levels(Planets_dataset$P_H) <- c("False","True")
 
-
+#chart.Correlation(Planets_dataset[,-c(1,12,15)],histogram=TRUE, pch="+")
 
 ##############
 #Decision Tree 
@@ -505,7 +505,7 @@ ggdensity(check_final,x="P_T_E",rug = TRUE, color = "Full",fill = "Full" )+theme
 Planet_not_habitable<-subset(Planets_dataset,P_H="False")
 Planet_habitable<-subset(Planets_dataset,P_H="True")
 
-ggdensity(Planets_dataset,x="P_T_E",rug = TRUE, color = "P_H",fill = "P_H" )+theme_bw()
+ggdensity(Planets_dataset,x="P_M",rug = TRUE, color = "P_H",fill = "P_H" )+theme_bw()
 
 
 ggdensity(Planet_not_habitable$S_LUMINOSITY)
