@@ -478,9 +478,9 @@ The first approach that was considered is the classification decision tree. Firs
 
 \begin{figure}[htp]
   \centering
-\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_CV.png}}\\
-\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_ROC.png}}
-\caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0}
+\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_CV.pdf}}\\
+\subfloat[]{\label{Decision_Tree_FINAL_CV}\includegraphics[width=0.6\textwidth]{Pic/Decision_Tree_FINAL_ROC.pdf}}
+\caption{The performances of the decision tree algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as True (T) while a test (T) non-habitable exoplanet is classified as False (F) }
 \label{Decision_tree_performances}
 \end{figure}
 
@@ -502,9 +502,9 @@ The first approach that was considered is the classification decision tree. Firs
 
 \begin{figure}[h]
   \centering
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/Random_Forest_FINAL_CV.png}}\\
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/Random_Forest_FINAL_ROC.png}}
-\caption{The performances of the random forest algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/Random_Forest_FINAL_CV.pdf}}\\
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/Random_Forest_FINAL_ROC.pdf}}
+\caption{The performances of the random forest algorithm on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as True (T) while a test (T) non-habitable exoplanet is classified as False (F)}
 \label{Random_forest_tree_results}
 \end{figure} 
 
@@ -525,9 +525,9 @@ Next the SVM classification algorithm was considered: as for the previous cases,
 
 \begin{figure}[h]
   \centering
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_FINAL_CV.png}}\\
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_FINAL_ROC.png}}
-\caption{The performances of the SVM on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_FINAL_CV.pdf}}\\
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_FINAL_ROC.pdf}}
+\caption{The performances of the SVM on the habitability of exoplanets as given by the confusion matrix (upper panel) and ROC curve (lower panel) as obtained by a 10-fold cross validation.  A predicted (P) habitable exoplanet is classified as True (T) while a test (T) non-habitable exoplanet is classified as False (F).}
 \label{SVM_results}
 \end{figure}
 
@@ -543,9 +543,9 @@ Next the SVM classification algorithm was considered: as for the previous cases,
 
 \begin{figure}[h]
   \centering
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_PCA_ROC.png}}\\
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_PCA_CV.png}}
-\caption{The performances of the SVM on the habitability of exoplanets (as obtained by a 10-fold cross validation) once the the dimensionality reduction via was applied (to 2 dimension): on the panel (a) the confusion matrix is given  while on panel (b) the ROC curve (lower panel) is reported. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_PCA_CV.pdf}}\\
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/SVM_PCA_ROC.pdf}}
+\caption{The performances of the SVM on the habitability of exoplanets (as obtained by a 10-fold cross validation) once the the dimensionality reduction via was applied (to 2 dimension): on the panel (a) the confusion matrix is given  while on panel (b) the ROC curve (lower panel) is reported. A predicted (P) habitable exoplanet is classified as True (T) while a test (T) non-habitable exoplanet is classified as False (F)}
 \label{SVM+PCA_results}
 \end{figure}
 
@@ -557,9 +557,9 @@ Beside the approaches previously described, the logistic classification was also
 
 \begin{figure}[h]
   \centering
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/LOG_ROC.png}}\\
-\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/LOG_FULL.png}}
-\caption{The performances of the multiple logistic regression on the habitability of exoplanets (as obtained by a 10-fold cross validation) once the the dimensionality reduction via was applied (to 2 dimension): on the panel (a) the confusion matrix is given  while on panel (b) the ROC curve (lower panel) is reported. A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/LOG_FULL.pdf}}\\
+\subfloat[]{\includegraphics[width=0.6\textwidth]{Pic/LOG_FULL_ROC.pdf}}
+\caption{The performances of the multiple logistic regression on the habitability of exoplanets (as obtained by a 10-fold cross validation) once the the dimensionality reduction via was applied (to 2 dimension): on the panel (a) the confusion matrix is given  while on panel (b) the ROC curve (lower panel) is reported.  A predicted (P) habitable exoplanet is classified as True (T) while a test (T) non-habitable exoplanet is classified as False (F)}
 \label{logistic_performances}
 \end{figure}
 
@@ -572,11 +572,11 @@ Finally the liner and quadratic discriminant analysis algorithms were used: thei
 
 \begin{figure}[h]
   \centering
-\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/LDA_FULL_CV.png}}
-\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/QDA_FULL_CV.png}}\\
-\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/LDA_FULL_ROC.png}}
-\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/QDA_FULL_ROC.png}}
-\caption{The performances of the LDA (left panels a and c) and QDA (right panels b and d) on the habitability of exoplanets as obtained by a 10-fold cross validation.  A predicted (P) habitable exoplanet is classified as 1 while a test (T) non-habitable exoplanet is classified as 0.}
+\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/LDA_FULL_CV.pdf}}
+\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/QDA_FULL_CV.pdf}}\\
+\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/LDA_FULL_ROC.pdf}}
+\subfloat[]{\includegraphics[width=0.4\textwidth]{Pic/QDA_FULL_ROC.pdf}}
+\caption{The performances of the LDA (left panels a and c) and QDA (right panels b and d) on the habitability of exoplanets as obtained by a 10-fold cross validation.   A predicted (P) habitable exoplanet is classified as True (T) while a test (T) non-habitable exoplanet is classified as False (F)}
 \label{LDA+QDA_results}
 \end{figure}
 
@@ -593,7 +593,7 @@ Finally the liner and quadratic discriminant analysis algorithms were used: thei
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=1\textwidth]{Pic/QDA_project_RED.pdf}
-\caption{The projection of QDA classification on the $P\_T\_E$ and $S\_L$ axes. Note, as showed in Fig. \ref{QDA_project_FULL} that this is the projection with the lowest error (consistently with the results of random forest algorithm). A predicted (P) habitable exoplanet is classified as T while a test (T) non-habitable exoplanet is classified as F. The red label refers to the misclassified exoplanets}
+\caption{The projection of QDA classification on the $P\_T\_E$ and $S\_L$ axes. Note, as showed in Fig. \ref{QDA_project_FULL} that this is the projection with the lowest error (consistently with the results of random forest algorithm). A predicted (P) habitable exoplanet is classified as True (T) while a test (T) non-habitable exoplanet is classified as False (F)}
 \label{QDA_project_red}
 \end{center}
 \end{figure}
@@ -631,6 +631,8 @@ Among the different methods that were here considered, the random forest achieve
 
 
 \section{R code}
+
+
 \definecolor{light-gray}{gray}{0.95}
 \lstset{ columns=fullflexible, basicstyle=\ttfamily, backgroundcolor=\color{light-gray},xleftmargin=0.5cm,frame=lr,framesep=8pt,framerule=0pt,frame=single,breaklines=true, postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}}
 \lstinputlisting[language=R]{Script.R}

@@ -80,7 +80,6 @@ chart.Correlation(Planets_dataset[,-c(1,12,15)],histogram=TRUE, pch="+")
 ##############
 
 
-
 tune_dec.out=tune.rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,], minsplit=seq(1,20,1))
 
 print(tune_dec.out)
@@ -93,13 +92,8 @@ classProbs = TRUE,
                            summaryFunction = twoClassSummary)
 cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
 
-
-
-
-
 cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
 ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
-
 
 
 tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,method="class",data=Planets_dataset, subset=Planets_dataset_train,minsplit = 5)
@@ -255,16 +249,9 @@ autoplot(roc_svm_full.perf)+theme_bw()
 ########
 
 
-
 pca_mix_out<-PCAmix(Planets_dataset[Planets_dataset_train,-c(1,12,15)],Planets_dataset[Planets_dataset_train,c(12,15)],rename.level=TRUE)
 
-
-
-
-
-
 pca_mix.planet.test  <-  predict(pca_mix_out, Planets_dataset[-Planets_dataset_train,-c(1,12,15)],Planets_dataset[-Planets_dataset_train,c(12,15)])
-
 
 
 plot(pca_mix_out,choice="cor",coloring.var = TRUE,main="All variables")
@@ -386,8 +373,6 @@ autoplot(roc_qda.perf)+theme_bw()
 
 
 
-
-
 ####
 #LDA
 ####
@@ -433,8 +418,6 @@ autoplot(roc_lda.perf)+theme_bw()
 #Logistic classitification
 ##########################
 
-
-
 model <- glm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M,family=binomial(link='logit'),data=Planets_dataset[,-c(1)])
 
 summary(model)
@@ -447,46 +430,29 @@ logistic.prob["T"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
 fourfoldplot(table(logistic.prob), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Logistic")
 
 
-
-
-
-
 sink()
-###############
-#Auxiliary code
-###############
+###################################################
+#Plot the overall confusion matrices and ROC curves
+###################################################
 
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12])
 
-
-
-
-Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_log.xlsx")
-
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA_boolean.xlsx")
 caret::confusionMatrix(table(Conf_matrix_dec_tree))
-
 fourfoldplot(table(Conf_matrix_dec_tree), color = c("red","darkgreen"),conf.level = 0, margin = 1)
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA.xlsx")
 
 pred_gen<-prediction(as.numeric(Conf_matrix_dec_tree$P),as.numeric(Conf_matrix_dec_tree$T))
-
 roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
-
 phi_gen<-performance(pred_gen, "phi")
-
 print(phi_gen)
 
-autoplot(roc_gen.perf)+theme_bw()
-
-
-
-
-
+autoplot(roc_gen.perf, main = "ROC",xlab = "False positive rate", ylab = "True positive rate")+geom_line(size = 1.1)+theme_bw()+theme(plot.title = element_text(hjust = 0.5))+ theme(legend.position = "none")
 
 ###################################################
 #Check on the radomization of non habitable planets
 ###################################################
-
 
 phl_exoplanet_FULLC <- data.frame(read_excel("phl_exoplanet_catalog_RENAMED.xlsx"),stringsAsFactors = FALSE)
 Planet_not_habitable_FULLC<-subset(phl_exoplanet_FULLC,P_H="False")
@@ -504,8 +470,5 @@ ggdensity(check_final,x="P_T_E",rug = TRUE, color = "Full",fill = "Full" )+theme
 
 Planet_not_habitable<-subset(Planets_dataset,P_H="False")
 Planet_habitable<-subset(Planets_dataset,P_H="True")
-
 ggdensity(Planets_dataset,x="P_M",rug = TRUE, color = "P_H",fill = "P_H" )+theme_bw()
-
-
 ggdensity(Planet_not_habitable$S_LUMINOSITY)

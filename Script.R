@@ -36,6 +36,8 @@ library(plotly)
 library(klaR)
 library(car)
 library(ggpubr)
+library(cairoDevice)
+
 
 l <- makeCluster(8, type='PSOCK')
 registerDoParallel(cl)
@@ -462,11 +464,13 @@ pca3d(pca.planet,group= pca.train[,12])
 
 
 
-Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_log.xlsx")
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA_boolean.xlsx")
 
 caret::confusionMatrix(table(Conf_matrix_dec_tree))
 
 fourfoldplot(table(Conf_matrix_dec_tree), color = c("red","darkgreen"),conf.level = 0, margin = 1)
+
+Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA.xlsx")
 
 pred_gen<-prediction(as.numeric(Conf_matrix_dec_tree$P),as.numeric(Conf_matrix_dec_tree$T))
 
@@ -476,9 +480,7 @@ phi_gen<-performance(pred_gen, "phi")
 
 print(phi_gen)
 
-autoplot(roc_gen.perf)+theme_bw()
-
-
+autoplot(roc_gen.perf, main = "ROC",xlab = "False positive rate", ylab = "True positive rate")+geom_line(size = 1.1)+theme_bw()+theme(plot.title = element_text(hjust = 0.5))+ theme(legend.position = "none")
 
 
 
