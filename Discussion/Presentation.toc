@@ -10,3 +10,9 @@
 \beamer@subsectionintoc {2}{2}{Stars Feature}{4}{0}{2}
 \defcounter {refsection}{0}\relax 
 \beamer@subsectionintoc {2}{3}{Planet Features}{5}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Data inspection}{7}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {3}{1}{Densities}{7}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {3}{2}{FAMD}{8}{0}{3}
