@@ -3,4 +3,10 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {1}{Intro}{2}{0}{1}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {2}{Data}{3}{0}{2}
+\beamer@sectionintoc {2}{Theoretical background}{3}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {2}{1}{Habitability}{3}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {2}{2}{Stars Feature}{4}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {2}{3}{Planet Features}{5}{0}{2}

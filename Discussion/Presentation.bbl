@@ -17,8 +17,42 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{planet_dataset}{misc}{}
+  \field{howpublished}{\url{http://phl.upr.edu/projects/habitable-exoplanets-catalog/data/database}}
+  \endentry
+
+  \entry{HR_diagram}{misc}{}
+  \field{howpublished}{\url{https://www.slideserve.com/ruth-york/chapter-15-surveying-the-stars-powerpoint-ppt-presentation}}
+  \endentry
+
   \entry{exoplanets-catalog}{misc}{}
   \field{howpublished}{\url{http://phl.upr.edu/projects/habitable-exoplanets-catalog/media/pte}}
+  \endentry
+
+  \entry{seager2013exoplanet}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SS}{%
+         family={Seager},
+         familyi={S\bibinitperiod},
+         given={Sara},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Association for the Advancement of Science}%
+    }
+    \strng{namehash}{SS1}
+    \strng{fullhash}{SS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{6132}
+    \field{pages}{577\bibrangedash 581}
+    \field{title}{Exoplanet habitability}
+    \field{volume}{340}
+    \field{journaltitle}{Science}
+    \field{year}{2013}
   \endentry
 \enddatalist
 \endinput
