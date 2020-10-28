@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  28 OCT 2020 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  28 OCT 2020 19:53
 entering extended mode
 **./Presentation.tex
 (Presentation.tex
@@ -1200,12 +1200,16 @@ Package pdftex.def Info: Pic/Intro.jpg  used on input line 48.
 
 {C:/Users/Marzio/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pic/Intr
 o.jpg>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
 
- ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 52.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -1217,7 +1221,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: Pic/Planets_habitability_Seager.png Graphic file (type png)
 <use Pic/Planets_habitability_Seager.png>
 Package pdftex.def Info: Pic/Planets_habitability_Seager.png  used on input lin
-e 82.
+e 84.
 (pdftex.def)             Requested size: 136.91603pt x 90.80704pt.
  [3
 
@@ -1225,7 +1229,7 @@ e 82.
 <Pic/S_T_T_explanation.png, id=181, 455.301pt x 481.8pt>
 File: Pic/S_T_T_explanation.png Graphic file (type png)
 <use Pic/S_T_T_explanation.png>
-Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 101.
+Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 103.
 (pdftex.def)             Requested size: 154.03183pt x 162.99379pt.
  [4
 
@@ -1233,7 +1237,7 @@ Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 101.
 <Pic/PT_Confirmed.jpg, id=212, 1674.255pt x 1084.05pt>
 File: Pic/PT_Confirmed.jpg Graphic file (type jpg)
 <use Pic/PT_Confirmed.jpg>
-Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 113.
+Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 115.
 (pdftex.def)             Requested size: 308.06367pt x 199.45439pt.
  [5
 
@@ -1245,42 +1249,42 @@ Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 113.
 <Pic/Density/P_M.pdf, id=298, 426.59375pt x 393.47pt>
 File: Pic/Density/P_M.pdf Graphic file (type pdf)
 <use Pic/Density/P_M.pdf>
-Package pdftex.def Info: Pic/Density/P_M.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/P_M.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
 <Pic/Density/P_A.pdf, id=299, 426.59375pt x 393.47pt>
 File: Pic/Density/P_A.pdf Graphic file (type pdf)
 <use Pic/Density/P_A.pdf>
-Package pdftex.def Info: Pic/Density/P_A.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/P_A.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
 <Pic/Density/P_R.pdf, id=300, 426.59375pt x 393.47pt>
 File: Pic/Density/P_R.pdf Graphic file (type pdf)
 <use Pic/Density/P_R.pdf>
-Package pdftex.def Info: Pic/Density/P_R.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/P_R.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
 <Pic/Density/P_D.pdf, id=301, 426.59375pt x 393.47pt>
 File: Pic/Density/P_D.pdf Graphic file (type pdf)
 <use Pic/Density/P_D.pdf>
-Package pdftex.def Info: Pic/Density/P_D.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/P_D.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
 <Pic/Density/S_T.pdf, id=302, 426.59375pt x 393.47pt>
 File: Pic/Density/S_T.pdf Graphic file (type pdf)
 <use Pic/Density/S_T.pdf>
-Package pdftex.def Info: Pic/Density/S_T.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/S_T.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
 <Pic/Density/P_PN.pdf, id=303, 426.59375pt x 393.47pt>
 File: Pic/Density/P_PN.pdf Graphic file (type pdf)
 <use Pic/Density/P_PN.pdf>
-Package pdftex.def Info: Pic/Density/P_PN.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/P_PN.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
 <Pic/Density/P_T_E.pdf, id=304, 426.59375pt x 393.47pt>
 File: Pic/Density/P_T_E.pdf Graphic file (type pdf)
 <use Pic/Density/P_T_E.pdf>
-Package pdftex.def Info: Pic/Density/P_T_E.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/P_T_E.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
 <Pic/Density/S_R_E.pdf, id=305, 426.59375pt x 393.47pt>
 File: Pic/Density/S_R_E.pdf Graphic file (type pdf)
 <use Pic/Density/S_R_E.pdf>
-Package pdftex.def Info: Pic/Density/S_R_E.pdf  used on input line 175.
+Package pdftex.def Info: Pic/Density/S_R_E.pdf  used on input line 177.
 (pdftex.def)             Requested size: 85.57382pt x 78.92674pt.
  [8
 
@@ -1290,22 +1294,22 @@ ty/P_T_E.pdf> <./Pic/Density/S_R_E.pdf>]
 <Pic/FAMD_squared_loadings.pdf, id=405, 426.59375pt x 393.47pt>
 File: Pic/FAMD_squared_loadings.pdf Graphic file (type pdf)
 <use Pic/FAMD_squared_loadings.pdf>
-Package pdftex.def Info: Pic/FAMD_squared_loadings.pdf  used on input line 191.
+Package pdftex.def Info: Pic/FAMD_squared_loadings.pdf  used on input line 193.
 
 (pdftex.def)             Requested size: 171.14764pt x 157.85951pt.
 <Pic/FAMD_Qualitative_VAR.pdf, id=406, 426.59375pt x 393.47pt>
 File: Pic/FAMD_Qualitative_VAR.pdf Graphic file (type pdf)
 <use Pic/FAMD_Qualitative_VAR.pdf>
-Package pdftex.def Info: Pic/FAMD_Qualitative_VAR.pdf  used on input line 191.
+Package pdftex.def Info: Pic/FAMD_Qualitative_VAR.pdf  used on input line 193.
 (pdftex.def)             Requested size: 119.80283pt x 110.50105pt.
 <Pic/FAMD_quantitative_variables.pdf, id=407, 426.59375pt x 393.47pt>
 File: Pic/FAMD_quantitative_variables.pdf Graphic file (type pdf)
 <use Pic/FAMD_quantitative_variables.pdf>
 Package pdftex.def Info: Pic/FAMD_quantitative_variables.pdf  used on input lin
-e 191.
+e 193.
 (pdftex.def)             Requested size: 119.80283pt x 110.50105pt.
 
-Overfull \vbox (3.20233pt too high) detected at line 191
+Overfull \vbox (3.20233pt too high) detected at line 193
  []
 
 [9
@@ -1315,18 +1319,18 @@ _quantitative_variables.pdf>]
 <Pic/DecisionTree.pdf, id=451, 325.215pt x 400.49625pt>
 File: Pic/DecisionTree.pdf Graphic file (type pdf)
 <use Pic/DecisionTree.pdf>
-Package pdftex.def Info: Pic/DecisionTree.pdf  used on input line 209.
+Package pdftex.def Info: Pic/DecisionTree.pdf  used on input line 211.
 (pdftex.def)             Requested size: 136.91862pt x 168.61671pt.
 <Pic/Var_imp_dec_tree.pdf, id=452, 325.215pt x 400.49625pt>
 File: Pic/Var_imp_dec_tree.pdf Graphic file (type pdf)
 <use Pic/Var_imp_dec_tree.pdf>
-Package pdftex.def Info: Pic/Var_imp_dec_tree.pdf  used on input line 209.
+Package pdftex.def Info: Pic/Var_imp_dec_tree.pdf  used on input line 211.
 (pdftex.def)             Requested size: 85.57382pt x 105.37933pt.
 <Pic/Decision_Tree_FINAL_ROC.pdf, id=453, 438.63875pt x 403.5075pt>
 File: Pic/Decision_Tree_FINAL_ROC.pdf Graphic file (type pdf)
 <use Pic/Decision_Tree_FINAL_ROC.pdf>
-Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.pdf  used on input line 20
-9.
+Package pdftex.def Info: Pic/Decision_Tree_FINAL_ROC.pdf  used on input line 21
+1.
 (pdftex.def)             Requested size: 85.57382pt x 78.7175pt.
  [10
 
@@ -1336,19 +1340,19 @@ AL_ROC.pdf>]
 File: Pic/Proximity_Random_forest.pdf Graphic file (type pdf)
 <use Pic/Proximity_Random_forest.pdf>
 Package pdftex.def Info: Pic/Proximity_Random_forest.pdf  used on input line 22
-7.
+9.
 (pdftex.def)             Requested size: 171.14764pt x 151.21027pt.
 <Pic/Random_forest_importance.pdf, id=506, 456.70625pt x 403.5075pt>
 File: Pic/Random_forest_importance.pdf Graphic file (type pdf)
 <use Pic/Random_forest_importance.pdf>
 Package pdftex.def Info: Pic/Random_forest_importance.pdf  used on input line 2
-27.
+29.
 (pdftex.def)             Requested size: 102.68962pt x 90.7237pt.
 <Pic/Random_Forest_FINAL_ROC.pdf, id=507, 438.63875pt x 403.5075pt>
 File: Pic/Random_Forest_FINAL_ROC.pdf Graphic file (type pdf)
 <use Pic/Random_Forest_FINAL_ROC.pdf>
 Package pdftex.def Info: Pic/Random_Forest_FINAL_ROC.pdf  used on input line 22
-7.
+9.
 (pdftex.def)             Requested size: 102.68962pt x 94.461pt.
  [11
 
@@ -1357,17 +1361,17 @@ c/Random_Forest_FINAL_ROC.pdf>]
 <Pic/PCA+SVM_PLOT.pdf, id=552, 426.59375pt x 393.47pt>
 File: Pic/PCA+SVM_PLOT.pdf Graphic file (type pdf)
 <use Pic/PCA+SVM_PLOT.pdf>
-Package pdftex.def Info: Pic/PCA+SVM_PLOT.pdf  used on input line 244.
+Package pdftex.def Info: Pic/PCA+SVM_PLOT.pdf  used on input line 246.
 (pdftex.def)             Requested size: 171.14764pt x 157.85951pt.
 <Pic/SVM_FINAL_ROC.pdf, id=553, 438.63875pt x 403.5075pt>
 File: Pic/SVM_FINAL_ROC.pdf Graphic file (type pdf)
 <use Pic/SVM_FINAL_ROC.pdf>
-Package pdftex.def Info: Pic/SVM_FINAL_ROC.pdf  used on input line 244.
+Package pdftex.def Info: Pic/SVM_FINAL_ROC.pdf  used on input line 246.
 (pdftex.def)             Requested size: 85.57382pt x 78.7175pt.
 <Pic/SVM_PCA_ROC.pdf, id=554, 438.63875pt x 403.5075pt>
 File: Pic/SVM_PCA_ROC.pdf Graphic file (type pdf)
 <use Pic/SVM_PCA_ROC.pdf>
-Package pdftex.def Info: Pic/SVM_PCA_ROC.pdf  used on input line 244.
+Package pdftex.def Info: Pic/SVM_PCA_ROC.pdf  used on input line 246.
 (pdftex.def)             Requested size: 85.57382pt x 78.7175pt.
  [12
 
@@ -1375,12 +1379,12 @@ Package pdftex.def Info: Pic/SVM_PCA_ROC.pdf  used on input line 244.
 <Pic/LOG_FULL.png, id=597, 426.84468pt x 394.47375pt>
 File: Pic/LOG_FULL.png Graphic file (type png)
 <use Pic/LOG_FULL.png>
-Package pdftex.def Info: Pic/LOG_FULL.png  used on input line 262.
+Package pdftex.def Info: Pic/LOG_FULL.png  used on input line 264.
 (pdftex.def)             Requested size: 171.14764pt x 158.17192pt.
 <Pic/LOG_FULL_ROC.pdf, id=598, 438.63875pt x 403.5075pt>
 File: Pic/LOG_FULL_ROC.pdf Graphic file (type pdf)
 <use Pic/LOG_FULL_ROC.pdf>
-Package pdftex.def Info: Pic/LOG_FULL_ROC.pdf  used on input line 262.
+Package pdftex.def Info: Pic/LOG_FULL_ROC.pdf  used on input line 264.
 (pdftex.def)             Requested size: 145.47653pt x 133.82285pt.
  [13
 
@@ -1388,17 +1392,17 @@ Package pdftex.def Info: Pic/LOG_FULL_ROC.pdf  used on input line 262.
 <Pic/QDA_project_FULL.pdf, id=632, 684.5575pt x 684.5575pt>
 File: Pic/QDA_project_FULL.pdf Graphic file (type pdf)
 <use Pic/QDA_project_FULL.pdf>
-Package pdftex.def Info: Pic/QDA_project_FULL.pdf  used on input line 280.
+Package pdftex.def Info: Pic/QDA_project_FULL.pdf  used on input line 282.
 (pdftex.def)             Requested size: 171.14764pt x 171.1494pt.
 <Pic/LDA_FULL_ROC.pdf, id=633, 438.63875pt x 403.5075pt>
 File: Pic/LDA_FULL_ROC.pdf Graphic file (type pdf)
 <use Pic/LDA_FULL_ROC.pdf>
-Package pdftex.def Info: Pic/LDA_FULL_ROC.pdf  used on input line 280.
+Package pdftex.def Info: Pic/LDA_FULL_ROC.pdf  used on input line 282.
 (pdftex.def)             Requested size: 85.57382pt x 78.7175pt.
 <Pic/QDA_FULL_ROC.pdf, id=634, 438.63875pt x 403.5075pt>
 File: Pic/QDA_FULL_ROC.pdf Graphic file (type pdf)
 <use Pic/QDA_FULL_ROC.pdf>
-Package pdftex.def Info: Pic/QDA_FULL_ROC.pdf  used on input line 280.
+Package pdftex.def Info: Pic/QDA_FULL_ROC.pdf  used on input line 282.
 (pdftex.def)             Requested size: 85.57382pt x 78.7175pt.
  [14
 
@@ -1409,7 +1413,7 @@ Package pdftex.def Info: Pic/QDA_FULL_ROC.pdf  used on input line 280.
 <Pic/Exoplanet_picture.jpg, id=704, 803.0pt x 752.8125pt>
 File: Pic/Exoplanet_picture.jpg Graphic file (type jpg)
 <use Pic/Exoplanet_picture.jpg>
-Package pdftex.def Info: Pic/Exoplanet_picture.jpg  used on input line 316.
+Package pdftex.def Info: Pic/Exoplanet_picture.jpg  used on input line 318.
 (pdftex.def)             Requested size: 171.14764pt x 160.45012pt.
  [16
 
@@ -1426,7 +1430,7 @@ Package pdftex.def Info: Pic/Exoplanet_picture.jpg  used on input line 316.
 <Pic/Prox_explanation.jpg, id=847, 371.17873pt x 254.10132pt>
 File: Pic/Prox_explanation.jpg Graphic file (type jpg)
 <use Pic/Prox_explanation.jpg>
-Package pdftex.def Info: Pic/Prox_explanation.jpg  used on input line 344.
+Package pdftex.def Info: Pic/Prox_explanation.jpg  used on input line 346.
 (pdftex.def)             Requested size: 273.83728pt x 187.4737pt.
  [21
 
@@ -1434,7 +1438,7 @@ Package pdftex.def Info: Pic/Prox_explanation.jpg  used on input line 344.
 <Pic/Prox_explanation_3.jpg, id=875, 385.34364pt x 163.47475pt>
 File: Pic/Prox_explanation_3.jpg Graphic file (type jpg)
 <use Pic/Prox_explanation_3.jpg>
-Package pdftex.def Info: Pic/Prox_explanation_3.jpg  used on input line 352.
+Package pdftex.def Info: Pic/Prox_explanation_3.jpg  used on input line 354.
 (pdftex.def)             Requested size: 273.83728pt x 116.17763pt.
 
 [22
@@ -1443,7 +1447,7 @@ Package pdftex.def Info: Pic/Prox_explanation_3.jpg  used on input line 352.
 <Pic/Prox_explanation_2.jpg, id=903, 328.39488pt x 148.1535pt>
 File: Pic/Prox_explanation_2.jpg Graphic file (type jpg)
 <use Pic/Prox_explanation_2.jpg>
-Package pdftex.def Info: Pic/Prox_explanation_2.jpg  used on input line 360.
+Package pdftex.def Info: Pic/Prox_explanation_2.jpg  used on input line 362.
 (pdftex.def)             Requested size: 273.83728pt x 123.5461pt.
  [23
 
@@ -1487,7 +1491,7 @@ m/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Presentation.pdf (24 pages, 4823565 bytes).
+Output written on Presentation.pdf (24 pages, 4824385 bytes).
 PDF statistics:
  1016 PDF objects out of 1200 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)
