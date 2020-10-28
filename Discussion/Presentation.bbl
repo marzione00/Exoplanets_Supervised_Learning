@@ -29,6 +29,140 @@
   \field{howpublished}{\url{http://phl.upr.edu/projects/habitable-exoplanets-catalog/media/pte}}
   \endentry
 
+  \entry{exoplanet_pic}{misc}{}
+  \field{howpublished}{\url{https://exoplanets.nasa.gov/news/1605/observing-exoplanets-what-can-we-really-see/}}
+  \endentry
+
+  \entry{blanchet2020constructing}{article}{}
+    \name{author}{8}{}{%
+      {{hash=BL}{%
+         family={Blanchet},
+         familyi={B\bibinitperiod},
+         given={Lionel},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Vitale},
+         familyi={V\bibinitperiod},
+         given={Raffaele},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=vVR}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Voorstenbosch},
+         familyi={V\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SG}{%
+         family={Stavropoulos},
+         familyi={S\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pender},
+         familyi={P\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Jonkers},
+         familyi={J\bibinitperiod},
+         given={Daisy},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=vSFJ}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Schooten},
+         familyi={S\bibinitperiod},
+         given={Frederik-Jan},
+         giveni={F\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Smolinska},
+         familyi={S\bibinitperiod},
+         given={Agnieszka},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{BL+1}
+    \strng{fullhash}{BLVRVRvSGPJJDSFJvSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Constructing bi-plots for Random Forest: tutorial}
+    \field{journaltitle}{Analytica Chimica Acta}
+    \field{year}{2020}
+  \endentry
+
+  \entry{saha2018machine}{article}{}
+    \name{author}{8}{}{%
+      {{hash=SS}{%
+         family={Saha},
+         familyi={S\bibinitperiod},
+         given={Snehanshu},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BK}{%
+         family={Bora},
+         familyi={B\bibinitperiod},
+         given={Kakoli},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Basak},
+         familyi={B\bibinitperiod},
+         given={Suryoday},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SG}{%
+         family={Srinivasa},
+         familyi={S\bibinitperiod},
+         given={Gowri},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Safonova},
+         familyi={S\bibinitperiod},
+         given={Margarita},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Murthy},
+         familyi={M\bibinitperiod},
+         given={Jayant},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Agrawal},
+         familyi={A\bibinitperiod},
+         given={Surbhi},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CPS}{%
+         family={Campus},
+         familyi={C\bibinitperiod},
+         given={PESIT\bibnamedelima South},
+         giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SS+1}
+    \strng{fullhash}{SSBKBSSGSMMJASCPS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{MACHINE LEARNING IN ASTRONOMY: A WORKMAN’S MANUAL}
+    \field{year}{2018}
+  \endentry
+
   \entry{seager2013exoplanet}{article}{}
     \name{author}{1}{}{%
       {{hash=SS}{%

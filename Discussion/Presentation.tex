@@ -1,5 +1,12 @@
 \documentclass[compress]{beamer}
 \usepackage{hyperref}
+\hypersetup{
+    pdftitle = {A bird’s-eye view on the habitability of exoplanets via statistical learning techniques}, % <-- Missing in PDF
+    pdfauthor = {Marzio De Corato},
+    pdfsubject = {Marzio De Corato project the exam: Machine learning, statistical
+learning, deep learning and artificial intelligence - Unsupervised Learning}
+}
+
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \author{Marzio De Corato}
@@ -22,18 +29,25 @@
 
 %Information to be included in the title page:
 
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Pic/Intro.jpg}}
 \title[Exoplanets survey via SL techniques]{A bird’s-eye view on the habitability of exoplanets via statistical learning techniques}
 
-\author{Marzio De Corato}
+\author{}
+\date{}
 
 \subtitle{Project for the exam: Machine learning, statistical
 learning, deep learning and artificial intelligence - Unsupervised Learning}
 
+\setbeamertemplate{enumerate items}[default]
+\usecolortheme{beaver}
+
 \begin{document}
 
 
+\frame{\vspace{+4.5cm}\titlepage}
 
-\frame{\titlepage}
+\usebackgroundtemplate{ } 
 
 \section{Intro}
 
@@ -104,7 +118,7 @@ Image taken from \cite{exoplanets-catalog}
 \begin{itemize}
 \item\textbf{Distance}: in this work the mean planet distance from the host star (P\_D), the periastron (P\_PN) and the apastron (P\_A) as well the termal effective distance (P\_D\_E) from the host star  were considered. These quantities constrain the planet orbital period (P\_P) via the 3$^{th}$ Kepler law (a corollary of Newton's law of universal gravitation)
 \item\textbf{Mass and Radius}: the (estimated) planet mass (P\_M) and its radius (P\_R) were considered (these are also useful to distinguish the super-earth planets) 
-\item\textbf{Temperature}: the planet equilibrium temperature (P\_T\_E) defined according to the expression $T_{eq}=T_{star}\sqrt{R/2a}\left(1-A\right)^{0.25}$) where R is the star radius (S\_R), a the planet mean distance (P\_D) and A the albedo here considered as 0.3 was considered as well the planet mean stellar flux $P_F$ 
+\item\textbf{Temperature}: the planet mean stellar flux $P_F$  and the planet equilibrium temperature (P\_T\_E) were considered. The latter is defined as $T_{eq}=T_{star}\sqrt{R/2a}\left(1-A\right)^{0.25}$) where R is the star radius (S\_R), a the planet mean distance (P\_D), A the albedo (here it was set equal to 0.3)
 \item\textbf{Habitability}: The planet habitability was classified with a boolean variable using the values reported in the dataset \cite{planet_dataset}
 
 \end{itemize}
@@ -171,13 +185,189 @@ Image taken from \cite{exoplanets-catalog}
 \end{columns}
 \end{frame}
 
+\section{Results}
+\subsection{Results - Decision Tree}
+\begin{frame}
+\frametitle{Results - Decision Tree}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Pic/DecisionTree.pdf}
+\end{center}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Pic/Var_imp_dec_tree.pdf}
+\includegraphics[width=0.5\linewidth]{Pic/Decision_Tree_FINAL_ROC.pdf}\\
+$\phi_{DT}=0.790$
+\end{center}
+\end{columns}
+\end{frame}
 
+
+\subsection{Results - Random Forest}
+\begin{frame}
+\frametitle{Results - Random Forest}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\linewidth]{Pic/Proximity_Random_forest.pdf}
+\end{center}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.6\linewidth]{Pic/Random_forest_importance.pdf}
+\includegraphics[width=0.6\linewidth]{Pic/Random_Forest_FINAL_ROC.pdf}\\
+$\phi_{RF}=0.835$
+\end{center}
+\end{columns}
+\end{frame}
+
+\subsection{Results - SVC}
+\begin{frame}
+\frametitle{Results - Support Vector Classifier}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\linewidth]{Pic/PCA+SVM_PLOT.pdf}
+\end{center}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Pic/SVM_FINAL_ROC.pdf}
+\includegraphics[width=0.5\linewidth]{Pic/SVM_PCA_ROC.pdf}\\
+$\phi_{SVC}=0.527$\quad$\phi_{PCA+SVC}=0.667$
+\end{center}
+\end{columns}
+\end{frame}
+
+\subsection{Results - Logistic Classification}
+\begin{frame}
+\frametitle{Results - Logistic Classification}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\linewidth]{Pic/LOG_FULL.png}
+\end{center}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.85\linewidth]{Pic/LOG_FULL_ROC.pdf}\\
+\end{center}
+\end{columns}
+\begin{center}
+$\phi_{log}=0.566$
+\end{center}
+\end{frame}
+
+
+\subsection{Results -  LDA and QDA}
+\begin{frame}
+\frametitle{Results - Linear and quadratic discriminant analysis}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\linewidth]{Pic/QDA_project_FULL.pdf}
+\end{center}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Pic/LDA_FULL_ROC.pdf}
+\includegraphics[width=0.5\linewidth]{Pic/QDA_FULL_ROC.pdf}\\
+$\phi_{LDA}=0.526$\quad$\phi_{QDA}=0.757$
+\end{center}
+\end{columns}
+\end{frame}
+
+
+\subsection{Discussion}
+\begin{frame}
+\frametitle{Discussion}
+\begin{table}[]
+\begin{center}
+\begin{tabular}{c||c|c|c}
+{\color[HTML]{CB0000} \textbf{Algortim}} & {\color[HTML]{CB0000} \textbf{Accuracy}} & {\color[HTML]{CB0000} \textbf{NIR}} & {\color[HTML]{CB0000} \textbf{$\phi$}} \\ \hline\hline
+Decision tree                            & 0.952                                    & 0.867                               & 0.790                                  \\ \hline
+Random forest                            & 0.964                                    & 0.869                               & 0.835                                  \\ \hline
+SVM                                      & 0.907                                    & 0.869                               & 0.527                                  \\ \hline
+PCA+SVM                                  & 0.932                                    & 0.869                               & 0.667                                  \\ \hline
+Logistic                                 & 0.914                                    & 0.869                               & 0.566                                  \\ \hline
+LDA                                      & 0.902                                    & 0.898                               & 0.526                                  \\ \hline
+QDA                                      & 0.941                                    & 0.869                               & 0.757 
+                             
+\end{tabular}
+\end{center}
+\end{table}
+\begin{itemize}
+\item The random forest algorithm provides the best forecast, followed by the decision tree and the the QDA. 
+\item This behaviour can be explained by considering that in the features space,as showed in the previous plots, the two sets largely overlaps
+\item A similar performance ranking was found by Sasha et al. (2018) \cite{saha2018machine}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Pic/Exoplanet_picture.jpg}
+\end{center}
+\begin{center}
+The 2M1207b exoplanet (red spot) and its host star 2M120 (a brown dwarf) as observed, after three near-infrared exposures (H, K and L wavebands), by the VLT Yepun telescope at the ESO Paranal Observatory. Image taken from \cite{exoplanet_pic}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textit{Per aspera ad astra}
+\end{center}
+\end{frame}
 
 
 
 \begin{frame}[t,allowframebreaks]
 \frametitle{References}
 \printbibliography
+\end{frame}
+
+\section{Supporting slides}
+\begin{frame}
+\begin{center}
+SUPPORTING SLIDES
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proximity plot - Explanation}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Pic/Prox_explanation.jpg}\\
+Image taken from \cite{blanchet2020constructing}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\frametitle{Proximity plot - Explanation}
+\includegraphics[width=0.8\linewidth]{Pic/Prox_explanation_3.jpg}\\
+Image taken from \cite{blanchet2020constructing}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\frametitle{Proximity plot - Explanation}
+\includegraphics[width=0.8\linewidth]{Pic/Prox_explanation_2.jpg}\\
+Image taken from \cite{blanchet2020constructing}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\frametitle{$\phi$ coefficent}
+\begin{table}[]
+\begin{tabular}{c|c|c}
+\multicolumn{1}{l|}{\textbf{}} & \textbf{Actual - N} & \textbf{Actual - P} \\ \hline
+\textbf{Predicted - N}         & \#TP                & \#FN                \\ \hline
+\textbf{Predicted - P}         & \#FP                & \#TP               
+\end{tabular}
+\end{table}
+\begin{equation*}
+\phi=\dfrac{TP\times TN - FP\times FN}{\sqrt{\left(TP+FP\right)\left(TP+FN\right)\left(TN+FP\right)\left(TN+FN\right)}}
+\end{equation*}
+\end{center}
 \end{frame}
 
 \end{document}
