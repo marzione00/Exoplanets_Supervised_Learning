@@ -54,7 +54,7 @@ learning, deep learning and artificial intelligence - Unsupervised Learning}
 \begin{frame}
 \frametitle{Overview}
 \begin{itemize}
-\item\textbf{Final goal}: Survey the performances of different statistical learning algorithm in the prediction of exoplanets habitability
+\item\textbf{Final goal}: Survey the performances of different statistical learning algorithms for the prediction of exoplanets habitability
 \item\textbf{Dataset}: Planetary Habitability Laboratory @ UPR Arecibo \cite{planet_dataset}
 \item\textbf{Algorithms}: Decision Tree, Random Forest, Support Vector Classifier, Logistic Regression, Linear and Quadratic Classifier
 \end{itemize}
@@ -117,10 +117,15 @@ Image taken from \cite{exoplanets-catalog}
 \frametitle{Theoretical background - Planet features }
 \begin{itemize}
 \item\textbf{Distance}: in this work the mean planet distance from the host star (P\_D), the periastron (P\_PN) and the apastron (P\_A) as well the termal effective distance (P\_D\_E) from the host star  were considered. These quantities constrain the planet orbital period (P\_P) via the 3$^{th}$ Kepler law (a corollary of Newton's law of universal gravitation)
-\item\textbf{Mass and Radius}: the (estimated) planet mass (P\_M) and its radius (P\_R) were considered (these are also useful to distinguish the super-earth planets) 
-\item\textbf{Temperature}: the planet mean stellar flux $P_F$  and the planet equilibrium temperature (P\_T\_E) were considered. The latter is defined as $T_{eq}=T_{star}\sqrt{R/2a}\left(1-A\right)^{0.25}$) where R is the star radius (S\_R), a the planet mean distance (P\_D), A the albedo (here it was set equal to 0.3)
+\item\textbf{Mass and Radius}: the (estimated) planet mass (P\_M) and its radius (P\_R) were considered (these are also useful to distinguish the super-earth planets)
+\end{itemize}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Theoretical background - Planet features }
+\begin{itemize}
+\item\textbf{Temperature}: the planet mean stellar flux $P_F$ (defined as $F=S_{L}/4\pi D$, where S$_{L}$ is the host star luminosity and D its distance) and the planet equilibrium temperature (P\_T\_E) were considered. The latter is defined as $T_{eq}=T_{star}\sqrt{R/2a}\left(1-A\right)^{0.25}$) where R is the star radius (S\_R), a the planet mean distance (P\_D), A the albedo (here it was set equal to 0.3)
 \item\textbf{Habitability}: The planet habitability was classified with a boolean variable using the values reported in the dataset \cite{planet_dataset}
-
 \end{itemize}
 \end{frame}
 
