@@ -7,45 +7,45 @@ Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: bibliography.bib
 Warning--empty journal in saha2018machine
 Warning--can't use both volume and number fields in pierrehumbert2011infrared
-You've used 54 entries,
+You've used 55 entries,
             1791 wiz_defined-function locations,
-            744 strings with 11596 characters,
-and the built_in function-call counts, 10340 in all, are:
-= -- 912
-> -- 367
+            748 strings with 11713 characters,
+and the built_in function-call counts, 10504 in all, are:
+= -- 925
+> -- 375
 < -- 9
-+ -- 151
-- -- 97
-* -- 624
-:= -- 1524
-add.period$ -- 139
-call.type$ -- 54
++ -- 154
+- -- 99
+* -- 629
+:= -- 1550
+add.period$ -- 142
+call.type$ -- 55
 change.case$ -- 34
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 477
-empty$ -- 1165
-format.name$ -- 97
-if$ -- 2360
+cite$ -- 57
+duplicate$ -- 487
+empty$ -- 1184
+format.name$ -- 99
+if$ -- 2399
 int.to.chr$ -- 0
-int.to.str$ -- 54
-missing$ -- 47
-newline$ -- 247
-num.names$ -- 41
-pop$ -- 189
+int.to.str$ -- 55
+missing$ -- 49
+newline$ -- 252
+num.names$ -- 42
+pop$ -- 196
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 277
+skip$ -- 280
 stack$ -- 0
 substring$ -- 651
-swap$ -- 94
+swap$ -- 95
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 94
-width$ -- 56
-write$ -- 512
+while$ -- 95
+width$ -- 57
+write$ -- 522
 (There were 2 warnings)
