@@ -11,8 +11,8 @@
 \contentsline {paragraph}{{Support vector machines}}{21}{equation.3.26}%
 \contentsline {subsection}{\numberline {3.3}{Logistic regression}}{23}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}{Linear and quadratic vector classifier}}{23}{subsection.3.4}%
-\contentsline {subparagraph}{{Linear discriminat analysis}}{23}{equation.3.34}%
-\contentsline {subparagraph}{{Quadratic discriminat analysis}}{24}{equation.3.36}%
+\contentsline {subparagraph}{{Linear discriminant analysis}}{23}{equation.3.34}%
+\contentsline {subparagraph}{{Quadratic discriminant analysis}}{24}{equation.3.36}%
 \contentsline {section}{\numberline {4}{Results and discussion}}{24}{section.4}%
 \contentsline {subsection}{\numberline {4.1}{A survey on the correlations via FAMD}}{24}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}{The decision tree and the random forest}}{28}{subsection.4.2}%
