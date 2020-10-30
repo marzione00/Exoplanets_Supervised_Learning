@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  30 OCT 2020 10:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  30 OCT 2020 21:24
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1996,7 +1996,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--245
 [][][]$\T1/fvm/m/n/12 https : / / towardsdatascience . com /
  []
 
-
+[63]
 Underfull \hbox (badness 10000) in paragraph at lines 252--253
 [][][]$\T1/fvm/m/n/12 https : / / www . r-[]bloggers . com / 2019 / 10 /
  []
@@ -2007,7 +2007,7 @@ Underfull \hbox (badness 1033) in paragraph at lines 260--263
  et
  []
 
-[63]) [64] (Manuscript.aux)
+) [64] (Manuscript.aux)
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2019,10 +2019,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22118 strings out of 480236
- 397445 string characters out of 2888530
- 1423461 words of memory out of 3000000
- 37367 multiletter control sequences out of 15000+200000
+ 22124 strings out of 480236
+ 397582 string characters out of 2888530
+ 1404461 words of memory out of 3000000
+ 37358 multiletter control sequences out of 15000+200000
  699646 words of font info for 257 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  94i,23n,99p,10634b,2981s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2048,9 +2048,9 @@ c/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/pala
 tino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Manuscript.pdf (64 pages, 9534055 bytes).
+Output written on Manuscript.pdf (64 pages, 9535754 bytes).
 PDF statistics:
- 1617 PDF objects out of 1728 (max. 8388607)
- 701 named destinations out of 1000 (max. 500000)
+ 1635 PDF objects out of 1728 (max. 8388607)
+ 716 named destinations out of 1000 (max. 500000)
  49995 words of extra memory for PDF output out of 51595 (max. 10000000)
 

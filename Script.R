@@ -39,10 +39,6 @@ library(ggpubr)
 library(cairoDevice)
 
 
-l <- makeCluster(8, type='PSOCK')
-registerDoParallel(cl)
-
-sink('exoplanet_log_output.txt')
 
 #########Loading data and randomly extracting the no-habitable planets
 
@@ -66,7 +62,7 @@ Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
 
-set.seed(10)
+set.seed(0)
 
 #########Splitting training vs test set
 
@@ -83,16 +79,16 @@ levels(Planets_dataset$P_H) <- c("False","True")
 
 
 
-#tune_dec.out=tune.rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,], minsplit=seq(1,20,1))
+tune_dec.out=tune.rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,], minsplit=seq(1,20,1))
 
-#print(tune_dec.out)
-#plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
+print(tune_dec.out)
+plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
 
-#tuneGrid <- expand.grid(cp = seq(0, 1, 0.001))
-#fitControl <- trainControl(method = 'repeatedcv',
-#                           number = 10,
-#classProbs = TRUE,
-#                           summaryFunction = twoClassSummary)
+tuneGrid <- expand.grid(cp = seq(0, 1, 0.001))
+fitControl <- trainControl(method = 'repeatedcv',
+                           number = 10,
+classProbs = TRUE,
+                           summaryFunction = twoClassSummary)
 #cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
 
 
@@ -121,10 +117,6 @@ ggplot(var_imp_dec_tree, aes(y=reorder(rowname,Overall),x=Overall,color="red")) 
 
 
 
-plot(caret::varImp(cp_vs_ROC))
-
-
-
 fancyRpartPlot(tree.planet,sub = "Planets Habitability", palettes = "OrRd")
 
 tree.predict<-data.frame(predict(tree.planet, Planets_dataset_test, type = "class"))
@@ -135,8 +127,6 @@ tree.predict["Test"]<-as.factor(Planets_dataset_test[,12])
 
 colnames(tree.predict)<-c("Predict","Test")
 
-
-caret::confusionMatrix(table(tree.predict))
 
 plot(caret::varImp(tree.planet,surrogates = FALSE, competes = TRUE))
 
@@ -152,53 +142,50 @@ autoplot(roc_dec.perf)+theme_bw()
 #Random Forest 
 ##############
 
-#RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
-#RF_perf_out<-data.frame(RF_perf_out)
-#ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+RF_perf_out<-tuneRF(Planets_dataset[Planets_dataset_train,-c(12,1)],Planets_dataset[Planets_dataset_train,12], ntree=5000)
+RF_perf_out<-data.frame(RF_perf_out)
+ggplot(RF_perf_out,aes(x=mtry, y=OOBError))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 rfor.planet <-randomForest(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,data=Planets_dataset, subset=Planets_dataset_train,localImp = TRUE,importance=TRUE,proximity=TRUE,ntry=4)
 rfor.predict<-data.frame(predict(rfor.planet, Planets_dataset_test, type = "class"))
 #explain_forest(rfor.planet)
 
 
-#var_imp_rforest<-data.frame(varImp(rfor.planet))
-#colnames(var_imp_rforest)<-c("Variable","Overall")
-#var_imp_rforest[,1]<-rownames(var_imp_rforest)
-#rownames(var_imp_rforest)<-seq(1:13)
+var_imp_rforest<-data.frame(varImp(rfor.planet))
+colnames(var_imp_rforest)<-c("Variable","Overall")
+var_imp_rforest[,1]<-rownames(var_imp_rforest)
+rownames(var_imp_rforest)<-seq(1:13)
 
-#ggplot(var_imp_rforest, aes(y=reorder(Variable,Overall),x=Overall,color="red")) + 
-#  geom_point() +
-#  geom_segment(aes(x=0,xend=Overall,yend=Variable)) +
-#  scale_color_discrete(name="Variable Group") +
-#  xlab("Overall importance") +
-#  ylab("Variable Name") + guides(color = FALSE, size = FALSE) + theme_bw()
-
-
-#plot(rfor.planet)
-#tree_plot<-data.frame(rfor.planet[["err.rate"]])
-#tree_plot[4]<-seq(1:1000)
-#colnames(tree_plot)<-c("OOB","Not_habitable","Habitable","Trees")
+ggplot(var_imp_rforest, aes(y=reorder(Variable,Overall),x=Overall,color="red")) + 
+  geom_point() +
+  geom_segment(aes(x=0,xend=Overall,yend=Variable)) +
+  scale_color_discrete(name="Variable Group") +
+  xlab("Overall importance") +
+  ylab("Variable Name") + guides(color = FALSE, size = FALSE) + theme_bw()
 
 
+plot(rfor.planet)
+tree_plot<-data.frame(rfor.planet[["err.rate"]])
+tree_plot[4]<-seq(1:500)
+colnames(tree_plot)<-c("OOB","Not_habitable","Habitable","Trees")
 
 
-#ggplot() + geom_line(data = tree_plot, aes(x = Trees, y = OOB,color = "OOB") ) + 
-#  geom_line(data = tree_plot, aes(x = Trees, y = Not_habitable,color = "Not H") ) +
-#  geom_line(data = tree_plot, aes(x = Trees, y = Habitable,color = "H") )+labs(color = "Legend")+theme() + xlab('Trees') + ylab('Error')+theme_bw()
 
 
-#plot(rfor.planet)
-#legend("top", colnames(rfor.planet$err.rate), fill=1:ncol(rfor.planet$err.rate))
-#varImpPlot(rfor.planet)
-#proximityPlot(rfor.planet)
-#print(rfor.planet)
-#print(importance(rfor.planet,type=2))
+ggplot() + geom_line(data = tree_plot, aes(x = Trees, y = OOB,color = "OOB") ) + 
+  geom_line(data = tree_plot, aes(x = Trees, y = Not_habitable,color = "Not H") ) +
+  geom_line(data = tree_plot, aes(x = Trees, y = Habitable,color = "H") )+labs(color = "Legend")+theme() + xlab('Trees') + ylab('Error')+theme_bw()
+
+
+plot(rfor.planet)
+legend("top", colnames(rfor.planet$err.rate), fill=1:ncol(rfor.planet$err.rate))
+varImpPlot(rfor.planet)
+proximityPlot(rfor.planet)
+print(rfor.planet)
 
 rfor.predict["Test"]<-as.factor(Planets_dataset_test[,12])
 
 colnames(rfor.predict)<-c("Predict","Test")
 
-
-caret::confusionMatrix(table(rfor.predict))
 
 fourfoldplot(table(rfor.predict), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Random Forest")
 
@@ -221,13 +208,11 @@ perf_svm<-data.frame(tune_svm_full.out[["performances"]])
 
 ggplot(perf_svm,aes(x=cost,y=degree, z=error))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 
-X11(width=60, height=60)
-plot_ly(perf_svm[,1:3],x = ~cost, y = ~degree, z = ~error, type="scatter3d", mode="markers") 
+#X11(width=60, height=60)
+#plot_ly(perf_svm[,1:3],x = ~cost, y = ~degree, z = ~error, type="scatter3d", mode="markers") 
 
 
 svm.full <- svm(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T, data=Planets_dataset[Planets_dataset_train,],type = 'C-classification', kernel="polynomial",cost=4,degree=2,)
-
-plot(svm.full,data=Planets_dataset[Planets_dataset_train,],P_H~S_L, ylim = c(-1, 2)) #projection on P_H vs S_L in, the mistaken one are shown in the decision tree
 
 svm.predict_full<-data.frame(predict(svm.full,Planets_dataset[-Planets_dataset_train,],type = "class"))
 
@@ -449,11 +434,6 @@ logistic.prob["T"]<-as.factor(Planets_dataset[-Planets_dataset_train,12])
 fourfoldplot(table(logistic.prob), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Logistic")
 
 
-
-
-
-
-sink()
 ###############
 #Auxiliary code
 ###############
