@@ -79,27 +79,6 @@ chart.Correlation(Planets_dataset[,-c(1,12,15)],histogram=TRUE, pch="+")
 
 
 
-tune_dec.out=tune.rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,], minsplit=seq(1,20,1))
-
-print(tune_dec.out)
-plot(tune_dec.out,type="contour",swapxy = TRUE,mar = c(2, 1, 1, 2))
-
-tuneGrid <- expand.grid(cp = seq(0, 1, 0.001))
-fitControl <- trainControl(method = 'repeatedcv',
-                           number = 10,
-classProbs = TRUE,
-                           summaryFunction = twoClassSummary)
-cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
-
-
-
-
-
-cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
-ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
-
-
-
 tree.planet <- rpart(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M+S_S_T,method="class",data=Planets_dataset, subset=Planets_dataset_train,minsplit = 5)
 
 var_imp_dec_tree<-data.frame(caret::varImp(tree.planet) %>%

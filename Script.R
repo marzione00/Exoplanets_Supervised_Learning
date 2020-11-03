@@ -89,14 +89,14 @@ fitControl <- trainControl(method = 'repeatedcv',
                            number = 10,
 classProbs = TRUE,
                            summaryFunction = twoClassSummary)
-#cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
+cp_vs_ROC<-train(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, data= Planets_dataset[Planets_dataset_train,],trControl = fitControl, method="rpart",tuneGrid = tuneGrid,metric = 'ROC')
 
 
 
 
 
-#cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
-#ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
+cp_vs_ROC<-data.frame(cp_vs_ROC[["results"]])
+ggplot(cp_vs_ROC,aes(x=cp, y=ROC))+geom_line(color="red",linetype="dashed")+geom_point(color="red")+theme_bw()
 
 
 

@@ -30,6 +30,8 @@ BCOR5mm, % Binding correction
 \usepackage[english]{babel}
 \usepackage{url}
 \usepackage{graphicx}
+\usepackage{calligra}
+\usepackage[T1]{fontenc}
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{afterpage}
@@ -76,7 +78,9 @@ BCOR5mm, % Binding correction
 
 \begin{document}
 
-\thispagestyle{empty}
+
+
+
 \title{\normalfont{A bird's-eye view on the habitability of exoplanets via statistical learning techniques}} % The article title
 
 \subtitle{Project for the exam: Machine learning, statistical learning, deep learning and artificial intelligence} % Uncomment to display a subtitle
@@ -89,9 +93,7 @@ BCOR5mm, % Binding correction
 %\titlepic{\includegraphics[width=\textwidth]{Pic/Triple-star_sunset.jpg}}
 
 
-%----------------------------------------------------------------------------------------
-
-
+%---------------------------------------------------------------------------------------
 
 
 
@@ -111,6 +113,14 @@ BCOR5mm, % Binding correction
 
 \maketitle % Print the title/author/date block
 \thispagestyle{empty}
+\newpage
+
+{\fontfamily{calligra}\selectfont \begin{huge}
+\hspace{1em}
+\begin{flushright}
+To Lucy
+\end{flushright} \end{huge}  }
+
 \newpage
 \begin{figure}[h]
 \begin{center}
@@ -134,7 +144,7 @@ BCOR5mm, % Binding correction
 %----------------------------------------------------------------------------------------
 
 \section*{Abstract} % This section will not appear in the table of contents due to the star (\section*)
-Among the different tools that are considered by scholars to challenge the physical science issues, the statistical learning techniques seems to provide a promising approach to challenge them \cite{carleo2019machine}. This approach can be used to tackle, one of the oldest problem of physical sciences:  the habitability of exoplanets and the possibility of the presence of life on them \cite{seager2013exoplanet}. This approach was previously used by scholars \cite{armstrong2020exoplanet,saha2018machine}: here a group of statistical learning techniques (Decision Tree, Random Forest, Support-vector machines, logistic classification, linear and Quadratic Discriminat analysis) were applied and compared to a selected set of 500 planets. The performances of the different methods were also compared and using the confusion matrix and the ROC curve.
+Among the different tools that are considered by scholars to challenge the physical science issues, the statistical learning techniques seems to provide a promising approach to challenge them \cite{carleo2019machine}. This approach can be used to tackle, one of the oldest problem of physical sciences:  the habitability of exoplanets and the possibility of the presence of life on them \cite{seager2013exoplanet}. This approach was previously used by scholars \cite{armstrong2020exoplanet,saha2018machine}: here a group of statistical learning techniques (Decision Tree, Random Forest, Support-vector machines, logistic classification, Linear and Quadratic Discriminant Analysis) were applied and compared to a selected set of 500 exoplanets. The performances of the different methods were also compared using the confusion matrix, the ROC curve and the $/phi$ factor: it was pointed out that the Random forest algorithm provides the best forecasts, followed by the decision tree and the quadratic discriminant analysis. 
 
 \nocite{*}
 \setcounter{tocdepth}{2} % Set the depth of the table of contents to show sections and subsections only
@@ -231,7 +241,7 @@ Such relation establishes an interval for the distance $R$ where the stellar rad
 \begin{center}
 \includegraphics[width=1\textwidth]{Pic/Absorption_gas.png}
 \caption{The spectra of a selected set of planets/moons. The peaks that fingerprint the presence of atmospheric gases are also reported. Image taken from \cite{catling2017atmospheric}}
-\label{BlackBody_greenhouse}
+\label{BlackBody_greenhouse_2}
 \end{center}
 \end{figure}
 
@@ -341,12 +351,12 @@ Where $B$ is the overall number of training sets generated via the bootstrap and
 
 
 \paragraph{Random forest} 
-The random forest technique, firstly introduced in 1995 \cite{ho1995random}, represent a further improvement of the decision tree after bagging: in this case, for each split, a random subset m of the full predictor set p is used. Such procedure is perform in order to avoid that the decision tree generated with the bootstrap are too similar due to the fact that there only few predictor that dominates the others, otherwise the reduction of variance due to the bagging is not so efficient since the bagged trees are correlated. The full random forest algorithm can be explained with the following analogy \cite{rand_for_exp}: lets consider a man, Carlo,  that would like to made a trip and, for this propose,  he asks to different people a suggestion; these asks to him a set of questions (last trip, sea or mountain, budget etc.) and give to him a final propose. Carlo at least takes a decision by using all the answers. In this example the different peoples are the bagged trees that give an answer basing of a different set of predictors. 
+The random forest technique, firstly introduced in 1995 \cite{ho1995random}, represent a further improvement of the decision tree after bagging: in this case, for each split, a random subset m of the full predictor set p is used. Such procedure is perform in order to avoid that the decision tree generated with the bootstrap are too similar due to the fact that there only few predictor that dominates the others, otherwise the reduction of variance due to the bagging is not so efficient since the bagged trees are correlated. The full random forest algorithm can be explained with the following analogy \cite{rand_for_exp}: lets consider a man, Carlo,  that would like to made a trip and, for this propose,  he asks to different people a suggestion; these asks to him a set of questions (last trip, sea or mountain, budget etc.) and give to him a final propose. Carlo at least takes a decision by using all the answers. In this example the different peoples are the bagged trees that give an answer basing of a different set of predictors . This algorithm is described in Fig \ref{random-forest-algorithm2}.   
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{Pic/random-forest-algorithm2.png}
 \caption{A schematic representation of the random forest algorithm. Image taken from \cite{rand_for_fig}}
-\label{Noisy_channel}
+\label{random-forest-algorithm2}
 \end{center}
 \end{figure}
 
@@ -463,8 +473,7 @@ where in this case the dependence from $x$ is quadratic. Since QDA has a covaria
 
 \subsection{A survey on the correlations via FAMD}
 
-Before applying the algorithms previously described, a preliminary insight on the densities of the quantitative variables for habitable and non-habitable planets was performed: its results are reported in Fig. \ref{Desities}. Furthermore also a survey among the correlation, only for the quantitative variables concerning all exoplanets was also done: this is shown in Fig. \ref{Corr_chart}. Then a deep inspection using the factor analysis of mixed data (FAMD) was undertaken.  As expected the planet habitability $P\_H$ is statistically correlated with the surface temperature of the hosting star ($S_T$), its spectral type ($S\_S\_T$) and the planet temperature equilibrium $P\_T\_E$. Such behaviour is obviously given by the fact that the necessary condition for habitability of an exoplanet is that the surface temperature of a planet allows liquid water. On the other side the distances factors (such as the mean distance $P\_D$, planet apastron $P\_A$ and the planet periastron $P\_PN$) are poorly correlated with the planet habitability: this can be ascribed to the fact that the habitability was extended beyond the \textit{Earth zone} by considering habitable planets that, with a particular atmosphere as shown in fig \ref{Planets_habitability_Seager}, have the correct surface temperature for liquid water
-\footnote{In principle one may wonder if a better approach should considered only the planets like Earth habitable or perhaps to distinguish the two cases in order to get the distance effect: the issue here is that these exoplanets are very few, thus to preserve the significance of the habitable planets, if such approach was undertaken, a further reduction of the dataset had to be considered. Since this choice strongly limits the quality of forecasts, such approach was not considered.} thus the statistical correlation between the distance factors and the habitability is strongly lowered. Interesting also the dimension and the mass of the exoplanet seems to be weakly correlated with the habitability. An insight about its possible causality relation requires very complicated models, that, as described in the introduction, involve the tectonic phenomena of the exoplanets: for this reason the explanation will be not considered here \footnote{But may be considered in future developments}.
+Before applying the algorithms previously described, a preliminary insight on the densities of the quantitative variables for habitable and non-habitable planets was performed: its results are reported in Fig. \ref{Desities}. Furthermore also a survey among the correlation, only for the quantitative variables concerning all exoplanets was also done: this is shown in Fig. \ref{Corr_chart}. Then a deep inspection using the factor analysis of mixed data (FAMD) was undertaken.  As expected the planet habitability $P\_H$ is statistically correlated with the surface temperature of the hosting star ($S_T$), and the planet temperature equilibrium $P\_T\_E$. Such behaviour reflects well that the necessary condition for habitability of an exoplanet is the correct surface temperature for  liquid water. 
 
 
 \begin{figure}[h]
@@ -498,16 +507,7 @@ Before applying the algorithms previously described, a preliminary insight on th
 \clearpage
 
 \subsection{Decision tree and random forest}
-The first approach that was considered is the classification decision tree. First the complexity parameter (CP) was checked (a 10-fold cross-validation on the training set \footnote{In this work, for all the approaches undertaken, the training ensemble consist in a set of 350 exoplanets while the test one is composed by 150 items. } was undertaken): as can be seen from Fig \ref{dt_cp_performance} the default parameter $0.01$ can be safely used. Then the decision tree algorithm was applied to the dataset with the tuned parameter: as it can be seen from Fig \ref{DecisionTree}, where the decision tree is given accompanied by a plot that provides the variables importance,  the main discriminant parameters, as expected, are the stellar temperature $S\_T$ and the planet temperature equilibrium $P\_T\_E$: this features discriminates, as one expects, the largest part of the habitable planet from the non-habitable. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation \footnote{For this procedure the test set and the validation sets where reshuffled 10 times by modifying the numerical seed by which the exoplanets are assigned to the training or to the test set. The proportion 150/500 for test and training sets was kept constant}, is reported in Fig \ref{perf_table} and in the table \ref{perf_table}. Next, in order to improve the performance of this classification, the random forest was considered. As shown in Fig. \ref{Random_forest_tree_perfs} the main parameters for this algorithm were previously checked. Its results are reported in Fig \ref{Random_forest_tree_results}: here the most important variable became the $P\_T\_E$ followed by the $S\_T$: such swap is resonable since the $P\_T\_E$ determinate directly the state of water on the exoplanet. Furthermore the importance of the planet period is increased.  This reshuffling of the variable importance positively reflects on the performances of the model when the overall CV (as described before) is performed: as one can note from Fig the performances are slightly improved with respect to the ones reported in Fig \ref{Decision_tree_performances}, in particular the ratio of the false positive is reduced with a percentage of 40 $\%$. Such improvement is captured by the accuracy and $\phi$ factors reported in table \ref{perf_table}. Finally it is worth noting that, although  different features were also considered and the output of the response function has a larger set,  a similar hierarchy  among the variable importance for the random forest algorithm was obtained by Saha et al. \cite{saha2018machine}: in their paper the highest variable importance, via random forest algorithm,  is assigned to the mean planet temperature at surface followed by the stellar magnitude with respect to the planet (between these two there are other features strictly connected to the planet surface temperature). The last quantity is strictly connected to the stellar temperature and to the stellar spectral type. Moreover also in their study the mean distance between the planet and host star plays a minor role.
-
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{Pic/cp_vs_ROC.pdf}
-\caption{Perfomance of the decision tree as the complexity parameter (CP) is modified evaluated via the ROC metric. }
-\label{dt_cp_performance}
-\end{center}
-\end{figure}
+The first approach that was considered is the classification decision tree \footnote{In this work, for all the approaches undertaken, the training ensemble consist in a set of 350 exoplanets while the test one is composed by 150 items.}: as it can be seen from Fig \ref{DecisionTree}, where the decision tree is given accompanied by a plot that provides the variables importance,  the main discriminant parameters, as expected, are the planet temperature equilibrium $P\_T\_E$ and the stellar temperature $S\_T$: this features discriminates, as one expects, the largest part of the habitable planet from the non-habitable. The performance of this algorithm on this dataset, evaluated with a 10-fold cross-validation \footnote{For this procedure, applied to all algoritms here considered the test set and the validation sets where reshuffled 10 times by modifying the numerical seed by which the exoplanets are assigned to the training or to the test set. The proportion 150/500 for test and training sets was kept constant}, is reported in Fig \ref{Decision_tree_performances} and in the table \ref{perf_table}. Next, in order to improve the performance of this classification, the random forest was considered. As shown in Fig. \ref{Random_forest_tree_perfs} the main parameters for this algorithm were previously checked. Its results are reported in Fig \ref{Random_forest_tree_results}: here the most important variable is still $P\_T\_E$ followed by the $S\_T$.  Moreover  as one can note from Fig \ref{Random_forest_tree_results} the performances are slightly improved with respect to the ones reported in Fig \ref{Decision_tree_performances}.  Such improvement is captured by the accuracy and $\phi$ factors reported in table \ref{perf_table}. Finally it is worth noting that, although  different features were also considered and the output of the response function has a larger set,  a similar hierarchy  among the variable importance for the random forest algorithm was obtained by Saha et al. \cite{saha2018machine}: in their paper the highest variable importance, via random forest algorithm,  is assigned to the mean planet temperature at surface followed by the stellar magnitude with respect to the planet (between these two there are other features strictly connected to the planet surface temperature). The last quantity is strictly connected to the stellar temperature and to the stellar spectral type. Moreover also in their study the mean distance between the planet and host star plays a minor role.
 
 
 \begin{figure}[h]
@@ -533,7 +533,7 @@ The first approach that was considered is the classification decision tree. Firs
   \centering
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/Random_forest_trees.pdf}}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/mtry_Random_forest.pdf}}
-\caption{The performances of the random forest algorithm as the main parameters are modified: as the ensemble grew (panel a) accompanied by the optimization of the number of variables available (mtry). For the calculations presented in this work an ensemble of 500 trees (the default one) was considered while the mytry parameter was set equal to 3.}
+\caption{The performances of the random forest algorithm as the main parameters are modified: as the ensemble grew (panel a) accompanied by the optimization of the number of variables available (mtry). For the calculations presented in this work an ensemble of 500 trees (the default one) was considered while the mytry parameter was set equal to 4.}
 \label{Random_forest_tree_perfs}
 \end{figure}
 
@@ -557,13 +557,13 @@ The first approach that was considered is the classification decision tree. Firs
 
 
 \subsection{Support Vector Classifiers}
-Next the SVM classification algorithm was considered: as for the previous cases, the most important parameters , in this case the budget and the polynomial degree , were tuned (see Fig. \ref{SVM_tuning}). The performances of this approach are reported in the Fig. \ref{SVM_results} and in the Tab. \ref{perf_table}: these seems to be worst with respect to the decision tree and random forest. In order to survey the origin of this bad performance the dimensionality reduction with principal component analysis (PCA) was performed in order to obtain a 2D plot of the decision boundary \footnote{Since the planet habitability is a categorical variable a particular library was used: indeed the PCAmixdata package provides the function \textit{PCAmix()} that manage the quantitative variables with the principal component analysis (PCA), while the qualitative variables are undertaken via the multiple correspondence analysis (MCA)}. As can be seen from Fig. \ref{PCA+SVM_PLOT} \footnote{The degree and the budget for the SVAM used here  were tuned also in this case: the optimized parameters were 2 for the polynomial and 4 for the budget} the habitable and non-habitable exoplanets sets, also if the dimensions are reduced, are largely overlapping and the decision boundary is complex: this reduce the performance of the algorithm. This behaviour of SVM was also pointed out by Saha et al. \cite{saha2018machine}. However as showed in Fig \ref{SVM+PCA_results} and in the Tab. \ref{perf_table} the performance of the SVM classification are improved when the PCA is previously undertaken \footnote{In principle, on the basis of the variable importance previously obtained with the random forest, one can consider to reduce the dimensionality of the set by taking only the $P\_T\_E$ and the $S\_T$ features: in this case a better performance of SVM is expected}
+Next the SVM classification algorithm was considered: the most important parameters , in this case the budget and the polynomial degree , were tuned (see Fig. \ref{SVM_tuning}). The performances of this approach are reported in the Fig. \ref{SVM_results} and in the Tab. \ref{perf_table}: these seems to be worst with respect to the decision tree and random forest. In order to survey the origin of this bad performance the dimensionality reduction with principal component analysis (PCA) was performed in order to obtain a 2D plot of the decision boundary \footnote{Since the planet habitability is a categorical variable a particular library was used: indeed the PCAmixdata package provides the function \textit{PCAmix()} that manage the quantitative variables with the principal component analysis (PCA), while the qualitative variables are undertaken via the multiple correspondence analysis (MCA)}. As can be seen from Fig. \ref{PCA+SVM_PLOT} \footnote{The degree and the budget for the SVAM used here  were tuned also in this case: the optimized parameters were 2 for the polynomial and 4 for the budget} the habitable and non-habitable exoplanets sets, also if the dimensions are reduced, are largely overlapping and the decision boundary is complex: this reduce the performance of the algorithm. This behaviour of SVM was also pointed out by Saha et al. \cite{saha2018machine}. However as showed in Fig \ref{SVM+PCA_results} and in the Tab. \ref{perf_table} the performance of the SVM classification are improved when the PCA is previously undertaken \footnote{In principle, on the basis of the variable importance previously obtained with the random forest, one can consider to reduce the dimensionality of the set by taking only the $P\_T\_E$ and the $S\_T$ features: in this case a better performance of SVM is expected}
 
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{Pic/SVM_tuning.png}
-\caption{The tuning of the budget parameter and the polynomial degree for the SVM classification algorithm. The selected point (x represents the budge while x the polynomial degree) is the parameter set chosen for this work}
+\caption{The tuning of the budget parameter and the polynomial degree for the SVM classification algorithm. The selected point (x represents the budged while y the polynomial degree) is the parameter set chosen for this work}
 \label{SVM_tuning}
 \end{center}
 \end{figure}
@@ -598,7 +598,7 @@ Next the SVM classification algorithm was considered: as for the previous cases,
 
 
 \subsection{Logistic regression}
-Beside the approaches previously described, the logistic classification was also undertaken: its performances are reported in Fig. \ref{logistic_performances} and in the Tab. \ref{perf_table}: the overall result seems better with respect to the SVM alghoritm but definitely lower with respect to the decision tree and the random forest algorithms. 
+Beside the approaches previously described, the logistic classification was also undertaken: its performances are reported in Fig. \ref{logistic_performances} and in the Tab. \ref{perf_table}: the overall result seems better with respect to the SVM algorithm but definitely lower with respect to the decision tree and the random forest algorithms. 
 
 \begin{figure}[h]
   \centering
@@ -670,7 +670,7 @@ QDA                                      & 0.941                                
 
 \section{Conclusions}
 
-Among the different methods that were here considered, the random forest achieved the best forecast according to the accuracy and the $\phi$ parameters as shown in the Tab. \ref{perf_table}. A similar ranking was also obtained by Saha et al. \cite{saha2018machine}: in particular they obtained that the random forest was the best performing algorithm, followed by the decision tree, the LDA and the SVM. The difference, with respect to the ranking reported here, is the swap between the LDA and SVM (basically the algorithms that here performed worst). As stated by Saha et al. \cite{saha2018machine} this can be ascribed to the fact that the boundary decision as shown in Fig. \ref{PCA+SVM_PLOT} and  \ref{QDA_project_FULL} is difficult to achieve since the two classes, in the full feature hyperspace, largely overlaps. Thus, or a dimensionality reduction is considered, or, as for the decision tree and random forest, an alternative non-linear approach should be considered \footnote{A future outlook of this work is to consider also the neural network algorithm}. Finally it is worth noting that the main features that discriminate the planet habitability are, as obtained by the best performing algorithm, the stellar luminosity and planet equilibrium temperature; this statement, as reviewed in the Introduction, is exactly what the theoretical model requested since the necessary condition for the habitability is the presence of liquid water. 
+Among the different methods that were here considered, the random forest achieved the best forecast according to the accuracy and the $\phi$ parameters as shown in the Tab. \ref{perf_table}. A similar ranking was also obtained by Saha et al. \cite{saha2018machine}: in particular this research group obtained that the random forest was the best performing algorithm, followed by the decision tree, the LDA and the SVM. The difference, with respect to the ranking reported here, is the swap between the LDA and SVM (basically the algorithms that here performed worst). As stated by Saha et al. \cite{saha2018machine} such overall ranking can be ascribed to the fact that the boundary decision as shown in Fig. \ref{PCA+SVM_PLOT} and  \ref{QDA_project_FULL} is difficult to trace since the two classes, in the full feature hyperspace, largely overlaps. Thus, or a dimensionality reduction is considered, or, as for the decision tree and random forest, an alternative non-linear approach should be considered \footnote{A future outlook of this work is to consider also the neural network algorithm}. Finally it is worth noting that the main features that discriminate the planet habitability are, as obtained by the best performing algorithm, the planet equilibrium temperature and the stellar temperature; this statement, as reviewed in the Introduction, is exactly what the theoretical model requested since the necessary condition for the habitability is the presence of liquid water. 
 
 
 
