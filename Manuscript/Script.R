@@ -48,9 +48,9 @@ Planet_not_habitable_l<-subset(phl_exoplanet_catalog_RENAMED,P_H==0)
 Planet_habitable<-subset(phl_exoplanet_catalog_RENAMED,P_H==1)
 
 
-Planet_dataset_no_habit<- sample(3657,445)
+Planet_dataset_no_habit_sample<- sample(3657,445)
 
-phl_exoplanet_not_habitable<-phl_exoplanet_catalog_RENAMED[Planet_dataset_no_habit,]
+phl_exoplanet_not_habitable<-Planet_not_habitable_l[Planet_dataset_no_habit_sample,]
 
 Planets_dataset<-rbind(Planet_habitable,phl_exoplanet_not_habitable)
 
