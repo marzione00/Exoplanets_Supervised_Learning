@@ -389,7 +389,7 @@ subject\;to\;\sum_{j=1}^{p}\beta_{j}^{2}=1
 y_{i}\left( \beta_{0} + \beta_{1} x_{i1} + \beta_{2} x_{i2}+...+\beta x_{ip}\right)\geq M\quad\forall\; i=1,...,n
 \end{equation}
 \paragraph{Support vector Classifier}
-The maximal margin approach assumes that the separating hyperplane exists, however this is far from be the most common type of classification problem. To overcome to this point the support vector classifier: in this approach the margin is considered soft allowing some point to be on the wrong side of the margin or on the wrong side of the hyperplane. The tolerance threshold is fixed by a quantity that is called budget $C$, more formally \cite{james2013introduction}:
+The maximal margin approach assumes that the separating hyperplane exists, however this is far from be the most common type of classification problem. To overcome to this point the support vector classifier was proposed: in this approach the margin is considered soft allowing some point to be on the wrong side of the margin or on the wrong side of the hyperplane. The tolerance threshold is fixed by a quantity that is called budget $C$, more formally \cite{james2013introduction}:
 \begin{equation}
 \max\limits_{{\beta_{0},\beta_{1}...\beta_{p},M}} M
 \end{equation}
@@ -439,11 +439,7 @@ p(\textbf{X})=\dfrac{e^{\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}}}{1+e^{\beta
 \end{equation}
 where the estimation of the parameters $\beta$ is achieved via the maximum likehood method. Such approach is for a binary response, as in our case, but it can be extended to multiple ones.
 \subsection{Linear and quadratic vector classifier}
-The linear and quadratic classifier are an improvement of the logistic model approach \cite{james2013introduction}: 
-\begin{equation}
-p(Y=1|X)=\dfrac{e^{\beta_{0}+\beta_{1}X+...+\beta_{p}X_{p}}}{1+e^{\beta_{0}+\beta_{1}X_{1}+...+\beta_{p}X_{p}}}
-\end{equation}
-since the logistic one is unstable when the classes are well-separated, moreover these two are more stable if $n$ is small. The starting point is the is the Bayes theorem \cite{james2013introduction}:
+The linear and quadratic classifier are an improvement of the logistic model approach since the logistic one is unstable when the classes are well-separated, moreover these approaches are more stable if $n$ is small. The starting point is the is the Bayes theorem \cite{james2013introduction}:
 \begin{equation}
 p(Y=k|X=x)=\dfrac{\pi_{k}f_{k}(x)}{\sum_{l=1}^{K}\pi_{l}f_{l}(x)}
 \end{equation}
@@ -515,7 +511,7 @@ The first approach that was considered is the classification decision tree \foot
 \begin{center}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/DecisionTree.pdf}}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{Pic/Var_imp_dec_tree.pdf}}
-\caption{The classification of exoplanets habitability obtained by the decision tree algorithm (\textit{True} stands for habitable while \textit{False} not habitable). The units of measure are reported in the table \ref{features_table}. In the  upper panel (a) the decision tree representation is plotted: the highest number in each box refers to the output of the classifier give the condition reported on his bottom, the two number in the middle the percentages of the splitting and the last number the overall percentage of the planes classified by the node. Note that, since only boxes for which more than 5 items were considered, the overall sum is lower than $100 \%$. In the lower panel (b) is reported the overall importance of each variable.}
+\caption{The classification of exoplanets habitability obtained by the decision tree algorithm (\textit{True} stands for habitable while \textit{False} not habitable). The units of measure are reported in the table \ref{features_table}. In the  left panel (a) the decision tree representation is plotted: the highest number in each box refers to the output of the classifier give the condition reported on his bottom, the two number in the middle the percentages of the splitting and the last number the overall percentage of the planes classified by the node. Note that, since only boxes for which more than 5 items were considered, the overall sum is lower than $100 \%$. In the lower panel (b) is reported the overall importance of each variable.}
 \label{DecisionTree}
 \end{center}
 \end{figure}
@@ -541,7 +537,7 @@ The first approach that was considered is the classification decision tree \foot
   \centering
 \subfloat[]{\includegraphics[width=0.8\textwidth]{Pic/Proximity_Random_forest.pdf}}\\
 \subfloat[]{\includegraphics[width=0.8\textwidth]{Pic/Random_forest_importance.pdf}}
-\caption{Main results achieved with the random forest algorithm: on the left panel (a) the random Forest proximity scores is reported while on the left panel (b) the overall importance of each variable is plotted. Note that in this case the hierarchy importance of the variables is slightly changed with respect to the Fig \ref{DecisionTree} }
+\caption{Main results achieved with the random forest algorithm: on the upper panel (a) the random Forest proximity scores is reported while on the bottom panel (b) the overall importance of each variable is plotted. Note that in this case the hierarchy importance of the variables is slightly changed with respect to the Fig \ref{DecisionTree} }
 \label{Random_forest_tree_results}
 \end{figure}
 
@@ -557,7 +553,7 @@ The first approach that was considered is the classification decision tree \foot
 
 
 \subsection{Support Vector Classifiers}
-Next the SVM classification algorithm was considered: the most important parameters , in this case the budget and the polynomial degree , were tuned (see Fig. \ref{SVM_tuning}). The performances of this approach are reported in the Fig. \ref{SVM_results} and in the Tab. \ref{perf_table}: these seems to be worst with respect to the decision tree and random forest. In order to survey the origin of this bad performance the dimensionality reduction with principal component analysis (PCA) was performed in order to obtain a 2D plot of the decision boundary \footnote{Since the planet habitability is a categorical variable a particular library was used: indeed the PCAmixdata package provides the function \textit{PCAmix()} that manage the quantitative variables with the principal component analysis (PCA), while the qualitative variables are undertaken via the multiple correspondence analysis (MCA)}. As can be seen from Fig. \ref{PCA+SVM_PLOT} \footnote{The degree and the budget for the SVAM used here  were tuned also in this case: the optimized parameters were 2 for the polynomial and 4 for the budget} the habitable and non-habitable exoplanets sets, also if the dimensions are reduced, are largely overlapping and the decision boundary is complex: this reduce the performance of the algorithm. This behaviour of SVM was also pointed out by Saha et al. \cite{saha2018machine}. However as showed in Fig \ref{SVM+PCA_results} and in the Tab. \ref{perf_table} the performance of the SVM classification are improved when the PCA is previously undertaken \footnote{In principle, on the basis of the variable importance previously obtained with the random forest, one can consider to reduce the dimensionality of the set by taking only the $P\_T\_E$ and the $S\_T$ features: in this case a better performance of SVM is expected}
+Next the SVM classification algorithm was considered: the most important parameters , in this case the budget and the polynomial degree , were tuned (see Fig. \ref{SVM_tuning}). The performances of this approach are reported in the Fig. \ref{SVM_results} and in the Tab. \ref{perf_table}: these seems to be worst with respect to the decision tree and random forest. In order to survey the origin of this bad performance the dimensionality reduction with principal component analysis (PCA) was performed in order to obtain a 2D plot of the decision boundary \footnote{Since the planet habitability is a categorical variable a particular library was used: indeed the PCAmixdata package provides the function \textit{PCAmix()} that manage the quantitative variables with the principal component analysis (PCA), while the qualitative variables are undertaken via the multiple correspondence analysis (MCA)}. As can be seen from Fig. \ref{PCA+SVM_PLOT} \footnote{The degree and the budget for the SVM used here  were tuned also in this case: the optimized parameters were 2 for the polynomial and 4 for the budget} the habitable and non-habitable exoplanets sets, also if the dimensions are reduced, are largely overlapping and the decision boundary is complex: this reduce the performance of the algorithm. This behaviour of SVM was also pointed out by Saha et al. \cite{saha2018machine}. However as showed in Fig \ref{SVM+PCA_results} and in the Tab. \ref{perf_table} the performance of the SVM classification are improved when the PCA is previously undertaken \footnote{In principle, on the basis of the variable importance previously obtained with the random forest, one can consider to reduce the dimensionality of the set by taking only the $P\_T\_E$ and the $S\_T$ features: in this case a better performance of SVM is expected}
 
 
 \begin{figure}[h]
