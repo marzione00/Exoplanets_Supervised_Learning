@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  4 NOV 2020 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  4 NOV 2020 17:46
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -1957,12 +1957,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 ]
-[47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]) (Manuscript.bbl
+[47] [48] [49] [50] [51] [52] [53] [54] [55] [56]) (Manuscript.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 [][][]$\T1/fvm/m/n/12 https : / / exoplanets . nasa . gov / news / 1605 /
  []
 
-[59]
+[57]
 Underfull \hbox (badness 2293) in paragraph at lines 62--66
 []\T1/pplj/m/n/12 Richard P. Feyn-man.  The feyn-man lec-tures on physics.
  []
@@ -1973,13 +1973,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--66
  . html #
  []
 
-
+[58]
 Underfull \hbox (badness 10000) in paragraph at lines 80--81
 [][][]$\T1/fvm/m/n/12 https : / / upload . wikimedia . org / wikipedia / common
 s / 6 / 61 /
  []
 
-[60]
+
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
 [][][]$\T1/fvm/m/n/12 https : / / upload . wikimedia . org / wikipedia / common
 s / 0 / 04 /
@@ -2008,7 +2008,7 @@ Overfull \hbox (5.64812pt too wide) in paragraph at lines 132--133
 anets-[]catalog /
  []
 
-[61]
+[59]
 Overfull \hbox (5.64812pt too wide) in paragraph at lines 160--161
 [][][]$\T1/fvm/m/n/12 http : / / phl . upr . edu / projects / habitable-[]exopl
 anets-[]catalog /
@@ -2025,7 +2025,7 @@ Overfull \hbox (16.41257pt too wide) in paragraph at lines 163--164
 entation$[][]\T1/pplj/m/n/12 . 
  []
 
-[62]
+[60]
 Underfull \hbox (badness 10000) in paragraph at lines 238--239
 [][][]$\T1/fvm/m/n/12 https : / / builtin . com / data-[]science /
  []
@@ -2052,7 +2052,7 @@ Underfull \hbox (badness 1033) in paragraph at lines 260--263
  et
  []
 
-) [63] (Manuscript.aux)
+) [61] (Manuscript.aux)
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2064,10 +2064,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22109 strings out of 480236
- 397568 string characters out of 2888530
- 1452010 words of memory out of 3000000
- 37361 multiletter control sequences out of 15000+200000
+ 22021 strings out of 480236
+ 396274 string characters out of 2888530
+ 1399004 words of memory out of 3000000
+ 37339 multiletter control sequences out of 15000+200000
  700514 words of font info for 259 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  94i,23n,99p,10634b,2981s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2094,9 +2094,9 @@ onts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Manuscript.pdf (63 pages, 9485765 bytes).
+Output written on Manuscript.pdf (61 pages, 9470923 bytes).
 PDF statistics:
- 1602 PDF objects out of 1728 (max. 8388607)
- 690 named destinations out of 1000 (max. 500000)
+ 1516 PDF objects out of 1728 (max. 8388607)
+ 624 named destinations out of 1000 (max. 500000)
  51014 words of extra memory for PDF output out of 51595 (max. 10000000)
 

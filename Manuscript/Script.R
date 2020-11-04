@@ -62,14 +62,16 @@ Planets_dataset[,12]<-as.factor(Planets_dataset[,12])
 Planets_dataset[,15]<-as.factor(Planets_dataset[,15])
 
 
+
 set.seed(0)
 
 #########Splitting training vs test set
 
 Planets_dataset_train<- sample(500,350)
+levels(Planets_dataset$P_H) <- c("False","True")
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
-levels(Planets_dataset$P_H) <- c("False","True")
+
 
 chart.Correlation(Planets_dataset[,-c(1,12,15)],histogram=TRUE, pch="+")
 
@@ -107,15 +109,8 @@ tree.predict["Test"]<-as.factor(Planets_dataset_test[,12])
 colnames(tree.predict)<-c("Predict","Test")
 
 
-plot(caret::varImp(tree.planet,surrogates = FALSE, competes = TRUE))
-
 fourfoldplot(table(tree.predict), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Decision Tree")
 
-pred_dec<-prediction(as.numeric(tree.predict$Predict),as.numeric(tree.predict$Test))
-
-roc_dec.perf <- performance(pred_dec, measure = "tpr", x.measure = "fpr")
-
-autoplot(roc_dec.perf)+theme_bw()
 
 ##############
 #Random Forest
@@ -168,11 +163,6 @@ colnames(rfor.predict)<-c("Predict","Test")
 
 fourfoldplot(table(rfor.predict), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "Random Forest")
 
-pred_for<-prediction(as.numeric(rfor.predict$Predict),as.numeric(rfor.predict$Test))
-
-roc_for.perf <- performance(pred_for, measure = "tpr", x.measure = "fpr")
-
-autoplot(roc_for.perf)+theme_bw()
 
 
 ####
@@ -205,15 +195,7 @@ caret::confusionMatrix(table(svm_fin_full))
 
 fourfoldplot(table(svm_fin_full), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM_FULL")
 
-pred_svm_full<-prediction(as.numeric(svm_fin_full$Predict),as.numeric(svm_fin_full$Test))
 
-roc_svm_full.perf <- performance(pred_svm_full, measure = "tpr", x.measure = "fpr")
-
-phi_svm_full<-performance(pred_svm_full, "mi")
-
-phi_svm_full@y.values
-
-autoplot(roc_svm_full.perf)+theme_bw()
 
 
 ########
@@ -294,15 +276,6 @@ caret::confusionMatrix(table(svm_fin_mix))
 
 fourfoldplot(table(svm_fin_mix), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "SVM")
 
-pred_svm<-prediction(as.numeric(svm_fin_mix$Predict),as.numeric(svm_fin_mix$Test))
-
-roc_svm.perf <- performance(pred_svm, measure = "tpr", x.measure = "fpr")
-
-phi_svm<-performance(pred_svm, "mi")
-
-phi_svm@y.values
-
-autoplot(roc_svm.perf)+theme_bw()
 
 
 ####
@@ -316,15 +289,10 @@ qda.planet<- qda(P_H~P_P+S_T+P_D+P_PN+P_A+P_D_E+P_F+P_T_E+S_R_E+S_L+P_R+P_M, dat
 #X11(width=60, height=60)
 #partimat(P_H~S_T+P_D+P_PN+P_T_E+S_R_E+S_L+P_R+P_M,data=Planets_dataset[Planets_dataset_train,],method="qda",nplots.vert=4)
 
-plot(qda.planet,dimen = 1, type = "b")
+#partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
 
-partimat(P_H ~ S_L+P_T_E, data=Planets_dataset[Planets_dataset_train,], method="qda")
+#plot(qda.planet,P_H~S_L)
 
-plot(qda.planet,P_H~S_L)
-
-glm.planet
-
-summary(glm.planet)
 
 
 qda.prob<-data.frame(predict(qda.planet,Planets_dataset[-Planets_dataset_train,],type = "response"))
@@ -338,17 +306,6 @@ colnames(qda_fin)<-c("Predict","Test")
 caret::confusionMatrix(table(qda_fin))
 
 fourfoldplot(table(qda_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "QDA")
-
-pred_qda<-prediction(as.numeric(qda_fin$Predict),as.numeric(qda_fin$Test))
-
-roc_qda.perf <- performance(pred_qda, measure = "tpr", x.measure = "fpr")
-
-phi_qda<-performance(pred_qda, "phi")
-
-plot(phi_qda)
-
-autoplot(roc_qda.perf)+theme_bw()
-
 
 
 
@@ -379,15 +336,6 @@ caret::confusionMatrix(table(lda_fin))
 
 fourfoldplot(table(lda_fin), color = c("red","darkgreen"),conf.level = 0, margin = 1, main = "LDA")
 
-pred_lda<-prediction(as.numeric(lda_fin$Predict),as.numeric(lda_fin$Test))
-
-roc_lda.perf <- performance(pred_lda, measure = "tpr", x.measure = "fpr")
-
-phi_lda<-performance(pred_lda, "phi")
-
-plot(phi_lda)
-
-autoplot(roc_lda.perf)+theme_bw()
 
 
 
@@ -424,18 +372,6 @@ Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA_boolean
 caret::confusionMatrix(table(Conf_matrix_dec_tree))
 
 fourfoldplot(table(Conf_matrix_dec_tree), color = c("red","darkgreen"),conf.level = 0, margin = 1)
-
-Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA.xlsx")
-
-pred_gen<-prediction(as.numeric(Conf_matrix_dec_tree$P),as.numeric(Conf_matrix_dec_tree$T))
-
-roc_gen.perf <- performance(pred_gen, measure = "tpr", x.measure = "fpr")
-
-phi_gen<-performance(pred_gen, "phi")
-
-print(phi_gen)
-
-autoplot(roc_gen.perf, main = "ROC",xlab = "False positive rate", ylab = "True positive rate")+geom_line(size = 1.1)+theme_bw()+theme(plot.title = element_text(hjust = 0.5))+ theme(legend.position = "none")
 
 
 
