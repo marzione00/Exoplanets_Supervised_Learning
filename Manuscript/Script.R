@@ -68,9 +68,9 @@ set.seed(0)
 #########Splitting training vs test set
 
 Planets_dataset_train<- sample(500,350)
-levels(Planets_dataset$P_H) <- c("False","True")
 Planets_dataset_test<-Planets_dataset[-Planets_dataset_train,]
 
+levels(Planets_dataset$P_H) <- c("False","True")
 
 
 chart.Correlation(Planets_dataset[,-c(1,12,15)],histogram=TRUE, pch="+")
