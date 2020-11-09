@@ -1,24 +1,24 @@
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}{Introduction}}{6}{section.1}%
 \contentsline {section}{\numberline {2}{Data Description}}{13}{section.2}%
-\contentsline {section}{\numberline {3}{Theoretical Background}}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}{Decision tree}}{18}{subsection.3.1}%
-\contentsline {paragraph}{{Bagging}}{19}{equation.3.16}%
-\contentsline {paragraph}{{Random forest}}{19}{equation.3.17}%
-\contentsline {subsection}{\numberline {3.2}{Support vector machines}}{21}{subsection.3.2}%
-\contentsline {paragraph}{{Maximal margin Classifier}}{21}{figure.caption.12}%
-\contentsline {paragraph}{{Support vector Classifier}}{22}{equation.3.22}%
-\contentsline {paragraph}{{Support vector machines}}{22}{equation.3.26}%
-\contentsline {subsection}{\numberline {3.3}{Logistic regression}}{24}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}{Linear and quadratic vector classifier}}{24}{subsection.3.4}%
-\contentsline {subparagraph}{{Linear discriminant analysis}}{24}{equation.3.33}%
-\contentsline {subparagraph}{{Quadratic discriminant analysis}}{25}{equation.3.35}%
-\contentsline {section}{\numberline {4}{Results and discussion}}{25}{section.4}%
-\contentsline {subsection}{\numberline {4.1}{A survey on the correlations via FAMD}}{25}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}{Decision tree and random forest}}{29}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}{Support Vector Classifiers}}{35}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}{Logistic regression}}{40}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}{Linear and quadratic analysis}}{42}{subsection.4.5}%
-\contentsline {section}{\numberline {5}{Conclusions}}{46}{section.5}%
-\contentsline {section}{\numberline {6}{R code}}{46}{section.6}%
+\contentsline {section}{\numberline {3}{Theoretical Background}}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}{Decision tree}}{17}{subsection.3.1}%
+\contentsline {paragraph}{{Bagging}}{18}{equation.3.16}%
+\contentsline {paragraph}{{Random forest}}{18}{equation.3.17}%
+\contentsline {subsection}{\numberline {3.2}{Support vector machines}}{20}{subsection.3.2}%
+\contentsline {paragraph}{{Maximal margin Classifier}}{20}{figure.caption.12}%
+\contentsline {paragraph}{{Support vector Classifier}}{21}{equation.3.22}%
+\contentsline {paragraph}{{Support vector machines}}{21}{equation.3.26}%
+\contentsline {subsection}{\numberline {3.3}{Logistic regression}}{23}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}{Linear and quadratic vector classifier}}{23}{subsection.3.4}%
+\contentsline {subparagraph}{{Linear discriminant analysis}}{23}{equation.3.33}%
+\contentsline {subparagraph}{{Quadratic discriminant analysis}}{24}{equation.3.35}%
+\contentsline {section}{\numberline {4}{Results and discussion}}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}{A survey on the correlations via FAMD}}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}{Decision tree and random forest}}{28}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}{Support Vector Classifiers}}{34}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}{Logistic regression}}{39}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}{Linear and quadratic analysis}}{41}{subsection.4.5}%
+\contentsline {section}{\numberline {5}{Conclusions}}{45}{section.5}%
+\contentsline {section}{\numberline {6}{R code}}{45}{section.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

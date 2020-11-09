@@ -58,7 +58,7 @@ learning, deep learning and artificial intelligence - Supervised Learning}
 \begin{itemize}
 \item\textbf{Final goal}: Survey the performances of different statistical learning algorithms for the prediction of exoplanets habitability
 \item\textbf{Dataset}: Planetary Habitability Laboratory @ UPR Arecibo \cite{planet_dataset}
-\item\textbf{Algorithms}: Decision Tree, Random Forest, Support Vector Classifier, Logistic Regression, Linear and Quadratic Classifier
+\item\textbf{Algorithms}: Decision Tree, Random Forest, Support Vector Classifier, Logistic Regression, Linear and Quadratic discriminant analysis
 \end{itemize}
 \end{frame}
 
@@ -102,18 +102,6 @@ Image taken from \cite{HR_diagram}
 \end{columns}
 \end{frame}
 
-\subsection{Planet Features}
-
-\begin{frame}
-\frametitle{Theoretical background - Planet features }
-\begin{center}
-\includegraphics[width=.9\linewidth,]{Pic/PT_Confirmed.jpg}
-\end{center}
-\begin{center}
-Image taken from \cite{exoplanets-catalog}
-\end{center}
-\end{frame}
-
 
 \begin{frame}
 \frametitle{Theoretical background - Planet features }
@@ -129,6 +117,18 @@ Image taken from \cite{exoplanets-catalog}
 \item\textbf{Temperature}: the planet mean stellar flux $P_F$ (defined as $F=S_{L}/4\pi D$, where S$_{L}$ is the host star luminosity and D its distance) and the planet equilibrium temperature (P\_T\_E) were considered. The latter is defined as $T_{eq}=T_{star}\sqrt{R/2a}\left(1-A\right)^{0.25}$) where R is the star radius (S\_R), a the planet mean distance (P\_D), A the albedo (here it was set equal to 0.3)
 \item\textbf{Habitability}: The planet habitability was classified with a boolean variable using the values reported in the dataset \cite{planet_dataset}
 \end{itemize}
+\end{frame}
+
+\subsection{Planet Features}
+
+\begin{frame}
+\frametitle{Theoretical background - Planet features }
+\begin{center}
+\includegraphics[width=.9\linewidth,]{Pic/PT_Confirmed.jpg}
+\end{center}
+\begin{center}
+Image taken from \cite{exoplanets-catalog}
+\end{center}
 \end{frame}
 
 
@@ -357,7 +357,7 @@ Image taken from \cite{blanchet2020constructing}
 \begin{center}
 \frametitle{Proximity plot - Explanation}
 \includegraphics[width=0.8\linewidth]{Pic/Prox_explanation_2.jpg}\\
-Image taken from \cite{blanchet2020constructing}
+Images taken from \cite{blanchet2020constructing}
 \end{center}
 \end{frame}
 
@@ -374,6 +374,64 @@ Image taken from \cite{blanchet2020constructing}
 \begin{equation*}
 \phi=\dfrac{TP\times TN - FP\times FN}{\sqrt{\left(TP+FP\right)\left(TP+FN\right)\left(TN+FP\right)\left(TN+FN\right)}}
 \end{equation*}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Receiver operating characteristic}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\linewidth]{Pic/ROC/ROC_A.png}
+\includegraphics[width=1\linewidth]{Pic/ROC/ROC_B.png}\\
+\end{center}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Pic/ROC/ROC_A_R.png}
+\includegraphics[width=0.5\linewidth]{Pic/ROC/ROC_B_R.png}\\
+\end{center}
+\end{columns}
+\begin{center}
+Images taken from \cite{ROC_fig}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Receiver operating characteristic}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\linewidth]{Pic/ROC/ROC_C.png}
+\includegraphics[width=1\linewidth]{Pic/ROC/ROC_D.png}\\
+\end{center}
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Pic/ROC/ROC_C_R.png}
+\includegraphics[width=0.5\linewidth]{Pic/ROC/ROC_D_R.png}\\
+\end{center}
+\end{columns}
+\begin{center}
+Images taken from \cite{ROC_fig}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Factor analysis of mixed data - FAMD}
+\begin{center}
+r(z,k) correlation coefficient (z and k quantitative) \\
+\end{center}
+\begin{center}
+$\eta^{2}$(z,q) correlation ratio (z quantitative and q qualitative)
+\end{center}
+\begin{center}
+PCA $\rightarrow$ $max\sum_{k}r^{2}(z,k)$
+\end{center}
+\begin{center}
+MCA $\rightarrow$ $max\sum_{q}\eta^{2}(z,q)$
+\end{center}
+\begin{center}
+FAMD $\rightarrow$ $max\sum_{k}r^{2}(z,k)+max\sum_{q}\eta^{2}(z,q)$
 \end{center}
 \end{frame}
 

@@ -40,21 +40,22 @@ library(cairoDevice)
 
 
 
-#########Loading data and randomly extracting the no-habitable planets
-
-
 phl_exoplanet_catalog_RENAMED <- data.frame(read_excel("phl_exoplanet_catalog_RENAMED.xlsx"),stringsAsFactors = FALSE)
 Planet_not_habitable_l<-subset(phl_exoplanet_catalog_RENAMED,P_H==0)
 Planet_habitable<-subset(phl_exoplanet_catalog_RENAMED,P_H==1)
 
 
-Planet_dataset_no_habit_sample<- sample(3657,445)
+Planet_dataset_no_habit_sample<- sample(3650,445)
 
 phl_exoplanet_not_habitable<-Planet_not_habitable_l[Planet_dataset_no_habit_sample,]
 
 Planets_dataset<-rbind(Planet_habitable,phl_exoplanet_not_habitable)
 
 #save(Planets_dataset,file="Planets_dataset.rda")
+
+#Loading a previous dataset were the non-habitable planets
+#were randomized among the whole dataset 
+
 
 #load("Planets_dataset.rda")
 
@@ -359,12 +360,11 @@ fourfoldplot(table(logistic.prob), color = c("red","darkgreen"),conf.level = 0, 
 
 ###############
 #Auxiliary code
+#It takes an excel file where a predicted/test values for 10 runs are reported and plot the confusion matrix
 ###############
 
 pca.planet <- prcomp(pca.train[,2:14], center = TRUE,scale. = TRUE)
 pca3d(pca.planet,group= pca.train[,12])
-
-
 
 
 Conf_matrix_dec_tree <- read_excel("Final_data/Strumenti/Conf_matrix_QDA_boolean.xlsx")
@@ -398,7 +398,7 @@ ggdensity(check_final,x="P_T_E",rug = TRUE, color = "Full",fill = "Full" )+theme
 Planet_not_habitable<-subset(Planets_dataset,P_H="False")
 Planet_habitable<-subset(Planets_dataset,P_H="True")
 
-ggdensity(Planets_dataset,x="P_M",rug = TRUE, color = "P_H",fill = "P_H" )+theme_bw()
+ggdensity(Planets_dataset,x="S_R_E",rug = TRUE, color = "P_H",fill = "P_H" )+theme_bw()
 
 
 ggdensity(Planet_not_habitable$S_LUMINOSITY)

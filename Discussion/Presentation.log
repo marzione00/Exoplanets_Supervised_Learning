@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  30 OCT 2020 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.27)  9 NOV 2020 10:05
 entering extended mode
 **./Presentation.tex
 (Presentation.tex
@@ -1233,19 +1233,19 @@ Package pdftex.def Info: Pic/S_T_T_explanation.png  used on input line 103.
 (pdftex.def)             Requested size: 154.03183pt x 162.99379pt.
  [4
 
- <./Pic/S_T_T_explanation.png>]
-<Pic/PT_Confirmed.jpg, id=212, 1674.255pt x 1084.05pt>
-File: Pic/PT_Confirmed.jpg Graphic file (type jpg)
-<use Pic/PT_Confirmed.jpg>
-Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 115.
-(pdftex.def)             Requested size: 308.06367pt x 199.45439pt.
- [5
+ <./Pic/S_T_T_explanation.png>] [5
 
- <./Pic/PT_Confirmed.jpg>] [6
-
-] [7
+] [6
 
 ]
+<Pic/PT_Confirmed.jpg, id=269, 1674.255pt x 1084.05pt>
+File: Pic/PT_Confirmed.jpg Graphic file (type jpg)
+<use Pic/PT_Confirmed.jpg>
+Package pdftex.def Info: Pic/PT_Confirmed.jpg  used on input line 132.
+(pdftex.def)             Requested size: 308.06367pt x 199.45439pt.
+ [7
+
+ <./Pic/PT_Confirmed.jpg>]
 <Pic/Density/P_M.pdf, id=298, 426.59375pt x 393.47pt>
 File: Pic/Density/P_M.pdf Graphic file (type pdf)
 <use Pic/Density/P_M.pdf>
@@ -1342,12 +1342,12 @@ File: Pic/Proximity_Random_forest.pdf Graphic file (type pdf)
 Package pdftex.def Info: Pic/Proximity_Random_forest.pdf  used on input line 22
 9.
 (pdftex.def)             Requested size: 171.14764pt x 151.21027pt.
-<Pic/Random_forest_importance.pdf, id=506, 456.70625pt x 403.5075pt>
+<Pic/Random_forest_importance.pdf, id=506, 438.63875pt x 403.5075pt>
 File: Pic/Random_forest_importance.pdf Graphic file (type pdf)
 <use Pic/Random_forest_importance.pdf>
 Package pdftex.def Info: Pic/Random_forest_importance.pdf  used on input line 2
 29.
-(pdftex.def)             Requested size: 102.68962pt x 90.7237pt.
+(pdftex.def)             Requested size: 102.68962pt x 94.461pt.
 <Pic/Random_Forest_FINAL_ROC.pdf, id=507, 438.63875pt x 403.5075pt>
 File: Pic/Random_Forest_FINAL_ROC.pdf Graphic file (type pdf)
 <use Pic/Random_Forest_FINAL_ROC.pdf>
@@ -1363,16 +1363,16 @@ File: Pic/PCA+SVM_PLOT.pdf Graphic file (type pdf)
 <use Pic/PCA+SVM_PLOT.pdf>
 Package pdftex.def Info: Pic/PCA+SVM_PLOT.pdf  used on input line 246.
 (pdftex.def)             Requested size: 171.14764pt x 157.85951pt.
-<Pic/SVM_FINAL_ROC.pdf, id=553, 438.63875pt x 403.5075pt>
+<Pic/SVM_FINAL_ROC.pdf, id=553, 408.52625pt x 394.47375pt>
 File: Pic/SVM_FINAL_ROC.pdf Graphic file (type pdf)
 <use Pic/SVM_FINAL_ROC.pdf>
 Package pdftex.def Info: Pic/SVM_FINAL_ROC.pdf  used on input line 246.
-(pdftex.def)             Requested size: 85.57382pt x 78.7175pt.
-<Pic/SVM_PCA_ROC.pdf, id=554, 438.63875pt x 403.5075pt>
+(pdftex.def)             Requested size: 85.57382pt x 82.62523pt.
+<Pic/SVM_PCA_ROC.pdf, id=554, 408.52625pt x 394.47375pt>
 File: Pic/SVM_PCA_ROC.pdf Graphic file (type pdf)
 <use Pic/SVM_PCA_ROC.pdf>
 Package pdftex.def Info: Pic/SVM_PCA_ROC.pdf  used on input line 246.
-(pdftex.def)             Requested size: 85.57382pt x 78.7175pt.
+(pdftex.def)             Requested size: 85.57382pt x 82.62523pt.
  [12
 
  <./Pic/PCA+SVM_PLOT.pdf> <./Pic/SVM_FINAL_ROC.pdf> <./Pic/SVM_PCA_ROC.pdf>]
@@ -1427,7 +1427,7 @@ Package pdftex.def Info: Pic/Exoplanet_picture.jpg  used on input line 318.
 ] [20
 
 ]
-<Pic/Prox_explanation.jpg, id=847, 371.17873pt x 254.10132pt>
+<Pic/Prox_explanation.jpg, id=850, 371.17873pt x 254.10132pt>
 File: Pic/Prox_explanation.jpg Graphic file (type jpg)
 <use Pic/Prox_explanation.jpg>
 Package pdftex.def Info: Pic/Prox_explanation.jpg  used on input line 346.
@@ -1435,7 +1435,7 @@ Package pdftex.def Info: Pic/Prox_explanation.jpg  used on input line 346.
  [21
 
  <./Pic/Prox_explanation.jpg>]
-<Pic/Prox_explanation_3.jpg, id=875, 385.34364pt x 163.47475pt>
+<Pic/Prox_explanation_3.jpg, id=878, 385.34364pt x 163.47475pt>
 File: Pic/Prox_explanation_3.jpg Graphic file (type jpg)
 <use Pic/Prox_explanation_3.jpg>
 Package pdftex.def Info: Pic/Prox_explanation_3.jpg  used on input line 354.
@@ -1444,7 +1444,7 @@ Package pdftex.def Info: Pic/Prox_explanation_3.jpg  used on input line 354.
 [22
 
  <./Pic/Prox_explanation_3.jpg>]
-<Pic/Prox_explanation_2.jpg, id=903, 328.39488pt x 148.1535pt>
+<Pic/Prox_explanation_2.jpg, id=906, 328.39488pt x 148.1535pt>
 File: Pic/Prox_explanation_2.jpg Graphic file (type jpg)
 <use Pic/Prox_explanation_2.jpg>
 Package pdftex.def Info: Pic/Prox_explanation_2.jpg  used on input line 362.
@@ -1453,6 +1453,56 @@ Package pdftex.def Info: Pic/Prox_explanation_2.jpg  used on input line 362.
 
  <./Pic/Prox_explanation_2.jpg>]
 [24
+
+]
+<Pic/ROC/ROC_A.png, id=961, 529.98pt x 229.85875pt>
+File: Pic/ROC/ROC_A.png Graphic file (type png)
+<use Pic/ROC/ROC_A.png>
+Package pdftex.def Info: Pic/ROC/ROC_A.png  used on input line 397.
+(pdftex.def)             Requested size: 171.14764pt x 74.2297pt.
+<Pic/ROC/ROC_B.png, id=962, 508.90125pt x 237.88875pt>
+File: Pic/ROC/ROC_B.png Graphic file (type png)
+<use Pic/ROC/ROC_B.png>
+Package pdftex.def Info: Pic/ROC/ROC_B.png  used on input line 397.
+(pdftex.def)             Requested size: 171.14764pt x 80.00266pt.
+<Pic/ROC/ROC_A_R.png, id=963, 324.21124pt x 294.09875pt>
+File: Pic/ROC/ROC_A_R.png Graphic file (type png)
+<use Pic/ROC/ROC_A_R.png>
+Package pdftex.def Info: Pic/ROC/ROC_A_R.png  used on input line 397.
+(pdftex.def)             Requested size: 85.57382pt x 77.62614pt.
+<Pic/ROC/ROC_B_R.png, id=964, 341.275pt x 310.15875pt>
+File: Pic/ROC/ROC_B_R.png Graphic file (type png)
+<use Pic/ROC/ROC_B_R.png>
+Package pdftex.def Info: Pic/ROC/ROC_B_R.png  used on input line 397.
+(pdftex.def)             Requested size: 85.57382pt x 77.7714pt.
+ [25
+
+ <./Pic/ROC/ROC_A.png (PNG copy)> <./Pic/ROC/ROC_B.png (PNG copy)> <./Pic/ROC/R
+OC_A_R.png (PNG copy)> <./Pic/ROC/ROC_B_R.png (PNG copy)>]
+<Pic/ROC/ROC_C.png, id=993, 431.6125pt x 222.8325pt>
+File: Pic/ROC/ROC_C.png Graphic file (type png)
+<use Pic/ROC/ROC_C.png>
+Package pdftex.def Info: Pic/ROC/ROC_C.png  used on input line 416.
+(pdftex.def)             Requested size: 171.14764pt x 88.35959pt.
+<Pic/ROC/ROC_D.png, id=994, 558.085pt x 216.81pt>
+File: Pic/ROC/ROC_D.png Graphic file (type png)
+<use Pic/ROC/ROC_D.png>
+Package pdftex.def Info: Pic/ROC/ROC_D.png  used on input line 416.
+(pdftex.def)             Requested size: 171.14764pt x 66.4892pt.
+<Pic/ROC/ROC_C_R.png, id=995, 364.36125pt x 331.2375pt>
+File: Pic/ROC/ROC_C_R.png Graphic file (type png)
+<use Pic/ROC/ROC_C_R.png>
+Package pdftex.def Info: Pic/ROC/ROC_C_R.png  used on input line 416.
+(pdftex.def)             Requested size: 85.57382pt x 77.79027pt.
+<Pic/ROC/ROC_D_R.png, id=996, 301.125pt x 273.02pt>
+File: Pic/ROC/ROC_D_R.png Graphic file (type png)
+<use Pic/ROC/ROC_D_R.png>
+Package pdftex.def Info: Pic/ROC/ROC_D_R.png  used on input line 416.
+(pdftex.def)             Requested size: 85.57382pt x 77.58655pt.
+ [26
+
+ <./Pic/ROC/ROC_C.png (PNG copy)> <./Pic/ROC/ROC_D.png (PNG copy)> <./Pic/ROC/R
+OC_C_R.png (PNG copy)> <./Pic/ROC/ROC_D_R.png (PNG copy)>] [27
 
 ]
 \tf@nav=\write7
@@ -1466,16 +1516,16 @@ Package pdftex.def Info: Pic/Prox_explanation_2.jpg  used on input line 362.
 
  (Presentation.aux)
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: C6720707FED6DDF1D2F59AB18AB08937;1015.
+(rerunfilecheck)             Checksum: 404516C8587B22B20F5642393E6549B9;1015.
 Package logreq Info: Writing requests to 'Presentation.run.xml'.
 \openout1 = `Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26039 strings out of 480236
- 507306 string characters out of 2888530
- 1023338 words of memory out of 3000000
- 41937 multiletter control sequences out of 15000+200000
+ 26104 strings out of 480236
+ 508497 string characters out of 2888530
+ 1023383 words of memory out of 3000000
+ 41986 multiletter control sequences out of 15000+200000
  545253 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,15n,112p,1861b,1638s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1491,9 +1541,9 @@ m/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Presentation.pdf (24 pages, 4824382 bytes).
+Output written on Presentation.pdf (27 pages, 4900417 bytes).
 PDF statistics:
- 1016 PDF objects out of 1200 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
- 362 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1109 PDF objects out of 1200 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 402 words of extra memory for PDF output out of 10000 (max. 10000000)
 

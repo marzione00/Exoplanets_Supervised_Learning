@@ -33,6 +33,10 @@
   \field{howpublished}{\url{https://exoplanets.nasa.gov/news/1605/observing-exoplanets-what-can-we-really-see/}}
   \endentry
 
+  \entry{ROC_fig}{misc}{}
+  \field{howpublished}{\url{https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5}}
+  \endentry
+
   \entry{blanchet2020constructing}{article}{}
     \name{author}{8}{}{%
       {{hash=BL}{%

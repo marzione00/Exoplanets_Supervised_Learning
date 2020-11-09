@@ -9,7 +9,7 @@
 \defcounter {refsection}{0}\relax 
 \beamer@subsectionintoc {2}{2}{Stars Feature}{4}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{3}{Planet Features}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Planet Features}{7}{0}{2}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {3}{Data inspection}{8}{0}{3}
 \defcounter {refsection}{0}\relax 
